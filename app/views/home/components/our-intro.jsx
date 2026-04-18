@@ -30,11 +30,12 @@ export default function OurIntro() {
         </div>
 
         {/* Experience badge */}
-        <div className="absolute bottom-0 left-0 z-20 bg-primary-500 px-7 py-6 w-[140px]">
-          <p className="text-white font-extrabold text-4xl leading-none">
-            7<sup className="text-2xl">+</sup>
+        <div className="absolute bottom-0 left-0 z-20 bg-primary-500 px-4 py-3 sm:px-5 sm:py-4 lg:px-7 lg:py-6 w-[110px] sm:w-[120px] lg:w-[140px]">
+          <p className="text-white font-extrabold text-2xl sm:text-3xl lg:text-4xl leading-none">
+            7<sup className="text-xs sm:text-sm lg:text-2xl">+</sup>
           </p>
-          <p className="text-white text-sm font-medium mt-2 leading-snug">
+
+          <p className="text-white text-[10px] sm:text-xs lg:text-sm font-medium mt-1 sm:mt-2 leading-snug">
             Years of <br /> Experience
           </p>
         </div>
@@ -88,9 +89,12 @@ export default function OurIntro() {
               <p className="text-gray-400 text-xs mb-0.5">
                 Have any questions?
               </p>
-              <p className="text-[#1a1a1a] text-base font-bold">
+              <a
+                href={`tel:${SITE_CONFIG.contact.phone}`}
+                className="text-[#1a1a1a] text-base font-bold"
+              >
                 {SITE_CONFIG.contact.phone}
-              </p>
+              </a>
             </div>
           </div>
         </div>

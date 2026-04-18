@@ -6,6 +6,7 @@ import PageWrapper from "@/app/components/page-wrapper";
 import * as Yup from "yup";
 import { useFormik } from "formik";
 import { Check } from "lucide-react";
+import emailjs from "@emailjs/browser";
 
 const TABS = ["Residential", "Housing", "Commercial"];
 
@@ -62,14 +63,38 @@ export default function ContactSection() {
     validationSchema: getValidationSchema(),
     onSubmit: async (values, { resetForm }) => {
       setIsSubmitting(true);
+
       try {
-        await new Promise((resolve) => setTimeout(resolve, 1000));
-        console.log(values);
+        const templateParams = {
+          fullName: values.fullName,
+          phone: values.phone,
+          pincode: values.pincode,
+          bill: values.bill,
+          type: activeTab,
+
+          // Only send relevant fields
+          societyName: activeTab === "Housing" ? values.societyName : "",
+          designation: activeTab === "Housing" ? values.designation : "",
+          agmStatus: activeTab === "Housing" ? values.agmStatus : "",
+
+          companyName: activeTab === "Commercial" ? values.companyName : "",
+          city: activeTab === "Commercial" ? values.city : "",
+        };
+
+        await emailjs.send(
+          process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
+          process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
+          templateParams,
+          process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY,
+        );
+
         setSubmitSuccess(true);
         resetForm();
+
         setTimeout(() => setSubmitSuccess(false), 4000);
       } catch (error) {
-        console.error(error);
+        console.error("EmailJS Error:", error);
+        alert("Something went wrong. Please try again.");
       } finally {
         setIsSubmitting(false);
       }
@@ -80,7 +105,7 @@ export default function ContactSection() {
     <PageWrapper className="bg-white">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
         {/* LEFT - Image */}
-        <div className="relative h-[400px] lg:h-[600px] rounded-3xl overflow-hidden">
+        <div className="relative h-[250px] lg:h-[600px] rounded-3xl overflow-hidden">
           <Image
             src="/Images/project-2.webp"
             alt="Contact us"
@@ -130,7 +155,10 @@ export default function ContactSection() {
             {TABS.map((tab) => (
               <button
                 key={tab}
-                onClick={() => setActiveTab(tab)}
+                onClick={() => {
+                  setActiveTab(tab);
+                  formik.resetForm();
+                }}
                 className={`pb-3 text-base transition-colors relative
                     ${
                       activeTab === tab
@@ -190,8 +218,9 @@ export default function ContactSection() {
                   </option>
                   <option value="<1500">Less than ₹2,500</option>
                   <option value="1500-2500">₹2,500 - ₹5,500</option>
-                  <option value="2500-4000">₹5,500 - ₹10,000</option>
-                  <option value=">8000">More than ₹8,000</option>
+                  <option value="5500-10000">₹5,500 - ₹10,000</option>
+                  <option value="10000-50000">₹10,000 - ₹50,000</option>
+                  <option value=">50000">More than ₹50,000</option>
                 </select>
                 {formik.touched.bill && formik.errors.bill && (
                   <p className="text-red-500 text-xs mt-1">

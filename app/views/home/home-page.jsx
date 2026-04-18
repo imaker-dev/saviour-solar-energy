@@ -9,9 +9,11 @@ import CtaBanner from "./components/cta-banner.jsx";
 import WorkingProcess from "./components/working-process.jsx";
 import OurProjectSection from "./components/our-projects-section.jsx";
 import SolutionsSection from "./components/solutions-section.jsx";
+import SolarSubsidySection from "./components/solar-subsidy-section.jsx";
 import FaqSection from "./components/faq-section.jsx";
 import ContactSection from "./components/contact-section.jsx";
 import TestimonialSlider from "./components/testimonial-slider.jsx";
+import BlogSlider from "./components/blog-slider.jsx";
 
 const HomePage = () => {
   return (
@@ -20,15 +22,17 @@ const HomePage = () => {
       <OurIntro />
       <ServicesSection />
       <SolutionsSection />
+      <CtaBanner />
+      <SolarSubsidySection />
       <OurProjectSection />
       <WhyChooseUsSection />
       <StatsSection />
       <WorkingProcess />
-      <CtaBanner />
       <OurBenefits />
       <FaqSection />
       <ContactSection />
       <TestimonialSlider />
+      <BlogSlider />
     </>
   );
 };

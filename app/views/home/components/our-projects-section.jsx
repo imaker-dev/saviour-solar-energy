@@ -5,36 +5,20 @@ import SectionHeader from "@/app/components/section-header";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import { Autoplay } from "swiper/modules";
-
-const projects = [
-  {
-    id: 1,
-    image: "/Images/project-1.webp",
-  },
-  {
-    id: 2,
-    image: "/Images/project-2.webp",
-  },
-  {
-    id: 3,
-    image: "/Images/project-3.webp",
-  },
-  {
-    id: 4,
-    image: "/Images/project-4.webp",
-  },
-];
+import { getAllProjects } from "@/data/projects.js";
+import ProjectCard from "@/app/views/projects/components/project-card";
+import Link from "next/link";
 
 export default function OurProjectSection() {
+  const projects = getAllProjects();
   return (
-    <PageWrapper className="bg-secondary-900 text-white">
+    <PageWrapper className="bg-white">
       <SectionHeader
         badge={"OUR PROJECTS"}
         title={"Showcase of Completed Projects"}
         description={
           "Explore our successfully completed solar installations across residential, commercial, and industrial sectors."
         }
-        light
       />
 
       {/* SLIDER */}
@@ -50,19 +34,14 @@ export default function OurProjectSection() {
       >
         {projects.map((project) => (
           <SwiperSlide key={project.id}>
-            <div className="overflow-hidden group cursor-pointer">
-              <img
-                src={project.image}
-                className="w-full h-[260px] lg:h-[320px] object-cover transition-transform duration-500 group-hover:scale-105"
-              />
-            </div>
+            <ProjectCard project={project} />
           </SwiperSlide>
         ))}
       </Swiper>
 
       {/* BUTTON */}
       <div className="flex justify-center mt-10">
-        <button className="btn btn-primary">View All Projects</button>
+        <Link href={'/projects'} className="btn btn-primary">View All Projects</Link>
       </div>
     </PageWrapper>
   );

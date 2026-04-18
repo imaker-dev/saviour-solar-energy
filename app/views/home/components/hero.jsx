@@ -12,8 +12,8 @@ const Hero = () => {
       label: "Projects Completed",
     },
     {
-      value: "2000 MW",
-      label: "Installed Capacity",
+      value: "50+",
+      label: "Expert Team Members",
     },
   ];
   return (

@@ -3,7 +3,7 @@ export const SITE_CONFIG = {
 
   contact: {
     email: "needhelp@company.com",
-    phone: "(123) 456-7890",
+    phone: "+91 84859 65451",
   },
 
   address: {
@@ -11,7 +11,7 @@ export const SITE_CONFIG = {
     city: "New York",
     zip: "8800",
     country: "United States",
-    full: "60 Brooklyn Golden Street, New York 8800, United States",
+    full: "602, 6th floor , Pramukh Square, Gandhinagar Bypass Rd, Sargasan, Gandhinagar, Gujarat 382421",
   },
 
   map: {

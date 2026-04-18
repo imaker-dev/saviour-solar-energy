@@ -1,10 +1,10 @@
 import Link from "next/link";
 
 export default function NotFound() {
-return ( <div className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-br from-yellow-50 to-white px-6 text-center">
+return ( <div className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-br from-primary-50 to-white px-6 text-center">
 
   {/* Big 404 */}
-  <h1 className="text-7xl font-extrabold text-yellow-500 drop-shadow-sm">
+  <h1 className="text-7xl font-extrabold text-primary-500 drop-shadow-sm">
     404
   </h1>
 
@@ -22,7 +22,7 @@ return ( <div className="flex min-h-screen flex-col items-center justify-center 
   <div className="mt-6 flex gap-4">
     <Link
       href="/"
-      className="rounded-lg bg-yellow-500 px-6 py-3 text-white shadow-md transition hover:bg-yellow-600"
+      className="rounded-lg bg-primary-500 px-6 py-3 text-white shadow-md transition hover:bg-primary-600"
     >
       Go Home
     </Link>

@@ -88,9 +88,7 @@ export default function StatsSection() {
 
   return (
     <PageWrapper
-      className="bg-white"
-      paddingY="py-0"
-      containerClassName="bg-secondary-500 px-10 py-16"
+      className="bg-secondary-500"
     >
       <div
         ref={ref}
