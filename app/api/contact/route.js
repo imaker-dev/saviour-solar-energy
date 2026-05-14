@@ -4,7 +4,7 @@ import { transporter } from "../../lib/mail";
 // ─── Brand Constants ────────────────────────────────────────────────────────
 const BRAND = {
   name: "Savior Solar Energy",
-  tagline: "STEP TOWARDS SOLAR",
+  tagline: "THE ENERGY OF TOMORROW",
   email: "needhelp@saviorsolar.com",
   phone: "+91 84859 65451",
   address:
