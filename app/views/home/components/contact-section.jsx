@@ -5,8 +5,7 @@ import Image from "next/image";
 import PageWrapper from "@/app/components/page-wrapper";
 import * as Yup from "yup";
 import { useFormik } from "formik";
-import { Check } from "lucide-react";
-import emailjs from "@emailjs/browser";
+import { Check, Loader, Send } from "lucide-react";
 
 const TABS = ["Residential", "Housing", "Commercial"];
 
@@ -18,6 +17,7 @@ export default function ContactSection() {
   const getValidationSchema = () => {
     let base = {
       fullName: Yup.string().required("Required"),
+      email: Yup.string().email("Invalid email").required("Required"),
       phone: Yup.string()
         .matches(/^[0-9]{10}$/, "Enter valid 10-digit number")
         .required("Required"),
@@ -51,6 +51,7 @@ export default function ContactSection() {
     enableReinitialize: true,
     initialValues: {
       fullName: "",
+      email: "",
       phone: "",
       pincode: "",
       bill: "",
@@ -65,35 +66,29 @@ export default function ContactSection() {
       setIsSubmitting(true);
 
       try {
-        const templateParams = {
-          fullName: values.fullName,
-          phone: values.phone,
-          pincode: values.pincode,
-          bill: values.bill,
-          type: activeTab,
+        const response = await fetch("/api/contact", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            ...values,
+            type: activeTab,
+          }),
+        });
 
-          // Only send relevant fields
-          societyName: activeTab === "Housing" ? values.societyName : "",
-          designation: activeTab === "Housing" ? values.designation : "",
-          agmStatus: activeTab === "Housing" ? values.agmStatus : "",
+        const data = await response.json();
 
-          companyName: activeTab === "Commercial" ? values.companyName : "",
-          city: activeTab === "Commercial" ? values.city : "",
-        };
-
-        await emailjs.send(
-          process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
-          process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
-          templateParams,
-          process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY,
-        );
+        if (!data.success) {
+          throw new Error(data.message);
+        }
 
         setSubmitSuccess(true);
         resetForm();
 
-        setTimeout(() => setSubmitSuccess(false), 4000);
+        setTimeout(() => setSubmitSuccess(false), 10000);
       } catch (error) {
-        console.error("EmailJS Error:", error);
+        console.error(error);
         alert("Something went wrong. Please try again.");
       } finally {
         setIsSubmitting(false);
@@ -194,6 +189,16 @@ export default function ContactSection() {
                 formik={formik}
               />
 
+              <div className="col-span-full">
+                <InputField
+                  label="Email Address"
+                  name="email"
+                  type="email"
+                  placeholder="Your email address"
+                  formik={formik}
+                />
+              </div>
+
               <InputField
                 label="Pin Code"
                 name="pincode"
@@ -216,11 +221,11 @@ export default function ContactSection() {
                   <option value="" className="text-gray-400">
                     Select bill range
                   </option>
-                  <option value="<1500">Less than ₹2,500</option>
-                  <option value="1500-2500">₹2,500 - ₹5,500</option>
-                  <option value="5500-10000">₹5,500 - ₹10,000</option>
-                  <option value="10000-50000">₹10,000 - ₹50,000</option>
-                  <option value=">50000">More than ₹50,000</option>
+                  <option value="under-2500">Under ₹2,500</option>
+                  <option value="2500-5500">₹2,500 – ₹5,500</option>
+                  <option value="5500-10000">₹5,500 – ₹10,000</option>
+                  <option value="10000-50000">₹10,000 – ₹50,000</option>
+                  <option value="above-50000">Above ₹50,000</option>
                 </select>
                 {formik.touched.bill && formik.errors.bill && (
                   <p className="text-red-500 text-xs mt-1">
@@ -287,9 +292,19 @@ export default function ContactSection() {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="btn btn-primary w-full md:w-auto  disabled:opacity-50"
+                className="btn btn-primary w-full md:w-auto disabled:opacity-50 flex items-center justify-center gap-2"
               >
-                {isSubmitting ? "Submitting..." : "Submit Request"}
+                {isSubmitting ? (
+                  <>
+                    <Loader className="h-4 w-4 animate-spin" />
+                    Submitting...
+                  </>
+                ) : (
+                  <>
+                    <Send className="h-4 w-4" />
+                    Submit Request
+                  </>
+                )}
               </button>
             </div>
           </form>

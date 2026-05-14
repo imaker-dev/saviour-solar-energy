@@ -94,7 +94,7 @@ export default function ContactPage() {
             height="100%"
             style={{
               border: 0,
-              minHeight: "400px",
+              minHeight: "500px",
               display: "block",
               filter: "grayscale(20%) contrast(1.02)",
             }}
@@ -103,18 +103,6 @@ export default function ContactPage() {
             referrerPolicy="no-referrer-when-downgrade"
           ></iframe>
 
-          {/* Address overlay chip */}
-          <div className="absolute bottom-5 left-5 bg-white border border-gray-100 shadow-sm px-4 py-3 flex items-center gap-3">
-            <div className="w-7 h-7 rounded-full bg-amber-50 border border-amber-200 flex items-center justify-center flex-shrink-0">
-              <MapPin size={13} className="text-amber-500" />
-            </div>
-            <div>
-              <p className="text-[12px] font-semibold text-gray-950 leading-snug">
-                Solar House, SG Highway
-              </p>
-              <p className="text-[11px] text-gray-400">Ahmedabad, Gujarat</p>
-            </div>
-          </div>
         </div>
 
         {/* ── Bottom strip ── */}

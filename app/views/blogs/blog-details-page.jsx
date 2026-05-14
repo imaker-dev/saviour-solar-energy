@@ -89,13 +89,13 @@ const BlogDetailsPage = ({ post }) => {
   const router = useRouter();
 
   return (
-    <PageWrapper>
+    <PageWrapper paddingY="py-4 lg:py-8">
       {/* ── Hero ─────────────────────────────────────────────────── */}
-      <div className="max-w-3xl mx-auto  pt-12 pb-10">
+      <div className="max-w-3xl mx-auto">
         {/* Back + Category */}
         <div className="flex items-center justify-between mb-8">
           <button
-            onClick={() => router.push()}
+            onClick={() => router.back()}
             className="inline-flex items-center gap-2 text-[12px] font-semibold text-gray-400 hover:text-gray-700 transition-colors"
           >
             <ArrowLeft size={13} />
@@ -137,7 +137,7 @@ const BlogDetailsPage = ({ post }) => {
 
       {/* ── Featured image ───────────────────────────────────────── */}
       <div className="max-w-3xl mx-auto">
-        <div className="relative overflow-hidden h-[250px] lg:h-[350px] mt-10 mb-2 bg-gray-100">
+        <div className="relative overflow-hidden h-[200px] md:h-[350px] lg:h-[400px] mt-10 mb-2 bg-gray-100">
           <img
             src={post.featuredImage}
             alt={post.title}
