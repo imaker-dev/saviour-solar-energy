@@ -1,14 +1,88 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import AppLayout from "@/app/components/app-layout";
+import { BASE_URL } from "./const";
 
 export const metadata: Metadata = {
-  title:
-    "Savior Solar Energy | Solar Panels, Inverters & Installation Services",
+  metadataBase: new URL(BASE_URL),
+
+  title: {
+    default:
+      "Savior Solar Energy | Solar Panels, Inverters & Installation Services",
+    template: "%s | Savior Solar Energy",
+  },
+
   description:
-    "Savior Solar Energy offers complete solar solutions including high-efficiency solar panels, advanced inverters, professional installation, and maintenance services for homes, businesses, and industries.",
-  keywords:
-    "solar energy company, solar panels, solar inverter, solar installation, solar maintenance, solar solutions India, residential solar, commercial solar, industrial solar, renewable energy, solar system provider",
+    "Savior Solar Energy provides complete solar power solutions including solar panels, solar inverters, rooftop solar systems, installation, and maintenance services for residential, commercial, and industrial projects.",
+
+  keywords: [
+    "solar energy company",
+    "solar panels",
+    "solar inverter",
+    "solar installation",
+    "rooftop solar",
+    "solar maintenance",
+    "renewable energy",
+    "commercial solar",
+    "industrial solar",
+    "residential solar",
+    "solar solutions India",
+  ],
+
+  creator: "iMaker Technology Pvt. Ltd.",
+  publisher: "iMaker Technology Pvt. Ltd.",
+
+  applicationName: "Savior Solar Energy",
+
+  robots: {
+    index: true,
+    follow: true,
+  },
+
+  alternates: {
+    canonical: "/",
+  },
+
+  openGraph: {
+    title:
+      "Savior Solar Energy | Solar Panels, Inverters & Installation Services",
+
+    description:
+      "Complete solar energy solutions for residential, commercial, and industrial projects.",
+
+    url: BASE_URL,
+
+    siteName: "Savior Solar Energy",
+
+    images: [
+      {
+        url: "/Images/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Savior Solar Energy",
+      },
+    ],
+
+    locale: "en_US",
+    type: "website",
+  },
+
+  twitter: {
+    card: "summary_large_image",
+
+    title:
+      "Savior Solar Energy | Solar Panels, Inverters & Installation Services",
+
+    description:
+      "Professional solar panel installation and renewable energy solutions for homes, businesses, and industries.",
+
+    images: ["/Images/og-image.png"],
+  },
+
+  icons: {
+    icon: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
+  },
 };
 
 export const viewport = {
@@ -23,8 +97,33 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const structuredData = [
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      name: "Savior Solar Energy",
+      alternateName: "Savior Solar",
+      url: BASE_URL,
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      name: "Savior Solar Energy",
+      url: BASE_URL,
+      logo: `${BASE_URL}/logo.png`,
+    },
+  ];
+
   return (
     <html lang="en">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(structuredData),
+          }}
+        />
+      </head>
       <body>
         <AppLayout>{children}</AppLayout>
       </body>

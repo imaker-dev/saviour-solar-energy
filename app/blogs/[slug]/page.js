@@ -1,39 +1,29 @@
 import { Metadata } from "next";
 import { getBlogById } from "@/data/blogs.js";
 import BlogDetailsPage from "../../views/blogs/blog-details-page";
+import { generateSEO } from "../../lib/seo-config";
 
-// export async function generateMetadata({ params }) {
-//   const { slug } = await params;
-//   const post = blogsData.posts.find(p => p.slug === slug);
+export async function generateMetadata({ params }) {
+  const { slug } = await params;
 
-//   if (!post) {
-//     return {
-//       title: 'Blog Post Not Found',
-//       description: 'The blog post you are looking for does not exist.',
-//     };
-//   }
+  const post = getBlogById(slug);
 
-//   return {
-//     title: post.seo.metaTitle,
-//     description: post.seo.metaDescription,
-//     keywords: post.seo.keywords,
-//     openGraph: {
-//       title: post.seo.ogTitle || post.title,
-//       description: post.seo.ogDescription || post.description,
-//       images: post.seo.ogImage ? [{ url: post.seo.ogImage }] : [{ url: post.featuredImage }],
-//       type: 'article',
-//       publishedTime: post.publishedAt,
-//       modifiedTime: post.updatedAt,
-//     },
-//     canonical: post.seo.canonicalUrl,
-//   };
-// }
+  if (!post) {
+    return {};
+  }
 
-// export async function generateStaticParams() {
-//   return blogsData.posts.map(post => ({
-//     slug: post.slug,
-//   }));
-// }
+  return generateSEO({
+    title: post?.seo?.metaTitle || post.title,
+
+    description: post?.seo?.metaDescription || post.description,
+
+    keywords: post?.seo?.keywords || post.tags || [],
+
+    path: `/blogs/${post.slug}`,
+
+    image: post.featuredImage,
+  });
+}
 
 export default async function Page({ params }) {
   const { slug } = await params;

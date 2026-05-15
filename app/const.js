@@ -27,3 +27,4 @@ export const SITE_CONFIG = {
     instagram: "#",
   },
 };
+export const BASE_URL = "https://saviorenergy.in";
