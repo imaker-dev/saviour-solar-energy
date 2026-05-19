@@ -57,10 +57,10 @@ export default function ContactPage() {
               className={`group bg-white flex flex-col gap-3 p-6 transition-colors duration-150 ${href ? "hover:bg-gray-50 cursor-pointer" : "cursor-default"}`}
             >
               {/* Icon */}
-              <div className="w-9 h-9 rounded-full border border-gray-200 flex items-center justify-center group-hover:border-amber-300 group-hover:bg-amber-50 transition-colors duration-150">
+              <div className="w-9 h-9 rounded-full border border-gray-200 flex items-center justify-center group-hover:border-primary-300 group-hover:bg-primary-50 transition-colors duration-150">
                 <Icon
                   size={15}
-                  className="text-gray-400 group-hover:text-amber-500 transition-colors duration-150"
+                  className="text-gray-400 group-hover:text-primary-500 transition-colors duration-150"
                 />
               </div>
 
@@ -83,9 +83,11 @@ export default function ContactPage() {
             </a>
           ))}
         </div>
+      </PageWrapper>
 
-        <ContactSection />
+      <ContactSection />
 
+      <PageWrapper>
         <div className=" relative overflow-hidden bg-gray-100 border border-gray-100 min-h-[340px] lg:min-h-0">
           {/* Map embed */}
           <iframe
@@ -102,10 +104,7 @@ export default function ContactPage() {
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
           ></iframe>
-
         </div>
-
-        {/* ── Bottom strip ── */}
       </PageWrapper>
     </>
   );

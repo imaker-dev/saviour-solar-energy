@@ -1,3 +1,5 @@
+import { twMerge } from "tailwind-merge";
+
 export default function SectionHeader({
   badge,
   title,
@@ -14,7 +16,10 @@ export default function SectionHeader({
 
   return (
     <div
-      className={`flex flex-col ${alignment} max-w-3xl mb-8 lg:mb-10 ${className}`}
+      className={twMerge(
+        `flex flex-col ${alignment} max-w-3xl mb-8 lg:mb-10`,
+        className,
+      )}
     >
       {/* Badge */}
       {badge && <SectionBadge light={light}>{badge}</SectionBadge>}
@@ -42,9 +47,13 @@ export default function SectionHeader({
 
 export function SectionBadge({ children, light }) {
   return (
-    <div className="inline-flex items-center gap-2 mb-4">
+    <div className="inline-flex items-center gap-3 mb-4">
+      <div
+        className={`h-px w-8 ${light ? "bg-primary-400" : "bg-primary-500"}`}
+      />
+
       <span
-        className={`text-xs sm:text-sm font-bold tracking-[0.2em] uppercase ${
+        className={`text-[11px] sm:text-xs font-bold uppercase tracking-[0.2em] ${
           light ? "text-primary-400" : "text-primary-500"
         }`}
       >
@@ -57,7 +66,7 @@ export function SectionBadge({ children, light }) {
 export function SectionHeading({ children, light }) {
   return (
     <h2
-      className={`text-2xl sm:text-3xl md:text-4xl font-semibold leading-[1.2] tracking-tight ${
+      className={`text-2xl sm:text-3xl  font-semibold leading-[1.2] tracking-tight ${
         light ? "text-white" : "text-slate-950"
       }`}
     >
@@ -69,7 +78,7 @@ export function SectionHeading({ children, light }) {
 export function SectionSubtext({ children, light }) {
   return (
     <p
-      className={`mt-4 text-sm sm:text-base md:text-lg leading-relaxed max-w-xl ${
+      className={`mt-4 text-sm sm:text-base leading-relaxed max-w-xl ${
         light ? "text-white/70" : "text-slate-600"
       }`}
     >
