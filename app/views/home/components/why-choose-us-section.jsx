@@ -1,90 +1,94 @@
+import React from "react";
+import { HandCoins, HardHat, Headphones, Trophy, Play } from "lucide-react";
 import PageWrapper from "@/app/components/page-wrapper";
-import SectionHeader from "@/app/components/section-header";
-import { Zap, PiggyBank, Home, ShieldCheck, Wrench, Leaf } from "lucide-react";
+import Link from "next/link";
+import SectionHeader, { HighlightText } from "@/app/components/section-header";
+import PlayButton from "@/app/components/play-button";
+
+const features = [
+  {
+    icon: HandCoins,
+    title: "Save Your Money",
+    description:
+      "Cut your monthly electricity bill with a solar system sized to your usage.",
+  },
+  {
+    icon: HardHat,
+    title: "Certified Engineer",
+    description:
+      "Every installation is handled by licensed, background-checked solar engineers.",
+  },
+  {
+    icon: Headphones,
+    title: "24 X 7 Support",
+    description:
+      "Our support team monitors your system and answers calls around the clock.",
+  },
+  {
+    icon: Trophy,
+    title: "Award Winning",
+    description:
+      "Recognized for installation quality and customer service across the region.",
+  },
+];
 
 export default function WhyChooseUsSection() {
-  const features = [
-    {
-      title: "Energy Independence",
-      desc: "Reduce dependence on grid power and protect yourself from rising electricity costs with reliable solar energy.",
-      icon: Zap,
-    },
-    {
-      title: "Cost Savings",
-      desc: "Lower your electricity bills with efficient solar systems designed to deliver long-term financial savings.",
-      icon: PiggyBank,
-    },
-    {
-      title: "Reliable Performance",
-      desc: "High-quality solar panels and systems ensure consistent energy generation and dependable performance over time.",
-      icon: ShieldCheck,
-    },
-    {
-      title: "Expert Installation",
-      desc: "Professional installation with complete support ensures your solar system operates efficiently from day one.",
-      icon: Wrench,
-    },
-    {
-      title: "Low Maintenance",
-      desc: "Durable solar solutions with minimal maintenance requirements for hassle-free and long-lasting operation.",
-      icon: Leaf,
-    },
-  ];
-
   return (
-    <PageWrapper
-      className="bg-white"
-      containerClassName="grid lg:grid-cols-2 gap-8 lg:gap-16 items-start"
-    >
-      {/* LEFT SIDE */}
-      <div>
+    <PageWrapper>
+      <div className="relative overflow-hidden">
         <SectionHeader
-          badge={"Why Choose Us"}
-          title={"Reliable and Affordable Solar Energy Solutions"}
-          align="start"
+          badge="Why Choose Us"
+          title={
+            <>
+              Why Choose Our <br />{" "}
+              <HighlightText>Green Energy Solutions</HighlightText>
+            </>
+          }
+          highlight="Green Energy Solutions"
+          actions={
+            <Link
+              href="/contact"
+              className="inline-flex items-center justify-center rounded-full bg-primary-500 px-9 py-4 text-sm font-semibold text-white transition-all hover:-translate-y-0.5 hover:bg-primary-600 "
+            >
+              Get A Quote
+            </Link>
+          }
         />
 
-        <div className="overflow-hidden">
-          <img
-            src="/Images/solar-3.webp"
-            alt="Solar panel installation team working on rooftop system"
-            className="w-full h-[300px] md:h-[450px] object-cover"
-          />
-        </div>
-      </div>
+        {/* Image + features */}
+        <div className="mt-16 grid grid-cols-1 items-center gap-14 lg:grid-cols-2 lg:gap-20">
+          {/* Image with play button */}
+          <div className="relative mx-auto w-full max-w-md lg:max-w-none">
+            <div className="overflow-hidden rounded-[1.75rem] shadow-2xl shadow-slate-900/15">
+              <img
+                src="/Images/why-choose-us.webp"
+                alt="Certified solar engineers on site reviewing a solar installation"
+                className="h-[420px] w-full object-cover sm:h-[480px]"
+              />
+            </div>
 
-      {/* RIGHT SIDE */}
-      <div className="flex flex-col gap-6 lg:gap-10">
-        {/* Top Paragraph */}
-        <p className="text-gray-500 text-[15px] leading-relaxed max-w-md">
-          Savior Solar Energy delivers high-quality solar solutions designed for
-          performance, savings, and long-term reliability. We combine advanced
-          technology with expert service to help you switch to clean and
-          efficient energy.
-        </p>
+            <PlayButton
+              // onClick={() => setPlayVideo(true)}
+className="group absolute left-1/2 top-1/2 flex -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white/25 ring-1 ring-white/50 backdrop-blur-md transition-transform duration-300 hover:scale-110"
+            />
+           
+          </div>
 
-        {/* Features */}
-        <div className="flex flex-col gap-8">
-          {features.map((item, i) => {
-            const Icon = item.icon;
-
-            return (
-              <div key={i} className="flex items-start gap-5">
-                <div className="w-14 h-14 bg-primary-500 flex items-center justify-center shrink-0">
-                  <Icon size={24} className="text-white" />
-                </div>
-
-                <div>
-                  <h3 className="text-[#1f2937] font-bold text-lg mb-1">
-                    {item.title}
-                  </h3>
-                  <p className="text-gray-500 text-sm leading-relaxed max-w-sm">
-                    {item.desc}
-                  </p>
-                </div>
+          {/* Feature grid */}
+          <div className="grid grid-cols-1 gap-x-14 gap-y-12 sm:grid-cols-2">
+            {features.map(({ icon: Icon, title, description }) => (
+              <div key={title} className="group">
+                <Icon
+                  className="mb-6 h-12 w-12 text-secondary-600 transition-transform duration-300 group-hover:-translate-y-1 group-hover:text-primary-500"
+                  strokeWidth={1.5}
+                />
+                <h3 className="text-xl font-bold text-slate-900">{title}</h3>
+                <p className="mt-2.5 max-w-[240px] text-sm leading-relaxed text-slate-500">
+                  {description}
+                </p>
               </div>
-            );
-          })}
+            ))}
+          </div>
         </div>
       </div>
     </PageWrapper>

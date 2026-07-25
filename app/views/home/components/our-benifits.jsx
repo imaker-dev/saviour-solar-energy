@@ -80,9 +80,9 @@ export default function OurBenefits() {
       <SectionHeader
         badge={"Our Benefits"}
         title={"Benefits of Switching to Solar Energy"}
-        description={
-          "Savior Solar Energy helps you reduce electricity costs, gain energy independence, and switch to clean, sustainable power with reliable solar solutions."
-        }
+        // description={
+        //   "Savior Solar Energy helps you reduce electricity costs, gain energy independence, and switch to clean, sustainable power with reliable solar solutions."
+        // }
       />
 
       {/* Layout */}

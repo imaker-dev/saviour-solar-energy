@@ -1,268 +1,279 @@
 "use client";
-
-import { useState, useEffect, useRef } from "react";
-import { Mail, ChevronDown, Menu, X, ArrowUpRight } from "lucide-react";
+import React, { useState, useEffect, useRef } from "react";
+import { ChevronDown, ChevronsRight, Menu, X, Settings2 } from "lucide-react";
 import Link from "next/link";
-import PageWrapper from "../page-wrapper";
-import { usePathname } from "next/navigation";
 
-const NAV_LINKS = [
-  { label: "Home", href: "/" },
-  { label: "About", href: "/about" },
-  { label: "Schemes", href: "/schemes" },
-  { label: "Services", href: "/services" },
-  { label: "Projects", href: "/projects" },
+const NAV_ITEMS = [
+  {
+    label: "Home",
+    href: "/",
+  },
+  { label: "About Us", href: "/about" },
+  {
+    label: "Services",
+    href: "/services",
+    dropdown: ["Installation", "Maintenance", "Consulting"],
+  },
+  // { label: "Pages", href: "/pages", dropdown: ["Pricing", "Team", "FAQ"] },
+  { label: "Blog", href: "/blogs" },
   { label: "Contact", href: "/contact" },
 ];
 
-export default function Navbar() {
-  const pathname = usePathname();
-  const [mobileOpen, setMobileOpen] = useState(false);
-  const [openDropdown, setOpenDropdown] = useState(null);
+// Picks whichever nav item's href matches the current URL path, so the
+// "active" state reflects the real page instead of a hardcoded default.
+function findActiveLabel() {
+  if (typeof window === "undefined") return "Home";
+  const path = window.location.pathname;
+  const match = NAV_ITEMS.find((item) => item.href === path);
+  return match ? match.label : "Home";
+}
+
+export default function SolstarNavbar() {
   const [scrolled, setScrolled] = useState(false);
-  const dropdownRef = useRef(null);
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const [mobileSubOpen, setMobileSubOpen] = useState(null);
+  const [active, setActive] = useState(findActiveLabel);
+  const headerRef = useRef(null);
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 10);
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
+    const onScroll = () => setScrolled(window.scrollY > 24);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  // Re-check on browser back/forward navigation
   useEffect(() => {
-    const handleClickOutside = (e) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
-        setOpenDropdown(null);
-      }
-    };
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
+    const onPopState = () => setActive(findActiveLabel());
+    window.addEventListener("popstate", onPopState);
+    return () => window.removeEventListener("popstate", onPopState);
   }, []);
 
-  // Prevent body scroll when mobile menu open
+  // Lock body scroll while the mobile panel is open
   useEffect(() => {
-    if (mobileOpen && window.innerWidth < 1024) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "";
-    }
+    document.body.style.overflow = mobileOpen ? "hidden" : "";
     return () => {
       document.body.style.overflow = "";
     };
   }, [mobileOpen]);
 
+  // Close the mobile menu on outside click and on Escape
+  useEffect(() => {
+    if (!mobileOpen) return;
+    const handlePointer = (e) => {
+      if (headerRef.current && !headerRef.current.contains(e.target)) {
+        setMobileOpen(false);
+      }
+    };
+    const handleKey = (e) => {
+      if (e.key === "Escape") setMobileOpen(false);
+    };
+    document.addEventListener("mousedown", handlePointer);
+    document.addEventListener("touchstart", handlePointer);
+    document.addEventListener("keydown", handleKey);
+    return () => {
+      document.removeEventListener("mousedown", handlePointer);
+      document.removeEventListener("touchstart", handlePointer);
+      document.removeEventListener("keydown", handleKey);
+    };
+  }, [mobileOpen]);
+
   return (
     <>
-      {/* Navbar Header - Sticky */}
-      <PageWrapper
-        as="header"
-        paddingY="py-0"
-        className="w-full sticky top-0 z-50 transition-all duration-300"
-        style={{
-          background: scrolled ? "rgba(255,255,255,0.95)" : "white",
-          backdropFilter: scrolled ? "blur(12px)" : "none",
-          borderBottom: scrolled ? "1px solid #F0EEE9" : "1px solid #F5F4F0",
-          boxShadow: scrolled ? "0 4px 24px rgba(0,0,0,0.06)" : "none",
-        }}
+      {/* Backdrop — click to close, blurs the page behind the mobile menu */}
+      <div
+        aria-hidden="true"
+        onClick={() => setMobileOpen(false)}
+        className={`fixed inset-0 z-40 bg-neutral-900/20 backdrop-blur-sm transition-opacity duration-300 lg:hidden ${
+          mobileOpen ? "opacity-100" : "pointer-events-none opacity-0"
+        }`}
+      />
+
+      <header
+        ref={headerRef}
+        className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ease-out ${
+          scrolled
+            ? "bg-white py-0 shadow-sm shadow-neutral-900/5 px-4 sm:px-6"
+            : "bg-transparent px-4 sm:px-6 lg:px-8  py-4"
+        }`}
       >
-        <div className="flex items-center justify-between h-[70px]">
+        {/* <nav
+          className={`relative mx-auto flex max-w-7xl items-center justify-between rounded-full bg-white py-2.5 transition-shadow duration-500  ${
+            scrolled ? "shadow-none" : "shadow-lg shadow-neutral-900/10  px-4 sm:px-6"
+          }`}
+        > */}
+        <nav
+          className={`relative mx-auto flex max-w-7xl items-center justify-between rounded-full bg-white py-2.5 transition-all duration-500 ease-out ${
+            scrolled
+              ? "shadow-none"
+              : "shadow-[0_0_18px_rgba(15,23,42,0.06)] px-4 sm:px-6"
+          }`}
+        >
           {/* Logo */}
-          <Link
-            href="/"
-            className="flex items-center gap-2.5 shrink-0 group"
-            style={{ textDecoration: "none" }}
-          >
-            <img src="/Images/logo.png" alt="" className="w-20 " />
+          <Link href="/" className="flex shrink-0 items-center gap-2">
+            <img src="/Images/logo.png" alt="logo" className="w-10 lg:w-14" />
           </Link>
 
-          {/* Desktop Nav */}
-          <nav ref={dropdownRef} className="hidden lg:flex items-center gap-1">
-            {NAV_LINKS.map((link) =>
-              link.hasDropdown ? (
-                <div key={link.label} className="relative">
-                  <button
-                    onClick={() =>
-                      setOpenDropdown(
-                        openDropdown === link.label ? null : link.label,
-                      )
-                    }
-                    className="flex items-center gap-1 px-3 py-2 rounded-lg text-[14.5px] font-normal text-[#555] bg-transparent border-none cursor-pointer  tracking-[-0.1px]"
+          {/* Desktop nav */}
+          <ul className="hidden items-center gap-8 lg:flex">
+            {NAV_ITEMS.map((item) => {
+              const isActive = active === item.label;
+              return (
+                <li key={item.label} className="group relative">
+                  <Link
+                    href={item.href}
+                    onClick={() => setActive(item.label)}
+                    className={`relative flex items-center gap-1 py-2 text-[15px] font-medium transition-colors ${
+                      isActive
+                        ? "text-primary-500"
+                        : "text-teal-900 hover:text-primary-600"
+                    }`}
                   >
-                    {link.label}
-                    <ChevronDown
-                      size={13}
-                      className={`transition-transform duration-200 ease ${openDropdown === link.label ? "rotate-180" : ""}`}
-                      style={{ opacity: 0.5, marginTop: 1 }}
-                    />
-                  </button>
-                  <div
-                    className={`
-                      absolute top-[calc(100%+12px)] left-1/2 -translate-x-1/2 
-                      transition-all duration-200 ease-out
-                      min-w-[160px] bg-white border border-[#F0EEE9] rounded-[14px] 
-                      shadow-[0_8px_32px_rgba(0,0,0,0.08),0_2px_8px_rgba(0,0,0,0.04)] 
-                      overflow-hidden z-[100]
-                      ${openDropdown === link.label ? "opacity-100 pointer-events-auto translate-y-0" : "opacity-0 pointer-events-none -translate-y-1.5"}
-                    `}
-                  >
-                    {link.children.map((child) => (
-                      <a
-                        key={child.label}
-                        href={child.href}
-                        className="flex items-center justify-between px-4 py-2.5 text-[13.5px] text-[#555] no-underline transition-all duration-150 hover:bg-[#FFF8EE] hover:text-[#F5A623] group/dropdown"
-                      >
-                        {child.label}
-                        <ArrowUpRight
-                          size={13}
-                          className="opacity-0 transition-all duration-150 group-hover/dropdown:opacity-100 group-hover/dropdown:translate-x-0.5 group-hover/dropdown:-translate-y-0.5"
-                        />
-                      </a>
-                    ))}
-                  </div>
-                </div>
-              ) : (
-                <Link
-                  key={link.label}
-                  href={link.href}
-                  className={`
-                    relative px-3 py-2 rounded-lg text-[14.5px] no-underline tracking-[-0.1px] transition-colors duration-150
-                    after:content-[''] after:absolute after:bottom-[-2px] after:left-1/2 after:right-1/2 after:h-[2px] after:bg-[#F5A623] after:rounded-full 
-                    after:transition-[left,right] after:duration-250 after:ease-[cubic-bezier(0.4,0,0.2,1)]
-                    hover:after:left-0 hover:after:right-0
-                    ${
-                      pathname === link.href
-                        ? "after:left-0 after:right-0 text-[#1A1A1A] font-medium"
-                        : "text-[#555] font-normal"
-                    }
-                  `}
-                >
-                  {link.label}
-                </Link>
-              ),
-            )}
-          </nav>
-
-          {/* Right side — CTA + Hamburger */}
-          <div className="flex items-center gap-3">
-
-            <Link href="#" className="btn btn-primary btn-shine hidden lg:flex">
-              <Mail size={14} strokeWidth={2.2} />
-              Get a Quote
-            </Link>
-            {/* Hamburger */}
-            <button
-              className="lg:hidden flex items-center justify-center w-10 h-10 rounded-xl transition-all duration-200 bg-[#F7F6F2] border-none cursor-pointer relative"
-              style={{ color: mobileOpen ? "#F5A623" : "#555" }}
-              onClick={() => setMobileOpen((v) => !v)}
-              aria-label="Toggle menu"
-            >
-              <div
-                className="absolute transition-all duration-300 ease"
-                style={{
-                  opacity: mobileOpen ? 0 : 1,
-                  transform: mobileOpen ? "rotate(90deg)" : "rotate(0deg)",
-                }}
-              >
-                <Menu size={19} />
-              </div>
-              <div
-                className="absolute transition-all duration-300 ease"
-                style={{
-                  opacity: mobileOpen ? 1 : 0,
-                  transform: mobileOpen ? "rotate(0deg)" : "rotate(-90deg)",
-                }}
-              >
-                <X size={19} />
-              </div>
-            </button>
-          </div>
-        </div>
-      </PageWrapper>
-
-      {/* Mobile Menu Overlay - Fixed: Positioned absolutely, doesn't push content */}
-      {mobileOpen && (
-        <div
-          className="lg:hidden fixed inset-0 z-40 bg-black/50 transition-opacity duration-300"
-          style={{ top: "70px" }}
-          onClick={() => setMobileOpen(false)}
-        >
-          <div
-            className="absolute left-0 right-0 bg-white shadow-xl overflow-y-auto max-h-[calc(100vh-70px)]"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <div className="px-6 pb-6 pt-4">
-              {NAV_LINKS.map((link) => (
-                <div key={link.label}>
-                  <div className="flex items-center justify-between">
-                    <Link
-                      href={link.href}
-                      className={`
-                        flex-1 block py-3 text-[15px] no-underline  tracking-[-0.2px] transition-all duration-150
-                        ${
-                          pathname === link.href
-                            ? "text-[#F5A623] font-medium"
-                            : "text-[#333] font-normal"
-                        }
-                        hover:text-[#F5A623] hover:pl-1.5
-                      `}
-                      onClick={
-                        link.hasDropdown
-                          ? (e) => e.preventDefault()
-                          : () => setMobileOpen(false)
-                      }
-                    >
-                      {link.label}
-                    </Link>
-                    {link.hasDropdown && (
+                    {item.label}
+                    {item.dropdown && (
                       <ChevronDown
-                        size={15}
-                        className={`transition-transform duration-200 ease text-[#999] ${openDropdown === link.label ? "rotate-180" : ""}`}
-                        onClick={() =>
-                          setOpenDropdown(
-                            openDropdown === link.label ? null : link.label,
-                          )
-                        }
+                        className="h-4 w-4 text-current opacity-70 transition-transform duration-200 group-hover:rotate-180"
+                        strokeWidth={2}
                       />
                     )}
-                  </div>
+                    <span
+                      className={`absolute bottom-0 left-0 h-0.5 rounded-full bg-primary-500 transition-all duration-300 ${
+                        isActive ? "w-full" : "w-0 group-hover:w-full"
+                      }`}
+                    />
+                  </Link>
 
-                  {link.hasDropdown && (
-                    <div
-                      className={`
-                        overflow-hidden transition-all duration-250 ease
-                        ${openDropdown === link.label ? "max-h-[200px]" : "max-h-0"}
-                      `}
-                    >
-                      <div className="pl-3 pb-2">
-                        {link.children.map((child) => (
-                          <Link
-                            key={child.label}
-                            href={child.href}
-                            className="block py-2 text-[13.5px] text-[#777] no-underline  transition-all duration-150 hover:text-[#F5A623] hover:pl-1.5"
-                            onClick={() => setMobileOpen(false)}
-                          >
-                            {child.label}
-                          </Link>
-                        ))}
-                      </div>
+                  {item.dropdown && (
+                    <div className="invisible absolute left-1/2 top-full z-20 w-48 -translate-x-1/2 translate-y-2 rounded-2xl border border-neutral-100 bg-white p-2 opacity-0 shadow-lg shadow-neutral-900/10 transition-all duration-200 group-hover:visible group-hover:translate-y-3 group-hover:opacity-100">
+                      {item.dropdown.map((sub) => (
+                        <Link
+                          key={sub}
+                          href="#"
+                          className="block rounded-xl px-3 py-2 text-sm text-neutral-600 transition-colors hover:bg-primary-50 hover:text-neutral-900"
+                        >
+                          {sub}
+                        </Link>
+                      ))}
                     </div>
                   )}
+                </li>
+              );
+            })}
+          </ul>
 
-                  <div className="h-px bg-[#F5F4F0]" />
-                </div>
-              ))}
+          {/* CTA */}
+          <Link
+            href="/contact"
+            className="hidden btn btn-primary btn-shine shrink-0  lg:flex"
+          >
+            Get a quote
+          </Link>
 
+          {/* Mobile toggle */}
+          <button
+            type="button"
+            aria-label="Toggle menu"
+            aria-expanded={mobileOpen}
+            onClick={() => setMobileOpen((v) => !v)}
+            className="relative flex h-9 w-9 items-center justify-center rounded-full text-teal-900 lg:hidden"
+          >
+            <Menu
+              className={`absolute h-5 w-5 transition-all duration-300 ${
+                mobileOpen ? "rotate-90 opacity-0" : "rotate-0 opacity-100"
+              }`}
+            />
+            <X
+              className={`absolute h-5 w-5 transition-all duration-300 ${
+                mobileOpen ? "rotate-0 opacity-100" : "-rotate-90 opacity-0"
+              }`}
+            />
+          </button>
+        </nav>
+
+        {/* Mobile menu — smooth height animation via grid-rows trick, no JS measuring */}
+        <div
+          className={`grid transition-all duration-300 ease-in-out lg:hidden ${
+            mobileOpen
+              ? "mt-3 grid-rows-[1fr] opacity-100"
+              : "grid-rows-[0fr] opacity-0"
+          }`}
+        >
+          <div className="overflow-hidden">
+            <div className="rounded-3xl bg-white p-4 ">
+              <ul className="flex flex-col divide-y divide-neutral-100">
+                {NAV_ITEMS.map((item) => {
+                  const isActive = active === item.label;
+                  return (
+                    <li key={item.label} className="py-1">
+                      <div className="flex items-center justify-between">
+                        <Link
+                          href={item.href}
+                          onClick={() => {
+                            setActive(item.label);
+                            if (!item.dropdown) setMobileOpen(false);
+                          }}
+                          className={`flex-1 py-2.5 text-left text-[15px] font-medium ${
+                            isActive ? "text-primary-600" : "text-teal-900"
+                          }`}
+                        >
+                          {item.label}
+                        </Link>
+                        {item.dropdown && (
+                          <button
+                            type="button"
+                            aria-label={`Toggle ${item.label} submenu`}
+                            onClick={() =>
+                              setMobileSubOpen((cur) =>
+                                cur === item.label ? null : item.label,
+                              )
+                            }
+                            className="p-2.5"
+                          >
+                            <ChevronDown
+                              className={`h-4 w-4 text-teal-900/70 transition-transform duration-300 ${
+                                mobileSubOpen === item.label ? "rotate-180" : ""
+                              }`}
+                            />
+                          </button>
+                        )}
+                      </div>
+                      {item.dropdown && (
+                        <div
+                          className={`grid transition-all duration-300 ease-in-out ${
+                            mobileSubOpen === item.label
+                              ? "grid-rows-[1fr] opacity-100"
+                              : "grid-rows-[0fr] opacity-0"
+                          }`}
+                        >
+                          <div className="flex flex-col overflow-hidden pb-2 pl-3">
+                            {item.dropdown.map((sub) => (
+                              <Link
+                                key={sub}
+                                href="#"
+                                onClick={() => setMobileOpen(false)}
+                                className="rounded-lg px-3 py-2 text-sm text-neutral-600 hover:bg-primary-50 hover:text-neutral-900"
+                              >
+                                {sub}
+                              </Link>
+                            ))}
+                          </div>
+                        </div>
+                      )}
+                    </li>
+                  );
+                })}
+              </ul>
               <Link
                 href="#"
-                className="inline-flex items-center gap-1.5 bg-primary-500 text-white text-[14px] font-medium px-5 py-2.5 no-underline  tracking-[-0.1px] mt-4 relative overflow-hidden transition-all duration-200 hover:-translate-y-px hover:shadow-[0_6px_20px_rgba(245,166,35,0.35)] active:translate-y-0 active:shadow-none before:content-[''] before:absolute before:top-0 before:left-[-100%] before:w-[60%] before:h-full before:bg-gradient-to-r before:from-transparent before:via-white/25 before:to-transparent before:transition-[left] before:duration-500 before:ease hover:before:left-[150%]"
-                onClick={() => setMobileOpen(false)}
+                className="mt-3 btn btn-primary flex items-center justify-center gap-1.5 rounded-full"
               >
-                <Mail size={14} strokeWidth={2.2} />
-                Get a Quote
+                Get a quote
+                <ChevronsRight className="h-4 w-4" strokeWidth={2.5} />
               </Link>
             </div>
           </div>
         </div>
-      )}
+      </header>
     </>
   );
 }

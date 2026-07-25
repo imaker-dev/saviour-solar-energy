@@ -1,26 +1,6 @@
-"use client";
-
-import { Mail, Phone } from "lucide-react";
-import PageWrapper from "../page-wrapper";
 import Link from "next/link";
-import { SITE_CONFIG } from "@/app/const";
-
-const EXPLORE_LINKS = [
-  { label: "Home", href: "/" },
-  { label: "About Us", href: "/about" },
-  { label: "Services", href: "/services" },
-  { label: "Projects", href: "/projects" },
-  { label: "Blogs", href: "/blogs" },
-  { label: "Contact Us", href: "/contact" },
-];
-
-const SERVICE_LINKS = [
-  { label: "Solar Panel Solutions", href: "/services/solar-panels" },
-  { label: "Solar Inverter Systems", href: "/services/inverters" },
-  { label: "Installation Services", href: "/services/installation" },
-  { label: "Maintenance Services", href: "/services/maintenance" },
-  { label: "Complete Solar Solutions", href: "/services" },
-];
+import { Sun, MapPin, Phone, Mail, ArrowUpRight } from "lucide-react";
+import PageWrapper from "../page-wrapper";
 
 // Social Media SVG Icons
 const FacebookIcon = () => (
@@ -71,139 +51,194 @@ const InstagramIcon = () => (
   </svg>
 );
 
-const SOCIAL_LINKS = [
-  { icon: FacebookIcon, href: "#", label: "Facebook" },
-  { icon: TwitterIcon, href: "#", label: "Twitter" },
-  { icon: YoutubeIcon, href: "#", label: "YouTube" },
-  { icon: InstagramIcon, href: "#", label: "Instagram" },
+const quickLinks = [
+  { label: "Help Center", href: "/help-center" },
+  {
+    label: "Solar Panel Installation",
+    href: "/services/solar-panel-installation",
+  },
+  { label: "Inverter & Battery", href: "/services/inverter-battery" },
+  {
+    label: "Residential & Commercial",
+    href: "/services/residential-commercial",
+  },
+];
+
+const companyLinks = [
+  { label: "About us", href: "/about" },
+  { label: "Help Center", href: "/help-center" },
+  { label: "Careers", href: "/careers" },
+  { label: "Blog", href: "/blog" },
+];
+
+const socialLinks = [
+  { label: "Facebook", href: "https://facebook.com", icon: FacebookIcon },
+  { label: "Instagram", href: "https://instagram.com", icon: InstagramIcon },
+  { label: "X", href: "https://x.com", icon: TwitterIcon },
+  { label: "YouTube", href: "https://youtube.com", icon: YoutubeIcon },
+];
+
+const legalLinks = [
+  { label: "Privacy Policy", href: "/privacy-policy" },
+  { label: "Terms of Use", href: "/terms-of-use" },
+  { label: "Cookies Policy", href: "/cookies-policy" },
 ];
 
 export default function Footer() {
+  const year = new Date().getFullYear();
+
   return (
-    <PageWrapper
-      as="footer"
-      className="bg-secondary-500 text-white"
-      paddingY=""
-    >
-      {/* Main Footer Content */}
-      <div className="pt-16 pb-12">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
-          {/* Brand Column */}
-          <div className="space-y-5">
-            {/* Logo */}
-            <Link
-              href="/"
-              className="flex items-center gap-2.5 shrink-0 group"
-              style={{ textDecoration: "none" }}
-            >
-              <img src="/Images/logo.png" alt="" className="w-20 lg:w-24" />
+    <PageWrapper className="relative overflow-hidden bg-secondary-500" topEdge edgeClassName="text-secondary-500">
+      <div>
+        <div className="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-[35%_1fr_1fr_1fr] lg:gap-10">
+          {/* Brand */}
+          <div className="max-w-md">
+            <Link href="/" className="inline-flex items-center gap-2.5">
+              <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[#71B843]/15 ring-1 ring-[#71B843]/30">
+                <Sun className="h-5 w-5 text-[#71B843]" strokeWidth={2} />
+              </span>
+              <span className="text-xl font-semibold tracking-tight text-white">
+                Savior
+              </span>
             </Link>
 
-            <p className="text-gray-400 text-[14.5px] leading-relaxed max-w-[220px]">
-              Complete solar solutions including panels, inverters,
-              installation, and maintenance for homes and businesses.
+            <p className="mt-4 max-w-sm text-sm leading-7 text-slate-200">
+              We provide modern and reliable solar energy solutions to help you
+              reduce electricity costs and build a sustainable future.
             </p>
-            <div className="space-y-3 pt-1">
-              <a
-                href={`mailto:${SITE_CONFIG.contact.email}`}
-                className="flex items-center gap-3 group"
-              >
-                <span className="w-7 h-7 flex items-center justify-center">
-                  <Mail
-                    size={16}
-                    className="text-primary-500 group-hover:scale-110 transition-transform"
-                  />
-                </span>
-                <span className="text-gray-300 text-[14px] group-hover:text-white transition-colors">
-                  {SITE_CONFIG.contact.email}
-                </span>
-              </a>
-              <a
-                href={`tel:${SITE_CONFIG.contact.phone}`}
-                className="flex items-center gap-3 group"
-              >
-                <span className="w-7 h-7 flex items-center justify-center">
-                  <Phone
-                    size={16}
-                    className="text-primary-500 group-hover:scale-110 transition-transform"
-                  />
-                </span>
-                <span className="text-gray-300 text-[14px] group-hover:text-white transition-colors">
-                  {SITE_CONFIG.contact.phone}
-                </span>
-              </a>
+
+            <div className="mt-6 flex items-start gap-2.5 text-sm text-slate-200">
+              <MapPin
+                className="mt-0.5 h-4 w-4 flex-shrink-0 text-[#71B843]"
+                strokeWidth={1.75}
+              />
+              <span>
+                123 Sunrise Boulevard, Bopal, Ahmedabad, Gujarat 380058
+              </span>
             </div>
-          </div>
 
-          {/* Explore Column */}
-          <div>
-            <h3 className="text-white font-bold text-[16px] mb-5 tracking-wide">
-              Explore
-            </h3>
-            <ul className="space-y-3">
-              {EXPLORE_LINKS.map((link) => (
-                <li key={link.label}>
-                  <Link
-                    href={link.href}
-                    className="text-gray-400 text-[14.5px] hover:text-primary-500 transition-colors duration-200"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Services Column */}
-          <div>
-            <h3 className="text-white font-bold text-[16px] mb-5 tracking-wide">
-              Services
-            </h3>
-            <ul className="space-y-3">
-              {SERVICE_LINKS.map((link) => (
-                <li key={link.label}>
-                  <Link
-                    href={link.href}
-                    className="text-gray-400 text-[14.5px] hover:text-primary-500 transition-colors duration-200"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Contact Column */}
-          <div>
-            <h3 className="text-white font-bold text-[16px] mb-5 tracking-wide">
-              Contact
-            </h3>
-            <p className="text-gray-400 text-[14.5px] leading-relaxed mb-6">
-              {SITE_CONFIG.address.full}
-            </p>
-            <div className="flex items-center gap-3">
-              {SOCIAL_LINKS.map(({ icon: Icon, href, label }) => (
+            <div className="mt-6 flex items-center gap-3">
+              {socialLinks.map(({ label, href, icon: Icon }) => (
                 <a
                   key={label}
                   href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   aria-label={label}
-                  className="w-9 h-9 rounded-full bg-primary-500 hover:bg-primary-600 flex items-center justify-center transition-colors duration-200 group"
+                  className="flex h-9 w-9 items-center justify-center rounded-full border border-white/15 text-white/90 transition-all duration-200 hover:border-[#71B843]/40 hover:bg-[#71B843]/10 hover:text-[#71B843]"
                 >
-                  <Icon />
+                  <Icon className="h-4 w-4" strokeWidth={1.75} />
                 </a>
               ))}
             </div>
           </div>
+
+          {/* Quick Links */}
+          <div className="">
+            <h3 className="text-xs font-semibold uppercase tracking-widest text-white">
+              Quick Links
+            </h3>
+            <ul className="mt-6 space-y-4">
+              {quickLinks.map(({ label, href }) => (
+                <li key={label}>
+                  <Link
+                    href={href}
+                    className="text-sm text-slate-200 transition-colors duration-200 hover:text-[#71B843]"
+                  >
+                    {label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Company */}
+          <div className="">
+            <h3 className="text-xs font-semibold uppercase tracking-widest text-white">
+              Company
+            </h3>
+            <ul className="mt-6 space-y-4">
+              {companyLinks.map(({ label, href }) => (
+                <li key={label}>
+                  <Link
+                    href={href}
+                    className="text-sm text-slate-200 transition-colors duration-200 hover:text-[#71B843]"
+                  >
+                    {label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Get in Touch */}
+          <div className="max-w-md">
+            <h3 className="text-xs font-semibold uppercase tracking-widest text-white">
+              Get in Touch
+            </h3>
+            <ul className="mt-5 space-y-4">
+              <li>
+                <a
+                  href="tel:+8801234567890"
+                  className="flex items-center gap-3 text-sm text-slate-200 transition-colors duration-200 hover:text-[#71B843]"
+                >
+                  <span className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full bg-white/10">
+                    <Phone className="h-4 w-4" strokeWidth={1.75} />
+                  </span>
+                  +880 1234-567890
+                </a>
+              </li>
+              <li>
+                <a
+                  href="mailto:info@savior.com"
+                  className="flex items-center gap-3 text-sm text-slate-200 transition-colors duration-200 hover:text-[#71B843]"
+                >
+                  <span className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full bg-white/10">
+                    <Mail className="h-4 w-4" strokeWidth={1.75} />
+                  </span>
+                  info@savior.com
+                </a>
+              </li>
+            </ul>
+
+            <Link
+              href="/contact"
+              className="mt-6 inline-flex items-center gap-1.5 rounded-full bg-[#71B843] px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-[#71B843]/30 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl"
+            >
+              Get a free quote
+              <ArrowUpRight className="h-4 w-4" strokeWidth={2.25} />
+            </Link>
+          </div>
+        </div>
+
+        {/* Divider */}
+        <div className="mt-14 border-t border-white/15 sm:mt-16" />
+
+        {/* Bottom bar */}
+        <div className="flex flex-col items-center justify-between gap-4 py-6 sm:flex-row">
+          <p className="order-2 text-xs text-slate-400 sm:order-1">
+            © {year} Savior. All rights reserved.
+          </p>
+          <ul className="order-1 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 sm:order-2">
+            {legalLinks.map(({ label, href }) => (
+              <li key={label}>
+                <Link
+                  href={href}
+                  className="text-xs text-slate-400 transition-colors duration-200 hover:text-white/80"
+                >
+                  {label}
+                </Link>
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
 
-      {/* Bottom Bar */}
-      <div className="border-t border-secondary-400 py-6">
-        <div className="text-center">
-          <p className="text-gray-400 text-[13px]">
-           © Savior Solar Energy. All rights reserved.
-          </p>
-        </div>
+      {/* Watermark wordmark */}
+      <div className="relative select-none overflow-hidden">
+        <p className="translate-y-[0.18em] text-center text-[18vw] font-extrabold leading-none tracking-tight text-white/[0.04] sm:text-[16vw] lg:text-[13vw]">
+          SAVIOR
+        </p>
       </div>
     </PageWrapper>
   );

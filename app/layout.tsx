@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { DM_Sans, Outfit } from "next/font/google";
 import "./globals.css";
 import AppLayout from "@/app/components/app-layout";
 import { BASE_URL } from "./const";
@@ -92,6 +93,15 @@ export const viewport = {
   userScalable: false,
 };
 
+const dmSans = DM_Sans({
+  subsets: ["latin"],
+  variable: "--font-body",
+});
+
+const outfit = Outfit({
+  subsets: ["latin"],
+  variable: "--font-heading",
+});
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -115,7 +125,7 @@ export default function RootLayout({
   ];
 
   return (
-    <html lang="en">
+    <html lang="en" className={`${dmSans.variable} ${outfit.variable}`}>
       <head>
         <script
           type="application/ld+json"

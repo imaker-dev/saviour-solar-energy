@@ -1,71 +1,88 @@
 "use client";
 
 import { useState } from "react";
-import { ChevronDown } from "lucide-react";
+import { Plus, Minus } from "lucide-react";
 import PageWrapper from "@/app/components/page-wrapper";
-import SectionHeader from "@/app/components/section-header";
+import SectionHeader, { HighlightText } from "@/app/components/section-header";
 
 const faqs = [
   {
     id: 1,
-    question: "How do solar panels work?",
+    question: "What are the benefits of installing solar panels?",
     answer:
-      "Solar panels convert sunlight into electricity using photovoltaic (PV) cells. These cells generate direct current (DC), which is then converted into usable alternating current (AC) for your home or business.",
+      "Solar panels lower your monthly electricity bills, reduce your carbon footprint, and increase your property's value. Most systems pay for themselves within a few years through energy savings alone.",
   },
   {
     id: 2,
-    question: "How much can I save with solar energy?",
+    question: "How do wind turbines generate electricity?",
     answer:
-      "Savings depend on your energy usage and system size, but most customers reduce their electricity bills by 50–90%. Over time, solar can pay for itself through energy savings.",
+      "Wind turbines use rotating blades to capture kinetic energy from moving air. That motion spins a generator, converting mechanical energy into electricity that can power homes or feed into the grid.",
   },
   {
     id: 3,
-    question: "What is the lifespan of a solar panel system?",
+    question: "What maintenance is required for solar panels?",
     answer:
-      "Most solar panels last 25–30 years with minimal maintenance. Inverters may need replacement after 10–15 years depending on usage.",
+      "Solar systems need very little upkeep — occasional cleaning to clear dust or debris and a yearly inspection to check wiring and inverter performance are usually enough to keep them running efficiently.",
   },
   {
     id: 4,
-    question: "Do solar panels work during cloudy days or at night?",
+    question: "Can I use solar panels to power my entire home?",
     answer:
-      "Solar panels still generate electricity on cloudy days, though at reduced efficiency. At night, systems rely on grid power or battery storage if installed.",
+      "Yes. With a properly sized system — and battery storage for nighttime or low-sun periods — solar can cover all of a home's electricity needs, not just offset a portion of the bill.",
   },
   {
     id: 5,
-    question: "Is maintenance required for solar panels?",
+    question: "Why is renewable energy important?",
     answer:
-      "Solar systems require very little maintenance. Occasional cleaning and periodic inspections are enough to ensure optimal performance.",
+      "Renewable energy reduces reliance on fossil fuels, cuts greenhouse gas emissions, and provides a more stable, sustainable power supply for the long term.",
+  },
+  {
+    id: 6,
+    question: "Do I need batteries to store solar energy?",
+    answer:
+      "Batteries aren't required, but they let you store excess energy for use at night or during outages instead of sending it back to the grid, giving you more independence from utility power.",
   },
 ];
 
 function FAQItem({ faq, isOpen, onClick }) {
   return (
     <div
-      onClick={onClick}
-      className={` cursor-pointer transition-all
-        ${
-          isOpen
-            ? "bg-secondary-600 border border-primary-500/30"
-            : "bg-secondary-700 hover:bg-secondary-600"
-        }`}
+      className={`overflow-hidden rounded-2xl transition-colors duration-300 ${
+        isOpen
+          ? "bg-secondary-700 shadow-lg shadow-secondary-700/20"
+          : "bg-white shadow-sm shadow-slate-900/5 ring-1 ring-slate-900/5 hover:ring-slate-900/10"
+      }`}
     >
-      <div className="flex items-center justify-between px-5 py-3.5">
-        <p className="text-[15px] text-white font-medium">{faq.question}</p>
-
-        <ChevronDown
-          size={18}
-          className={`transition-transform duration-300 text-primary-400 ${
-            isOpen ? "rotate-180" : ""
-          }`}
-        />
-      </div>
-
-      <div
-        className={`overflow-hidden transition-all duration-500 ease-in-out
-        ${isOpen ? "max-h-40 opacity-100" : "max-h-0 opacity-0"}`}
+      <button
+        type="button"
+        onClick={onClick}
+        className="flex w-full items-center justify-between gap-4 px-5 py-4 text-left sm:px-6 sm:py-4.5"
       >
-        <div className="px-5 pb-4">
-          <p className="text-sm text-secondary-300 leading-relaxed">
+        <span
+          className={`text-[15px] font-semibold sm:text-base ${
+            isOpen ? "text-white" : "text-slate-900"
+          }`}
+        >
+          {faq.question}
+        </span>
+        <span
+          className={`shrink-0 transition-colors ${
+            isOpen ? "text-primary-400" : "text-slate-400"
+          }`}
+        >
+          {isOpen ? <Minus size={18} /> : <Plus size={18} />}
+        </span>
+      </button>
+
+      {/* Grid-rows trick animates smoothly to the answer's natural height,
+          regardless of how long the text is. */}
+      <div
+        className={`grid transition-all duration-300 ease-in-out ${
+          isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
+        }`}
+      >
+        <div className="overflow-hidden">
+          <p className="px-5 pb-4 text-sm leading-relaxed text-white/80 sm:px-6 sm:pb-5">
             {faq.answer}
           </p>
         </div>
@@ -75,43 +92,33 @@ function FAQItem({ faq, isOpen, onClick }) {
 }
 
 export default function FaqSection() {
-  const [open, setOpen] = useState(1);
+  const [open, setOpen] = useState(faqs[0].id);
 
   return (
-    <PageWrapper className="bg-secondary-500">
+    <PageWrapper
+      className="bg-gray-100"
+      topEdge
+      bottomEdge
+      edgeClassName="text-gray-100"
+    >
       <SectionHeader
-        badge={"Got Questions?"}
-        title={"Frequently Asked Questions"}
-        description={
-          "Everything you need to know about Wood Academy — answered clearly."
+        badge={"FAQ"}
+        title={
+          <>
+            Have Any Questions? <br /> <HighlightText>Look Here.</HighlightText>
+          </>
         }
-        light
       />
-      {/* Equal height layout */}
-      <div className="flex flex-col lg:flex-row gap-12 items-stretch">
-        {/* LEFT IMAGE */}
-        <div className="w-full lg:w-[50%]">
-          <div className="h-[250px] lg:h-[400px] overflow-hidden">
-            <img
-              src="/Images/panel-1.webp"
-              className="w-full h-full object-cover"
-            />
-          </div>
-        </div>
 
-        {/* RIGHT FAQ */}
-        <div className="w-full lg:w-[50%] flex flex-col">
-          <div className="space-y-2.5 flex-1">
-            {faqs.map((faq) => (
-              <FAQItem
-                key={faq.id}
-                faq={faq}
-                isOpen={open === faq.id}
-                onClick={() => setOpen(open === faq.id ? null : faq.id)}
-              />
-            ))}
-          </div>
-        </div>
+      <div className="mx-auto mt-10 max-w-3xl space-y-3">
+        {faqs.map((faq) => (
+          <FAQItem
+            key={faq.id}
+            faq={faq}
+            isOpen={open === faq.id}
+            onClick={() => setOpen(open === faq.id ? null : faq.id)}
+          />
+        ))}
       </div>
     </PageWrapper>
   );

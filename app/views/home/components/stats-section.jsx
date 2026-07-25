@@ -1,68 +1,57 @@
 "use client";
 
 import PageWrapper from "@/app/components/page-wrapper";
+import { Zap, CalendarDays, Users, Leaf } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
 const stats = [
-  { value: 8000, display: "8K", label: "Total installed power" },
-  { value: 24, display: "24", label: "Years of experience" },
-  { value: 75, display: "75", label: "Professionals in our team" },
-  { value: 3000, display: "3K", label: "Our clients worldwide" },
+  { icon: Zap, value: 8, suffix: "MW+", label: "Total Installed Capacity" },
+  { icon: CalendarDays, value: 24, suffix: "+", label: "Years of Experience" },
+  { icon: Users, value: 75, suffix: "+", label: "In-House Engineers" },
+  { icon: Leaf, value: 12, suffix: "K+", label: "Tons of CO\u2082 Offset" },
 ];
 
-function useCountUp(target, duration = 2000, start = false) {
+function useCountUp(target, duration = 1800, start = false) {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
     if (!start) return;
 
     let startTime = null;
+    let frame;
 
     const step = (timestamp) => {
       if (!startTime) startTime = timestamp;
-
       const progress = Math.min((timestamp - startTime) / duration, 1);
       const eased = 1 - Math.pow(1 - progress, 3);
-
-      setCount(Math.floor(eased * target));
-
-      if (progress < 1) requestAnimationFrame(step);
+      setCount(Math.round(eased * target));
+      if (progress < 1) frame = requestAnimationFrame(step);
     };
 
-    requestAnimationFrame(step);
+    frame = requestAnimationFrame(step);
+    return () => cancelAnimationFrame(frame);
   }, [start, target, duration]);
 
   return count;
 }
 
-function formatNumber(val) {
-  if (val >= 1000) return Math.floor(val / 1000) + "K";
-  return val;
-}
-
-function StatItem({ value, display, label, start }) {
-  const count = useCountUp(value, 2000, start);
+function StatItem({ icon: Icon, value, suffix, label, start, isLast }) {
+  const count = useCountUp(value, 1800, start);
 
   return (
-    <div className="relative flex items-center gap-4">
-      {/* OUTLINE Background Number */}
-      <span
-        className="hidden md:absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 text-[150px] font-extrabold select-none pointer-events-none"
-        style={{
-          WebkitTextStroke: "1.5px rgba(0,0,0,0.08)",
-          color: "transparent",
-        }}
-      >
-        {display}
-      </span>
+    <div
+      className={`relative flex flex-col items-center gap-3 px-6 py-2 text-center ${
+        !isLast ? "sm:border-r sm:border-white/10" : ""
+      }`}
+    >
+      {/* <Icon className="h-7 w-7 text-primary-400" strokeWidth={1.75} /> */}
 
-      {/* Foreground Number */}
-      <div className="text-5xl md:text-6xl font-extrabold text-primary-500 z-10">
-        {formatNumber(count)}
+      <div className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl">
+        {count}
+        <span className="text-primary-400">{suffix}</span>
       </div>
 
-      {/* Label */}
-      <p className="text-white/80 text-sm md:text-base font-medium max-w-[150px] leading-snug z-10">
+      <p className="max-w-[170px] text-sm font-medium leading-snug text-white/60">
         {label}
       </p>
     </div>
@@ -82,20 +71,22 @@ export default function StatsSection() {
     );
 
     if (ref.current) observer.observe(ref.current);
-
     return () => observer.disconnect();
   }, []);
 
   return (
-    <PageWrapper
-      className="bg-secondary-500"
-    >
+    <PageWrapper className="bg-secondary-500" topEdge bottomEdge edgeClassName="text-secondary-500">
       <div
         ref={ref}
-        className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-16"
+        className="grid grid-cols-2 gap-x-6 gap-y-12 sm:grid-cols-4 sm:gap-y-0"
       >
         {stats.map((s, i) => (
-          <StatItem key={i} {...s} start={started} />
+          <StatItem
+            key={s.label}
+            {...s}
+            start={started}
+            isLast={i === stats.length - 1}
+          />
         ))}
       </div>
     </PageWrapper>

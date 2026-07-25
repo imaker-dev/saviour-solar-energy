@@ -1,81 +1,93 @@
 "use client";
 
-import { ChevronRight } from "lucide-react";
+import React from "react";
 import Link from "next/link";
+import Image from "next/image";
+import { ChevronRight } from "lucide-react";
 import { usePathname } from "next/navigation";
 
-function formatLabel(segment) {
-  return segment.replace(/-/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
-}
+const formatSegment = (segment) =>
+  segment
+    .replace(/-/g, " ")
+    .replace(/\b\w/g, (char) => char.toUpperCase());
 
-export default function PageHeader({
+export default function SectionHeader({
   title,
-  bgImage = "/Images/page-header-bg.jpg",
-  align = "center", // "left" | "center"
-  labelMap = {},
+  breadcrumbs,
+  backgroundImage = "/Images/page-header-bg.png", // Change this to your image path
 }) {
   const pathname = usePathname();
 
-  const pathnames = pathname.split("/").filter(Boolean);
+  const segments = pathname.split("/").filter(Boolean);
 
-  const breadcrumbs = [
-    { label: labelMap["/"] || "Home", link: "/" },
-    ...pathnames.map((segment, index) => {
-      const path = "/" + pathnames.slice(0, index + 1).join("/");
+  const pageTitle =
+    title || formatSegment(segments[segments.length - 1] || "Home");
 
-      return {
-        label: labelMap[path] || formatLabel(segment),
-        link: index !== pathnames.length - 1 ? path : null,
-      };
-    }),
-  ];
+  const pageBreadcrumbs =
+    breadcrumbs ||
+    [
+      { label: "Home", href: "/" },
+      ...segments.map((segment, index) => ({
+        label: formatSegment(segment),
+        href: "/" + segments.slice(0, index + 1).join("/"),
+      })),
+    ];
 
   return (
-    <div className="relative w-full h-[220px] md:h-[320px] flex items-center overflow-hidden">
-      {/* Background */}
-      <div
-        className="absolute inset-0 bg-cover bg-center scale-105"
-        style={{ backgroundImage: `url(${bgImage})` }}
+    <section className="relative overflow-hidden py-20 sm:py-28">
+      {/* Background Image */}
+      <Image
+        src={backgroundImage}
+        alt=""
+        fill
+        priority
+        className="object-cover"
       />
 
-      {/* Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/30 backdrop-blur-[2px]" />
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-[#F7F5F0]/60" />
+
+      {/* Optional gradient for better text visibility */}
+      <div className="absolute inset-0 bg-gradient-to-b from-white/10 via-transparent to-[#F7F5F0]/20" />
 
       {/* Content */}
-      <div
-        className={`relative z-10 max-w-7xl mx-auto px-4 w-full ${
-          align === "center" ? "text-center" : "text-left"
-        }`}
-      >
-        {/* Title */}
-        <h1 className="text-white text-3xl md:text-5xl font-semibold mb-4 tracking-tight">
-          {title}
+      <div className="relative mx-auto flex max-w-3xl flex-col items-center px-6 pt-12 text-center">
+        <h1 className="text-4xl font-bold text-neutral-900 sm:text-5xl">
+          {pageTitle}
         </h1>
 
-        {/* Breadcrumb */}
-        <div
-          className={`flex items-center text-sm text-gray-200 gap-2 flex-wrap ${
-            align === "center" ? "justify-center" : ""
-          }`}
-        >
-          {breadcrumbs.map((item, index) => (
-            <div key={index} className="flex items-center gap-2">
-              {index !== 0 && <ChevronRight size={14} className="opacity-60" />}
+        <nav aria-label="Breadcrumb" className="mt-5">
+          <ol className="flex flex-wrap items-center justify-center gap-2 text-sm font-medium text-neutral-600">
+            {pageBreadcrumbs.map((crumb, index) => {
+              const isLast = index === pageBreadcrumbs.length - 1;
 
-              {item.link ? (
-                <Link
-                  href={item.link}
-                  className="hover:text-white transition duration-200"
-                >
-                  {item.label}
-                </Link>
-              ) : (
-                <span className="text-white font-semibold">{item.label}</span>
-              )}
-            </div>
-          ))}
-        </div>
+              return (
+                <li key={crumb.href || crumb.label} className="flex items-center gap-2">
+                  {index > 0 && (
+                    <ChevronRight
+                      className="h-4 w-4 text-primary-500"
+                      strokeWidth={2.5}
+                    />
+                  )}
+
+                  {isLast ? (
+                    <span className="font-semibold text-neutral-900">
+                      {crumb.label}
+                    </span>
+                  ) : (
+                    <Link
+                      href={crumb.href}
+                      className="transition-colors hover:text-primary-600"
+                    >
+                      {crumb.label}
+                    </Link>
+                  )}
+                </li>
+              );
+            })}
+          </ol>
+        </nav>
       </div>
-    </div>
+    </section>
   );
 }

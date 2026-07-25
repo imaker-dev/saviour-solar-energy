@@ -1,59 +1,99 @@
-// import React from 'react'
-
-import { ArrowUpRight, MapPin, Zap } from "lucide-react";
+import React from "react";
+import {
+  CheckCircle2,
+  ArrowRight,
+  Clock,
+  Tractor,
+  Home,
+  Building2,
+  HeartPulse,
+  Warehouse,
+  Sun,
+} from "lucide-react";
 import Link from "next/link";
 
-const ProjectCard = ({ project }) => {
-  return (
-    <Link href={'#'} className="group block">
-      {/* Image */}
-      <div className="relative overflow-hidden aspect-[4/3] bg-gray-100 mb-5">
-        <img
-          src={project.image}
-          alt={project.title}
-          className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.05]"
-        />
+const ProjectCard = ({ project, reverse = false }) => {
+  const {
+    title,
+    description,
+    image,
+    location,
+    totalArea,
+    clientName,
+    tags = [],
+  } = project;
 
-        {/* Type badge */}
-        <div className="absolute top-4 left-4">
-          <span className="bg-white/95 backdrop-blur-sm text-gray-700 text-[10px] font-bold uppercase tracking-widest px-3 py-1.5">
-            {project.type}
-          </span>
-        </div>
+  const details = [
+    { label: "Location", value: location },
+    { label: "Total Area", value: totalArea },
+    { label: "Client", value: clientName },
+  ];
+
+  return (
+    <article
+      className={`group flex flex-col overflow-hidden rounded-[28px] p-4 bg-white shadowsm transition-all duration-500  md:flex-row ${
+        reverse ? "md:flex-row-reverse" : ""
+      }`}
+    >
+      {/* Image */}
+      <div className="relative h-64 w-full overflow-hidden md:h-auto md:w-1/2 rounded-2xl">
+        <img
+          src={image}
+          alt={title}
+          className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+        />
       </div>
 
       {/* Content */}
-      <div className=" ">
-        {/* Title row */}
-        <div className="flex items-start justify-between gap-3 mb-3">
-          <h3 className="text-[1.1rem] font-semibold text-gray-950 leading-snug tracking-tight group-hover:text-amber-600 transition-colors duration-200">
-            {project.title}
-          </h3>
-          <ArrowUpRight
-            size={16}
-            className="flex-shrink-0 mt-0.5 text-gray-300 group-hover:text-amber-500 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-200"
-          />
-        </div>
-
-        {/* Description */}
-        <p className="text-[13px] text-gray-400 leading-relaxed line-clamp-2 mb-4">
-          {project.description}
+      <div className="flex w-full flex-col justify-center p-4 md:w-1/2 md:p-6">
+        <h3 className="text-xl font-bold tracking-tight text-slate-900 transition-colors group-hover:text-emerald-600">
+          {title}
+        </h3>
+        <p className="mt-2 text-sm leading-relaxed text-slate-500 line-clamp-2">
+          {description}
         </p>
 
-        {/* Meta pills */}
-        <div className="flex items-center gap-3 flex-wrap">
-          <span className="flex items-center gap-1.5 text-[11.5px] text-gray-500 font-medium">
-            <MapPin size={11} className="text-amber-400" />
-            {project.location}
-          </span>
-          <span className="w-px h-3 bg-gray-200" />
-          <span className="flex items-center gap-1.5 text-[11.5px] text-gray-500 font-medium">
-            <Zap size={11} className="text-amber-400" />
-            {project.capacity}
-          </span>
-        </div>
+        {tags.length > 0 && (
+          <div className="mt-4 flex flex-wrap gap-2">
+            {tags.map((tag) => (
+              <span
+                key={tag}
+                className="rounded-full border border-slate-200 bg-slate-50 px-3 py-1 text-xs font-medium text-slate-600"
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
+        )}
+
+        <ul className="mt-5 space-y-2.5">
+          {details.map(({ label, value }) => (
+            <li
+              key={label}
+              className="flex items-start gap-2 text-sm text-slate-600"
+            >
+              <CheckCircle2
+                className="mt-0.5 h-4 w-4 shrink-0 text-emerald-500"
+                strokeWidth={2.25}
+              />
+              <span>
+                <span className="font-medium text-slate-900">{label}:</span>{" "}
+                {value}
+              </span>
+            </li>
+          ))}
+        </ul>
+
+        <Link
+        href={`/projects/${project.id}`}
+          className="group/link mt-6 inline-flex w-fit items-center gap-1.5 text-sm font-semibold text-emerald-600 transition-colors hover:text-emerald-700"
+        >
+          Learn more
+          <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover/link:translate-x-1" />
+        </Link>
       </div>
-    </Link>
+    </article>
   );
 };
+
 export default ProjectCard;

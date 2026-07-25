@@ -1,101 +1,168 @@
-import { ArrowUpRight } from "lucide-react";
-import PageWrapper from "@/app/components/page-wrapper.jsx";
+"use client";
+import React, { useState } from "react";
+import { ArrowRight, ArrowUpRight, X } from "lucide-react";
+import PageWrapper from "@/app/components/page-wrapper";
+import Image from "next/image";
+import Link from "next/link";
+import VideoOverlay from "@/app/components/video-overlay";
+import PlayButton from "@/app/components/play-button";
 
-const Hero = () => {
-  const stats = [
-    {
-      value: "7+",
-      label: "Years of Experience",
-    },
-    {
-      value: "100+",
-      label: "Projects Completed",
-    },
-    {
-      value: "50+",
-      label: "Expert Team Members",
-    },
-  ];
+function GetInTouchBadge() {
   return (
-    <PageWrapper>
-      {/* <div className="min-h-[calc(100vh-80px)] flex items-center"> */}
-      <div className="grid grid-cols-1 lg:grid-cols-[1.05fr_1fr] gap-8 lg:gap-12 items-center w-full">
-        {/* LEFT */}
-        <div className="flex flex-col space-y-5 lg:space-y-6 items-center lg:items-start text-center lg:text-left">
-          {/* Badge */}
-          <div className="text-xs font-semibold text-primary-500">
-            The Energy of Tomorrow
-          </div>
+    <div className="absolute -top-3 -right-3 h-28 w-28 sm:h-32 sm:w-32 rounded-full bg-white p-1">
+      <svg
+        viewBox="0 0 100 100"
+        className="h-full w-full animate-[spin_14s_linear_infinite]"
+      >
+        <defs>
+          {/* Top Arc */}
+          <path id="topArc" d="M 15 50 A 35 35 0 0 1 85 50" />
 
-          {/* Heading */}
-          <h1 className="text-[2.2rem] sm:text-5xl lg:text-[3.6rem] font-bold text-secondary-500 leading-[1.1]">
-            <span className="text-primary-500">Smart</span> Solar Solutions for
-            a Sustainable <span className="text-primary-500">Future</span>
-          </h1>
+          {/* Bottom Arc (reversed so text stays upright) */}
+          <path id="bottomArc" d="M 85 50 A 35 35 0 0 1 15 50" />
+        </defs>
 
-          {/* Description */}
-          <p className="text-sm sm:text-base text-gray-500  leading-relaxed">
-            Savior Solar Energy provides complete solar solutions, including
-            high-efficiency panels, advanced inverters, and expert installation
-            and maintenance for homes and businesses.
-          </p>
+        {/* Background */}
+        <svg className="text-secondary-500">
+          <circle cx="50" cy="50" r="49" fill="currentColor" />
+        </svg>
 
-          {/* CTA */}
-          <button className="group inline-flex items-center gap-3 rounded-full bg-primary-500 pl-5 pr-[6px] py-[6px] text-white hover:bg-primary-600 transition">
-            <span className="text-sm font-semibold">Get Free Consultation</span>
-            <span className="flex h-9 w-9 items-center justify-center rounded-full bg-white text-primary-500">
-              <ArrowUpRight className="h-4 w-4" strokeWidth={2.5} />
-            </span>
-          </button>
+        {/* Top Text */}
+        <text fill="#fff" fontSize="8" fontWeight="700" letterSpacing="2">
+          <textPath href="#topArc" startOffset="50%" textAnchor="middle">
+            GET IN TOUCH
+          </textPath>
+        </text>
 
-          {/* Stats */}
-          <div className="w-full pt-8 mt-2 lg:mt-6 border-t border-gray-100">
-            <div className="flex items-center justify-center lg:justify-start gap-4 sm:gap-8 lg:gap-12">
-              {stats.map((stat, index) => (
-                <div key={index} className="flex items-center">
-                  {/* Stat */}
-                  <div className="text-center lg:text-left">
-                    <div className="text-3xl sm:text-[2.8rem] font-bold text-primary-500 mb-1 sm:mb-2 tracking-tight">
-                      {stat.value}
-                    </div>
-                    <div className="text-[11px] sm:text-[14px] font-medium text-gray-400">
-                      {stat.label}
-                    </div>
-                  </div>
+        {/* Bottom Text */}
+        <text fill="#fff" fontSize="8" fontWeight="700" letterSpacing="2">
+          <textPath href="#bottomArc" startOffset="50%" textAnchor="middle">
+            GET IN TOUCH
+          </textPath>
+        </text>
 
-                  {/* Divider (only between items) */}
-                  {index !== stats.length - 1 && (
-                    <div className="w-px h-10 bg-gray-100 mx-4 sm:mx-6 lg:hidden hidden sm:block"></div>
-                  )}
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
+        {/* Side Dots */}
+        <circle cx="11" cy="50" r="2" fill="#fff" />
+        <circle cx="89" cy="50" r="2" fill="#fff" />
+      </svg>
 
-        {/* RIGHT */}
-        <div className="relative w-full h-[260px] sm:h-[360px] lg:h-[550px]">
-          {/* Main Image */}
-          <img
-            src="https://images.unsplash.com/photo-1466611653911-95081537e5b7?q=80&w=1200&auto=format&fit=crop"
-            alt="Wind turbines"
-            className="w-full h-full object-cover rounded-2xl"
-          />
-
-          {/* Floating Card (smaller & safer) */}
-          <div className="absolute bottom-[-20px] right-0 w-[240px] rounded-2xl bg-white p-3 shadow-xl hidden sm:block">
-            <img
-              src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?q=80&w=800&auto=format&fit=crop"
-              alt="Solar panels"
-              className="w-full h-[120px] object-cover rounded-xl mb-2"
-            />
-            <p className="text-xs text-gray-600 font-medium">
-              Complete Solar Panels, Inverters & Installation Solutions
-            </p>
-          </div>
+      {/* Center Button */}
+      <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
+        <div className="flex h-11 w-11 items-center justify-center rounded-full shadow-md bg-primary-500">
+          <ArrowUpRight className="h-5 w-5 text-white" strokeWidth={2.5} />
         </div>
       </div>
-      {/* </div> */}
+    </div>
+  );
+}
+
+const Hero = () => {
+  const [playVideo, setPlayVideo] = useState(false);
+  return (
+    <PageWrapper
+      className="overflow-hidden"
+      containerClassName="pt-20 lg:pt-16"
+    >
+      {/* ---------------- DECORATIVE BACKGROUND ---------------- */}
+      <div className="absolute inset-0 overflow-hidden z-0">
+        {/* clean light base */}
+        <div className="absolute inset-0 bg-gradient-to-b from-white via-gray-50 to-white" />
+
+        {/* dot grid — full hero coverage, no mask */}
+        <div
+          className="absolute inset-0 opacity-[0.18]"
+          style={{
+            backgroundImage: "radial-gradient(#3F4347 1px, transparent 1px)",
+            backgroundSize: "18px 18px",
+          }}
+        />
+
+        {/* very light glow blobs — subtle accents only */}
+        <div
+          className="absolute -top-20 -left-20 h-64 w-64 rounded-full bg-primary-400/10 
+               blur-2xl animate-pulse [animation-duration:7s] motion-reduce:animate-none
+               sm:h-80 sm:w-80 sm:blur-3xl
+               lg:-top-32 lg:-left-32 lg:h-[30rem] lg:w-[30rem]"
+        />
+        <div
+          className="absolute top-1/4 -right-16 h-56 w-56 rounded-full bg-amber-300/10 
+               blur-2xl animate-pulse [animation-duration:9s] motion-reduce:animate-none
+               sm:h-72 sm:w-72 sm:blur-3xl
+               lg:top-1/3 lg:-right-20 lg:h-[26rem] lg:w-[26rem]"
+        />
+
+        {/* fade bottom into page */}
+        <div className="absolute inset-x-0 bottom-0 h-24 sm:h-32 lg:h-40 bg-gradient-to-t from-gray-50 to-transparent" />
+      </div>
+
+      {/* ---------------- HERO CONTENT ---------------- */}
+      <div className="relative z-10 flex flex-col items-center gap-14 lg:flex-row lg:items-center lg:justify-between lg:gap-16">
+        {/* Left: copy */}
+        <div className="">
+          <div className="mb-5 flex items-center gap-3">
+            <span className="text-xs font-semibold tracking-[0.35em] text-neutral-500">
+              RUSTED SOLAR EXPERTS SINCE 2004
+            </span>
+          </div>
+
+          <h1 className="text-4xl font-extrabold leading-[1.12] text-[#3F4347] sm:text-5xl lg:text-[3.35rem]">
+            Solar Energy Solutions for
+            <br />
+            <span className="text-primary-500">Homes & Businesses</span>
+          </h1>
+
+          <p className="mt-6 max-w-md text-[15px] leading-relaxed text-[#58595B]">
+            Reduce electricity costs with high-performance solar panel
+            installations, rooftop solar systems, battery storage, and renewable
+            energy solutions designed for residential, commercial, and
+            industrial properties.
+          </p>
+
+          <div className="mt-9 flex flex-wrap items-center gap-8">
+            <Link
+              href="/contact"
+              className="btn btn-primary btn-shine group py-2"
+            >
+              Get Free Quote
+              <span className="btn-icon">
+                <ArrowRight className="h-4 w-4 text-primary-500 transition-transform group-hover:translate-x-0.5" />
+              </span>
+            </Link>
+
+            <Link
+              href="/services"
+              className="text-sm font-semibold text-[#3F4347] underline decoration-[#3F4347]/40 decoration-2 underline-offset-4 hover:decoration-[#3F4347] focus:outline-none"
+            >
+              View All Services
+            </Link>
+          </div>
+        </div>
+
+        {/* Right: image */}
+        <div className="relative w-full max-w-lg">
+          <div className="relative aspect-square overflow-hidden rounded-[38px]">
+            <Image
+              src="/Images/intro.webp"
+              alt="Renewable Energy"
+              fill
+              className="object-cover"
+            />
+            <PlayButton
+              onClick={() => setPlayVideo(true)}
+              className="group absolute left-1/2 top-1/2 flex -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border-[3px] border-white backdrop-blur-sm transition-all duration-300 hover:scale-110"
+            />
+          </div>
+
+          <GetInTouchBadge />
+        </div>
+      </div>
+
+      <VideoOverlay
+        isOpen={playVideo}
+        onClose={() => setPlayVideo(false)}
+        src="https://youtu.be/aqz-KE-bpKQ"
+        title="Hero Video"
+      />
     </PageWrapper>
   );
 };
