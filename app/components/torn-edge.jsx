@@ -1,4 +1,6 @@
-import React, { useMemo } from "react";
+'use client'
+
+import React, { useEffect, useMemo, useState } from "react";
 
 const TOP_POINTS = [
   [0.0, 0.611],
@@ -551,15 +553,34 @@ export default function TornEdge({
   height = 40,
   className = "",
 }) {
+  const [actualHeight, setActualHeight] = useState(height);
+  
+  useEffect(() => {
+    const handleResize = () => {
+      // Make edge smaller on mobile
+      if (window.innerWidth < 640) {
+        setActualHeight(height * 0.5); // 50% smaller on mobile
+      } else if (window.innerWidth < 1024) {
+        setActualHeight(height * 0.75); // 25% smaller on tablet
+      } else {
+        setActualHeight(height);
+      }
+    };
+    
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, [height]);
+  
   const points = side === "top" ? TOP_POINTS : BOTTOM_POINTS;
   const d = useMemo(
-    () => buildPath(points, 1000, height, side),
-    [points, height, side],
+    () => buildPath(points, 1000, actualHeight, side),
+    [points, actualHeight, side],
   );
 
   return (
     <svg
-      viewBox={`0 0 1000 ${height}`}
+      viewBox={`0 0 1000 ${actualHeight}`}
       preserveAspectRatio="none"
       aria-hidden="true"
       style={{
@@ -567,10 +588,9 @@ export default function TornEdge({
         left: 0,
         right: 0,
         width: "100%",
-        height: `${height}px`,
+        height: `${actualHeight}px`,
         display: "block",
-        // [side]: `-${height}px`,
-        [side]: `-${height - 2}px`,
+        [side]: `-${actualHeight - 2}px`,
       }}
       className={className}
     >

@@ -1,94 +1,90 @@
-"use client";
-
-import { ArrowRight, ArrowUpRight } from "lucide-react";
 import PageWrapper from "@/app/components/page-wrapper";
 import SectionHeader from "@/app/components/section-header";
-import { getSolutionCards } from "@/data/solution";
+import { ArrowRight, Zap } from "lucide-react";
 import Link from "next/link";
+import {getSectorsCards} from "@/data/sectors";
+
+function CapacityMeter({ scale }) {
+  const bars = 4;
+  const filled = Math.max(1, Math.round((scale / 100) * bars));
+
+  return (
+    <div className="flex items-end gap-[3px]">
+      {Array.from({ length: bars }).map((_, i) => (
+        <span
+          key={i}
+          className={`w-[3px] rounded-full ${
+            i < filled ? "bg-green-600" : "bg-slate-200"
+          }`}
+          style={{ height: `${7 + i * 3.5}px` }}
+        />
+      ))}
+    </div>
+  );
+}
+
+function SectorCard({ sector }) {
+  return (
+    <div className="group flex flex-col overflow-hidden rounded-[28px] border border-slate-100 bg-white transition-all hover:shadow-xl hover:shadow-slate-200/70">
+      {/* duotone image header — same green tint on every photo, unifies the set */}
+      <div className="relative h-40 overflow-hidden">
+        <img
+          src={sector.image}
+          alt={sector.title}
+          className="h-full w-full scale-105 object-cover  transition-transform duration-500 group-hover:scale-110"
+        />
+        {/* <div className="absolute inset-0 bg-green-700 mix-blend-multiply" /> */}
+        {/* <div className="absolute inset-0 bg-gradient-to-t from-green-950/40 via-transparent to-transparent" /> */}
+
+        <span className="absolute left-4 top-4 inline-flex items-center gap-1.5 rounded-full bg-white/95 px-3 py-1.5 font-mono text-[11px] font-bold text-slate-900 backdrop-blur-sm">
+          <Zap size={11} className="text-green-600" strokeWidth={2.5} />
+          {sector.range}
+        </span>
+      </div>
+
+      <div className="flex flex-1 flex-col px-5 pb-5 pt-4">
+        <span className="text-[10.5px] font-bold uppercase tracking-[0.14em] text-green-600">
+          {sector.subtitle}
+        </span>
+        <h3 className="mt-1 text-lg font-extrabold tracking-tight text-slate-900">
+          {sector.title}
+        </h3>
+        <p className="mt-2 flex-1 text-[13.5px] leading-relaxed text-slate-500 ">
+          {sector.description}
+        </p>
+
+        <div className="mt-4 flex items-center justify-between border-t border-slate-100 pt-4">
+          <CapacityMeter scale={sector.scale} />
+
+          <Link href={`/sectors/${sector.id}`} className="inline-flex items-center gap-2 rounded-full bg-primary-500 py-1.5 pl-4 pr-1.5 text-sm font-bold text-white transition-colors hover:bg-primary-600">
+            Explore
+            <span className="flex h-6 w-6 items-center justify-center rounded-full bg-white text-primary-500">
+              <ArrowRight size={13} strokeWidth={2.5} />
+            </span>
+          </Link>
+        </div>
+      </div>
+    </div>
+  );
+}
 
 export default function SolutionsSection() {
-  const solutions = getSolutionCards();
+  const sectors = getSectorsCards();
   return (
-    <PageWrapper className="bg-white">
-      {/* ── Header ── */}
-      <SectionHeader
-        badge={"Who We Serve"}
-        title={"Solar for every space"}
-        description={
-          "From a single home to a full factory floor — we design the right system for you."
-        }
-      />
+    <PageWrapper className="bg-gray-50">
 
-      {/* ── Cards grid ── */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-px bg-gray-100 border border-gray-100">
-        {solutions.map((s, i) => (
-          <Link
-      key={s.id}
-      href={`/solutions/${s.slug}`}
-      className="group bg-white flex flex-col relative overflow-hidden"
-    >
-            {/* Image */}
-            <div className="relative overflow-hidden aspect-[4/3]">
-              <img
-                src={s.image}
-                alt={s.title}
-                className="w-full h-full object-cover transition-transform duration-700 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] group-hover:scale-[1.06]"
-              />
-              <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm text-gray-950 text-[10px] font-bold tracking-widest px-2.5 py-1">
-                0{i + 1}
-              </div>
-            </div>
 
-            {/* Text block */}
-            <div className="flex flex-col flex-1 p-6 border-t border-gray-100">
-              <div className="flex items-start justify-between gap-3 mb-1">
-                <h3 className="text-[1.3rem] font-semibold text-gray-950 tracking-tight leading-snug">
-                  {s.title}
-                </h3>
-                <ArrowUpRight
-                  size={17}
-                  className="text-gray-300 group-hover:text-primary-500 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-300 flex-shrink-0 mt-0.5"
-                />
-              </div>
+<SectionHeader
+  badge="Who We Serve"
+  title="Solutions for Every Scale"
+  highlight="Every Scale"
+/>
 
-              <p className="text-xs text-gray-400 font-medium mb-3">
-                {s.subtitle}
-              </p>
-
-              {/* Animated underline */}
-              <div className="w-8 h-px bg-gray-200 mb-4 group-hover:w-14 group-hover:bg-primary-400 transition-all duration-500 ease-out" />
-
-              <p className="text-[13.5px] text-gray-500 leading-relaxed mb-5 flex-1">
-                {s.description}
-              </p>
-
-              <ul className="space-y-2">
-                {s.highlights.map((h) => (
-                  <li key={h} className="flex items-center gap-2">
-                    <span className="w-1 h-1 rounded-full bg-primary-400 flex-shrink-0" />
-                    <span className="text-[12px] text-gray-500 font-medium">
-                      {h}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-
-              {/* Mobile bottom CTA */}
-        <div className="mt-6 flex items-center gap-2 lg:hidden">
-          <span className="text-[11px] font-semibold tracking-wider uppercase text-amber-600">
-            Explore Solution
-          </span>
-
-          <ArrowRight
-            size={13}
-            className="text-amber-600"
-          />
+        <div className="mt-14 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          {sectors.map((sector) => (
+            <SectorCard key={sector.id} sector={sector} />
+          ))}
         </div>
-            </div>
-          </Link>
-        ))}
-      </div>
-      
     </PageWrapper>
   );
 }

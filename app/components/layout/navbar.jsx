@@ -1,7 +1,10 @@
 "use client";
+
 import React, { useState, useEffect, useRef } from "react";
 import { ChevronDown, ChevronsRight, Menu, X, Settings2 } from "lucide-react";
 import Link from "next/link";
+import { generateServiceDropdownMenu } from "@/data/services";
+import { usePathname } from "next/navigation";
 
 const NAV_ITEMS = [
   {
@@ -12,27 +15,30 @@ const NAV_ITEMS = [
   {
     label: "Services",
     href: "/services",
-    dropdown: ["Installation", "Maintenance", "Consulting"],
+    dropdown: generateServiceDropdownMenu(),
   },
-  // { label: "Pages", href: "/pages", dropdown: ["Pricing", "Team", "FAQ"] },
-  { label: "Blog", href: "/blogs" },
+  { label: "Projects", href: "/projects" },
+  // { label: "Blog", href: "/blogs" },
   { label: "Contact", href: "/contact" },
 ];
 
-// Picks whichever nav item's href matches the current URL path, so the
-// "active" state reflects the real page instead of a hardcoded default.
-function findActiveLabel() {
-  if (typeof window === "undefined") return "Home";
-  const path = window.location.pathname;
-  const match = NAV_ITEMS.find((item) => item.href === path);
-  return match ? match.label : "Home";
-}
-
 export default function SolstarNavbar() {
+  const pathname = usePathname();
+
+  const isItemActive = (item) => {
+    if (item.href === "/") return pathname === "/";
+    if (pathname === item.href) return true;
+    if (item.dropdown) {
+      return item.dropdown.some(
+        (sub) => pathname === sub.href || pathname.startsWith(sub.href + "/"),
+      );
+    }
+    return pathname.startsWith(item.href + "/");
+  };
+
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [mobileSubOpen, setMobileSubOpen] = useState(null);
-  const [active, setActive] = useState(findActiveLabel);
   const headerRef = useRef(null);
 
   useEffect(() => {
@@ -40,13 +46,6 @@ export default function SolstarNavbar() {
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
-  // Re-check on browser back/forward navigation
-  useEffect(() => {
-    const onPopState = () => setActive(findActiveLabel());
-    window.addEventListener("popstate", onPopState);
-    return () => window.removeEventListener("popstate", onPopState);
   }, []);
 
   // Lock body scroll while the mobile panel is open
@@ -78,6 +77,11 @@ export default function SolstarNavbar() {
     };
   }, [mobileOpen]);
 
+  useEffect(() => {
+    setMobileOpen(false);
+    setMobileSubOpen(null);
+  }, [pathname]);
+  
   return (
     <>
       {/* Backdrop — click to close, blurs the page behind the mobile menu */}
@@ -94,16 +98,11 @@ export default function SolstarNavbar() {
         className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ease-out ${
           scrolled
             ? "bg-white py-0 shadow-sm shadow-neutral-900/5 px-4 sm:px-6"
-            : "bg-transparent px-4 sm:px-6 lg:px-8  py-4"
+            : "bg-transparent px-4 sm:px-6 lg:px-8 py-5"
         }`}
       >
-        {/* <nav
-          className={`relative mx-auto flex max-w-7xl items-center justify-between rounded-full bg-white py-2.5 transition-shadow duration-500  ${
-            scrolled ? "shadow-none" : "shadow-lg shadow-neutral-900/10  px-4 sm:px-6"
-          }`}
-        > */}
         <nav
-          className={`relative mx-auto flex max-w-7xl items-center justify-between rounded-full bg-white py-2.5 transition-all duration-500 ease-out ${
+          className={`relative mx-auto flex max-w-7xl items-center justify-between rounded-full bg-white py-3 lg:py-4 transition-all duration-500 ease-out ${
             scrolled
               ? "shadow-none"
               : "shadow-[0_0_18px_rgba(15,23,42,0.06)] px-4 sm:px-6"
@@ -117,12 +116,12 @@ export default function SolstarNavbar() {
           {/* Desktop nav */}
           <ul className="hidden items-center gap-8 lg:flex">
             {NAV_ITEMS.map((item) => {
-              const isActive = active === item.label;
+              const isActive = isItemActive(item);
+
               return (
                 <li key={item.label} className="group relative">
                   <Link
                     href={item.href}
-                    onClick={() => setActive(item.label)}
                     className={`relative flex items-center gap-1 py-2 text-[15px] font-medium transition-colors ${
                       isActive
                         ? "text-primary-500"
@@ -144,16 +143,19 @@ export default function SolstarNavbar() {
                   </Link>
 
                   {item.dropdown && (
-                    <div className="invisible absolute left-1/2 top-full z-20 w-48 -translate-x-1/2 translate-y-2 rounded-2xl border border-neutral-100 bg-white p-2 opacity-0 shadow-lg shadow-neutral-900/10 transition-all duration-200 group-hover:visible group-hover:translate-y-3 group-hover:opacity-100">
-                      {item.dropdown.map((sub) => (
-                        <Link
-                          key={sub}
-                          href="#"
-                          className="block rounded-xl px-3 py-2 text-sm text-neutral-600 transition-colors hover:bg-primary-50 hover:text-neutral-900"
-                        >
-                          {sub}
-                        </Link>
-                      ))}
+                    <div className="invisible absolute left-1/2 top-full z-20 -translate-x-1/2 pt-3 opacity-0 transition-all duration-200 group-hover:visible group-hover:opacity-100">
+                      <div className="w-52 rounded-2xl border border-neutral-100 bg-white p-2 shadow-lg shadow-neutral-900/10">
+                        {item.dropdown.map((sub) => (
+                          <Link
+                            key={sub.href}
+                            href={sub.href}
+                            title={sub.label}
+                            className="block rounded-xl px-3 py-2 text-sm text-neutral-600 transition-colors hover:bg-primary-50 hover:text-neutral-900 truncate"
+                          >
+                            {sub.label}
+                          </Link>
+                        ))}
+                      </div>
                     </div>
                   )}
                 </li>
@@ -199,17 +201,17 @@ export default function SolstarNavbar() {
           }`}
         >
           <div className="overflow-hidden">
-            <div className="rounded-3xl bg-white p-4 ">
+            <div className={`rounded-3xl bg-white ${scrolled ? "" : "p-4"}`}>
               <ul className="flex flex-col divide-y divide-neutral-100">
                 {NAV_ITEMS.map((item) => {
-                  const isActive = active === item.label;
+                  const isActive = isItemActive(item);
+
                   return (
                     <li key={item.label} className="py-1">
                       <div className="flex items-center justify-between">
                         <Link
                           href={item.href}
                           onClick={() => {
-                            setActive(item.label);
                             if (!item.dropdown) setMobileOpen(false);
                           }}
                           className={`flex-1 py-2.5 text-left text-[15px] font-medium ${
@@ -245,17 +247,18 @@ export default function SolstarNavbar() {
                               : "grid-rows-[0fr] opacity-0"
                           }`}
                         >
-                          <div className="flex flex-col overflow-hidden pb-2 pl-3">
-                            {item.dropdown.map((sub) => (
-                              <Link
-                                key={sub}
-                                href="#"
-                                onClick={() => setMobileOpen(false)}
-                                className="rounded-lg px-3 py-2 text-sm text-neutral-600 hover:bg-primary-50 hover:text-neutral-900"
-                              >
-                                {sub}
-                              </Link>
-                            ))}
+                          <div className="overflow-hidden">
+                            <div className="ml-1 flex flex-col gap-0.5 border-l-2 border-neutral-100 pb-2 pl-3">
+                              {item.dropdown.map((sub) => (
+                                <Link
+                                  key={sub.href}
+                                  href={sub.href}
+                                  className="block rounded-lg px-3 py-2 text-sm text-neutral-600 transition-colors hover:bg-primary-50 hover:text-neutral-900"
+                                >
+                                  {sub.label}
+                                </Link>
+                              ))}
+                            </div>
                           </div>
                         </div>
                       )}
@@ -263,13 +266,15 @@ export default function SolstarNavbar() {
                   );
                 })}
               </ul>
-              <Link
-                href="#"
-                className="mt-3 btn btn-primary flex items-center justify-center gap-1.5 rounded-full"
-              >
-                Get a quote
-                <ChevronsRight className="h-4 w-4" strokeWidth={2.5} />
-              </Link>
+              <div className="py-4">
+                <Link
+                  href="/contact"
+                  className="btn btn-primary flex items-center justify-center gap-1.5 rounded-full"
+                >
+                  Get a quote
+                  <ChevronsRight className="h-4 w-4" strokeWidth={2.5} />
+                </Link>
+              </div>
             </div>
           </div>
         </div>

@@ -38,7 +38,7 @@ const MarkdownContent = ({ content }) => {
         ),
         li: ({ children, ordered }) => (
           <li className="flex items-start gap-3 text-[15px] text-gray-600 leading-relaxed">
-            <span className="mt-2.5 w-1.5 h-1.5 rounded-full bg-amber-400 flex-shrink-0" />
+            <span className="mt-2.5 w-1.5 h-1.5 rounded-full bg-primary-400 flex-shrink-0" />
             <span>{children}</span>
           </li>
         ),
@@ -46,7 +46,7 @@ const MarkdownContent = ({ content }) => {
           <strong className="font-semibold text-gray-900">{children}</strong>
         ),
         blockquote: ({ children }) => (
-          <blockquote className="border-l-2 border-amber-400 pl-6 my-8 text-gray-500 italic">
+          <blockquote className="border-l-2 border-primary-400 pl-6 my-8 text-gray-500 italic">
             {children}
           </blockquote>
         ),
@@ -63,7 +63,7 @@ const MarkdownContent = ({ content }) => {
         hr: () => (
           <div className="my-10 flex items-center gap-4">
             <div className="flex-1 h-px bg-gray-100" />
-            <div className="w-1.5 h-1.5 rounded-full bg-amber-400" />
+            <div className="w-1.5 h-1.5 rounded-full bg-primary-400" />
             <div className="flex-1 h-px bg-gray-100" />
           </div>
         ),
@@ -89,7 +89,7 @@ const BlogDetailsPage = ({ post }) => {
   const router = useRouter();
 
   return (
-    <PageWrapper paddingY="py-4 lg:py-8">
+    <PageWrapper containerClassName="mt-16">
       {/* ── Hero ─────────────────────────────────────────────────── */}
       <div className="max-w-3xl mx-auto">
         {/* Back + Category */}
@@ -101,7 +101,7 @@ const BlogDetailsPage = ({ post }) => {
             <ArrowLeft size={13} />
             Back
           </button>
-          <span className="text-[11px] font-semibold text-amber-600 uppercase tracking-[0.13em] bg-amber-50 px-3 py-1 rounded-full">
+          <span className="text-[11px] font-semibold text-primary-600 uppercase tracking-[0.13em] bg-primary-50 px-3 py-1 rounded-full">
             {post.category.name}
           </span>
         </div>

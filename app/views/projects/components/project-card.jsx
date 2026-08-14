@@ -49,7 +49,7 @@ const ProjectCard = ({ project, reverse = false }) => {
         <h3 className="text-xl font-bold tracking-tight text-slate-900 transition-colors group-hover:text-emerald-600">
           {title}
         </h3>
-        <p className="mt-2 text-sm leading-relaxed text-slate-500 line-clamp-2">
+        <p className="mt-2 text-sm leading-relaxed text-slate-500 line-clamp-5">
           {description}
         </p>
 

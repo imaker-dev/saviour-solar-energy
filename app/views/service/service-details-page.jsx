@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { Play, Check, ChevronDown } from "lucide-react";
 import PageWrapper from "../../components/page-wrapper";
-import SectionHeader from "../../components/section-header";
+import ServiceHeroSection from "./components/service-hero-section";
 
 // ─── Shared facet clip-path (notched corners like the reference design) ────
 // Cuts the top-left and bottom-right corners diagonally.
@@ -28,32 +28,6 @@ const BenefitItem = ({ text }) => (
       <span className="absolute left-3.5 h-2.5 w-2.5 rounded-full bg-primary-500" />
     </span>
     <span className="text-[15px] leading-snug text-slate-600">{text}</span>
-  </div>
-);
-
-// ─── Hero ────────────────────────────────────────────────────────────────
-
-const HeroBanner = ({ hero }) => (
-  <div
-    className="relative overflow-hidden shadow-xl shadow-slate-900/10 ring-1 ring-black/5"
-    style={facetClip(56)}
-  >
-    <img
-      src={hero?.image}
-      alt={hero?.alt || ""}
-      className="h-72 w-full object-cover sm:h-[26rem]"
-    />
-    {hero?.videoUrl && (
-      <button
-        type="button"
-        aria-label="Play video"
-        className="group absolute inset-0 flex items-center justify-center bg-slate-900/10 transition hover:bg-slate-900/20"
-      >
-        <span className="flex h-16 w-16 items-center justify-center rounded-full border-2 border-white/90 bg-white/10 backdrop-blur-sm transition group-hover:scale-105">
-          <Play className="ml-0.5 h-6 w-6 fill-white text-white" />
-        </span>
-      </button>
-    )}
   </div>
 );
 
@@ -172,11 +146,15 @@ const FaqSection = ({ faq }) => {
 
   return (
     <div>
-      <SectionHeader
-        title="Frequently Asked Questions"
-        description="Answers to the questions we hear most often about our solar panel solutions."
-        align="start"
-      />
+      <div className="mb-6 lg:mb-8">
+        <h2 className="text-2xl font-bold tracking-tight text-slate-900">
+          Frequently Asked Questions
+        </h2>
+        <p className="mt-4  text-[15px] leading-relaxed text-slate-600">
+          Answers to the questions we hear most often about our solar panel
+          solutions.
+        </p>
+      </div>
 
       <div className="space-y-3">
         {faq.map((item, i) => {
@@ -221,17 +199,15 @@ const ServiceDetailsPage = ({ service }) => {
   if (!service) return null;
 
   const { hero, about, services, gallery, process, benefits, faq } = service;
-
   return (
-    <PageWrapper
-      containerClassName="space-y-14 sm:space-y-16"
-      containerWidth="max-w-6xl mx-auto"
-    >
-      <HeroBanner hero={hero} />
-      <AboutSection about={about} services={services} gallery={gallery} />
-      <ProcessSection process={process} benefits={benefits} />
-      <FaqSection faq={faq} />
-    </PageWrapper>
+    <>
+      <ServiceHeroSection hero={hero} />
+      <PageWrapper containerClassName="space-y-14 sm:space-y-16">
+        <AboutSection about={about} services={services} gallery={gallery} />
+        <ProcessSection process={process} benefits={benefits} />
+        <FaqSection faq={faq} />
+      </PageWrapper>
+    </>
   );
 };
 

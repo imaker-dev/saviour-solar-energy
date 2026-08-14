@@ -4,6 +4,7 @@ import ClientsSlider from "./components/clients-slider.jsx";
 import OurBenefits from "./components/our-benifits.jsx";
 import StatsSection from "./components/stats-section.jsx";
 import ServicesSection from "./components/services-section.jsx";
+import GujaratCoverageSection from "./components/gujarat-coverage-section.jsx";
 import AboutUsSection from "./components/about-us-section.jsx";
 import WhyChooseUsSection from "./components/why-choose-us-section.jsx";
 import CtaBanner from "./components/cta-banner.jsx";
@@ -31,6 +32,7 @@ const HomePage = () => {
       <SolarSubsidySection />
       <OurProjectSection />
       <StatsSection />
+      <GujaratCoverageSection />
       <WorkingProcess />
       <FaqSection />
       <OurBenefits />

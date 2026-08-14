@@ -5,7 +5,7 @@ const projects = [
     card: {
       title: "Farm Solar Panel 2024",
       description:
-        "A large-scale agricultural solar installation designed to reduce electricity costs and provide reliable renewable energy for modern farming operations.",
+        "A large-scale agricultural solar installation spanning 18,500 sq.ft., designed to dramatically reduce electricity costs while providing reliable, sustainable renewable energy for modern farming operations. This ground-mounted commercial system harnesses California's abundant sunshine to power irrigation systems, cold storage facilities, and daily farm operations, delivering exceptional long-term ROI and energy independence for the agricultural sector.",
       image: "/Images/project-1.webp",
       location: "California, USA",
       totalArea: "18,500 sq.ft.",
@@ -33,10 +33,10 @@ const projects = [
     about: {
       title: "Project Overview",
       description:
-        "This project was designed to help the client reduce electricity expenses while improving energy efficiency through a customized solar power solution.",
+        "This transformative project was designed to help Green Valley Farms significantly reduce escalating electricity expenses while dramatically improving overall energy efficiency through a meticulously customized solar power solution. By transitioning from conventional grid dependency to renewable solar energy, the farm now enjoys predictable energy costs, enhanced operational reliability, and a substantially reduced carbon footprint that aligns with sustainable agricultural practices.",
 
       content:
-        "After conducting a detailed site assessment, our engineering team designed and installed a high-performance ground-mounted solar system tailored to the farm's daily energy requirements. The installation was completed with minimal disruption to ongoing operations and now delivers reliable clean energy, lower operating costs, and long-term sustainability benefits.",
+        "After conducting an exhaustive multi-week site assessment evaluating terrain variations, soil composition, and solar irradiance patterns, our engineering team designed and installed a high-performance ground-mounted solar system precisely tailored to the farm's unique energy requirements. The comprehensive installation involved strategic panel placement across the 18,500 sq.ft. area, advanced mounting systems engineered for agricultural terrain, and sophisticated electrical infrastructure integration. Throughout the four-month installation, our team maintained rigorous scheduling to ensure minimal disruption to critical ongoing operations. Today, this system consistently delivers reliable clean energy, substantially lower operating costs, and meaningful long-term sustainability benefits.",
     },
 
     gallery: [
@@ -57,14 +57,14 @@ const projects = [
     challenges: {
       title: "The Challenge",
       description:
-        "The project required installing a large solar system across uneven agricultural land while maintaining uninterrupted farm operations and maximizing solar exposure.",
+        "The project presented multiple complex challenges that required innovative engineering solutions. Installing a massive solar array across significantly uneven agricultural terrain demanded specialized mounting approaches to ensure optimal panel orientation and long-term structural integrity. Additionally, maintaining completely uninterrupted farm operations throughout installation was critical, as irrigation systems, cold storage facilities, and daily activities could not experience any downtime. The project also required maximizing solar exposure despite irregular landscape contours and integrating seamlessly with existing electrical infrastructure while adhering to California's strict solar installation codes.",
     },
 
     solution: {
       title: "The Solution",
 
       description:
-        "Our engineering team developed a customized ground-mounted solar solution that maximized energy generation while ensuring reliable performance, easy maintenance, and long-term operational efficiency for the agricultural facility.",
+        "Our engineering team developed an innovative and customized ground-mounted solar solution that masterfully addressed every challenge while exceeding performance expectations. Through meticulous site analysis and advanced modeling, we engineered a sophisticated racking system with adjustable tilt capabilities designed to accommodate uneven terrain while maximizing solar exposure throughout all seasons. We implemented a carefully orchestrated phased installation approach dividing the project into distinct work zones, allowing farm operations to continue unimpeded while construction progressed systematically. The comprehensive solution incorporated premium high-efficiency monocrystalline panels paired with cutting-edge inverter technology, reinforced deep-foundation mounting structures for superior stability, and intelligent energy management systems with real-time monitoring accessible via mobile and desktop platforms.",
 
       items: [
         "Comprehensive Site Survey",
@@ -81,7 +81,7 @@ const projects = [
     results: {
       title: "The Results",
       description:
-        "The completed project significantly reduced electricity costs, improved operational efficiency, increased energy independence, and provided a dependable renewable energy solution that continues delivering measurable value every day.",
+        "The completed solar installation has fundamentally transformed Green Valley Farms' energy profile, delivering exceptional and measurable outcomes across multiple performance indicators. The system now generates substantial clean renewable energy that has dramatically reduced monthly electricity costs, providing predictable and significantly lower operational expenses that directly improve bottom-line profitability. The farm has achieved remarkable energy independence, insulating the business from utility rate fluctuations and power grid instability while ensuring continuous operations. This project has established Green Valley Farms as a forward-thinking leader in sustainable agriculture, demonstrating how modern farming operations can integrate renewable energy to achieve both economic and environmental objectives that continue delivering measurable value every single day.",
     },
 
     testimonial: {
@@ -102,7 +102,7 @@ const projects = [
     card: {
       title: "Home Solar Panel 2024",
       description:
-        "A residential rooftop solar installation designed to reduce household electricity bills while providing clean, reliable energy for everyday living.",
+        "A residential rooftop solar installation spanning 3,200 sq.ft., designed to significantly reduce household electricity bills while providing clean, reliable energy for everyday living. This hybrid system combines rooftop solar efficiency with smart energy management, delivering substantial long-term savings and greater energy independence for the modern homeowner.",
       image: "/Images/project-2.webp",
       location: "Austin, Texas, USA",
       totalArea: "3,200 sq.ft.",
@@ -147,10 +147,10 @@ const projects = [
       title: "Project Overview",
 
       description:
-        "The homeowner wanted to reduce rising electricity costs while increasing energy independence through a modern rooftop solar system that blended seamlessly with the property's design.",
+        "The homeowner wanted to significantly reduce rising electricity costs while achieving greater energy independence through a modern rooftop solar system. The goal was to create a solution that not only delivered measurable financial savings but also blended seamlessly with the property's architectural design and enhanced the home's overall value.",
 
       content:
-        "After evaluating the home's energy consumption, roof orientation, and available installation space, our engineers designed a customized rooftop solar solution capable of meeting the family's daily electricity requirements. The installation was completed with minimal disruption and integrated with an intelligent monitoring system, allowing the homeowner to track energy production and system performance in real time. Today, the system provides reliable clean energy, lower utility bills, and long-term financial savings.",
+        "After conducting a thorough evaluation of the home's energy consumption patterns, roof orientation, shading analysis, and available installation space, our engineers designed a customized rooftop solar solution precisely calibrated to meet the family's daily electricity requirements. Completed in just 18 days with minimal disruption to the household, the system was integrated with an intelligent monitoring platform allowing the homeowner to track energy production and system performance in real time. Today, the system reliably generates clean energy, delivers substantially lower utility bills, and provides long-term financial savings while contributing to a sustainable future.",
     },
 
     gallery: [
@@ -172,14 +172,14 @@ const projects = [
       title: "The Challenge",
 
       description:
-        "The home featured multiple roof angles and limited installation space, requiring careful panel placement to maximize sunlight exposure while maintaining the property's visual appeal.",
+        "The home featured multiple roof angles, varying pitch sections, and limited contiguous installation space, requiring careful panel placement to maximize sunlight exposure throughout the day. Additionally, maintaining the property's visual appeal and architectural integrity was a top priority, demanding a solution that balanced performance with aesthetics while working within the constraints of the existing roof structure.",
     },
 
     solution: {
       title: "The Solution",
 
       description:
-        "We designed a customized rooftop solar solution that maximized the home's available roof space while delivering reliable energy production, improved efficiency, and seamless integration with the existing electrical system.",
+        "We designed a meticulously customized rooftop solar solution that maximized the home's available roof space through strategic panel layout and orientation optimization. The system delivered reliable energy production, improved overall efficiency, and seamless integration with the existing electrical infrastructure while preserving the home's aesthetic character.",
 
       items: [
         "Home Energy Assessment",
@@ -197,7 +197,7 @@ const projects = [
       title: "The Results",
 
       description:
-        "The completed installation now generates a significant portion of the home's daily electricity needs, helping the homeowner reduce monthly utility costs, increase energy independence, and contribute to a cleaner environment through renewable energy.",
+        "The completed installation now generates a significant portion of the home's daily electricity needs, helping the homeowner achieve substantial reductions in monthly utility costs while gaining meaningful energy independence. The smart monitoring system provides complete transparency into energy production and consumption, enabling informed decisions that maximize savings. Beyond the financial benefits, the project has reduced the household's carbon footprint and demonstrated how residential solar can deliver both immediate and long-term value.",
     },
 
     testimonial: {
@@ -218,7 +218,7 @@ const projects = [
     card: {
       title: "Corporate Office Solar Project",
       description:
-        "A rooftop solar solution developed for a modern corporate office to reduce operating costs, improve energy efficiency, and support long-term sustainability goals.",
+        "A comprehensive rooftop solar solution spanning 26,500 sq.ft., developed for a modern corporate office to significantly reduce operating costs, improve energy efficiency, and support long-term sustainability goals. This high-capacity commercial installation delivers reliable renewable energy while demonstrating the organization's commitment to environmental responsibility.",
       image: "/Images/project-3.webp",
       location: "New York, USA",
       totalArea: "26,500 sq.ft.",
@@ -267,10 +267,10 @@ const projects = [
       title: "Project Overview",
 
       description:
-        "Vertex Business Solutions wanted to reduce rising electricity costs while reinforcing its commitment to environmental sustainability. The objective was to install a rooftop solar system capable of supporting daily office operations without affecting employee productivity or business continuity.",
+        "Vertex Business Solutions wanted to substantially reduce rising electricity costs while reinforcing its commitment to environmental sustainability and corporate responsibility. The objective was to install a high-capacity rooftop solar system capable of supporting daily office operations without affecting employee productivity, business continuity, or the professional appearance of their corporate headquarters.",
 
       content:
-        "Following a detailed structural assessment and energy consumption analysis, our team designed a customized rooftop solar solution tailored to the building's available roof space and operational requirements. The installation was completed in carefully planned phases to avoid disruption to office activities. Today, the system supplies a significant portion of the building's daily electricity demand, helping the company reduce operating expenses, improve energy efficiency, and strengthen its commitment to clean renewable energy.",
+        "Following a comprehensive structural assessment and detailed energy consumption analysis, our engineering team designed a customized rooftop solar solution tailored to the available roof space and operational requirements. The installation was executed in carefully planned phases coordinated around business hours to avoid disruption to office activities and daily workflows. Today, the system supplies a significant portion of the building's daily electricity demand, helping the company reduce operating expenses, improve energy efficiency, and strengthen its commitment to clean renewable energy.",
     },
 
     gallery: [
@@ -292,14 +292,14 @@ const projects = [
       title: "The Challenge",
 
       description:
-        "The office remained fully operational throughout the project, requiring careful scheduling, strict safety measures, and efficient installation to minimize disruption while maximizing the available rooftop space for solar generation.",
+        "The office remained fully operational throughout the entire project duration, requiring meticulous scheduling, strict safety protocols, and highly efficient installation methods to minimize disruption. Additionally, the rooftop presented structural load considerations and limited access points, demanding creative engineering solutions to maximize solar generation capacity while ensuring the building's structural integrity and maintaining a clean, professional exterior appearance.",
     },
 
     solution: {
       title: "The Solution",
 
       description:
-        "Our team engineered a high-performance rooftop solar system that balanced maximum energy generation with structural safety while ensuring uninterrupted business operations throughout the installation process.",
+        "Our team engineered a high-performance rooftop solar system that achieved the perfect balance between maximum energy generation and structural safety while ensuring completely uninterrupted business operations throughout the installation process. The solution incorporated lightweight mounting technology, strategic panel distribution, and phased implementation scheduling.",
 
       items: [
         "Structural Roof Assessment",
@@ -317,7 +317,7 @@ const projects = [
       title: "The Results",
 
       description:
-        "The completed project significantly reduced the company's monthly electricity expenses while improving overall energy efficiency and supporting its sustainability initiatives. The new solar installation delivers dependable renewable energy, lowers carbon emissions, and provides measurable long-term financial savings, making it a valuable investment for the organization's future growth.",
+        "The completed project significantly reduced the company's monthly electricity expenses while improving overall energy efficiency and advancing its sustainability initiatives. The new solar installation delivers dependable renewable energy, substantially lowers carbon emissions, and provides measurable long-term financial savings that strengthen the organization's bottom line. Beyond the direct financial benefits, the system has enhanced the company's reputation as an environmentally responsible business, making it a valuable investment for future growth and stakeholder relations.",
     },
 
     testimonial: {
@@ -338,7 +338,7 @@ const projects = [
     card: {
       title: "Hospital Solar Energy System",
       description:
-        "A high-capacity rooftop solar installation developed to support continuous hospital operations while reducing electricity costs and promoting sustainable healthcare infrastructure.",
+        "A high-capacity rooftop solar installation spanning 31,800 sq.ft., developed to support continuous hospital operations while significantly reducing electricity costs and promoting sustainable healthcare infrastructure. This critical facility installation delivers reliable renewable energy that ensures uninterrupted power for essential medical services and patient care.",
       image: "/Images/project-4.webp",
       location: "Chicago, Illinois, USA",
       totalArea: "31,800 sq.ft.",
@@ -387,10 +387,10 @@ const projects = [
       title: "Project Overview",
 
       description:
-        "CityCare Medical Center wanted to improve energy efficiency while reducing the rising operational costs associated with running a modern healthcare facility. The objective was to install a reliable solar energy system capable of supporting daily hospital operations without interrupting essential medical services.",
+        "CityCare Medical Center needed to improve energy efficiency while substantially reducing the rising operational costs associated with running a modern 24/7 healthcare facility. The objective was to install a reliable, high-capacity solar energy system capable of supporting daily hospital operations without interrupting essential medical services, patient care, or critical life-support systems.",
 
       content:
-        "Following a detailed structural evaluation and energy consumption analysis, our engineering team designed a customized rooftop solar solution that maximized available roof space while meeting the hospital's energy requirements. Installation was carefully planned in multiple phases to ensure uninterrupted patient care and continuous operation of critical departments. Today, the system supplies a significant portion of the hospital's daytime electricity demand, helping reduce utility expenses while supporting the organization's sustainability initiatives.",
+        "Following an exhaustive structural evaluation and comprehensive energy consumption analysis across all departments, our engineering team designed a customized rooftop solar solution that maximized available roof space while meeting the hospital's demanding energy requirements. Installation was meticulously planned in multiple coordinated phases to ensure uninterrupted patient care and continuous operation of critical medical departments. Today, the system supplies a significant portion of the hospital's daytime electricity demand, helping reduce utility expenses while supporting the organization's sustainability initiatives and enhancing operational resilience.",
     },
 
     gallery: [
@@ -412,14 +412,14 @@ const projects = [
       title: "The Challenge",
 
       description:
-        "Hospitals operate around the clock, making uninterrupted power availability and strict safety compliance essential. The project required careful planning to complete the installation without affecting patient care, emergency services, or everyday hospital operations.",
+        "Hospitals operate around the clock with zero tolerance for power interruptions, making uninterrupted power availability and strict healthcare safety compliance absolutely essential. The project required navigating complex regulatory requirements, maintaining sterile environments, and carefully coordinating all installation activities to avoid any impact on patient care, emergency services, surgical schedules, or everyday hospital operations.",
     },
 
     solution: {
       title: "The Solution",
 
       description:
-        "We delivered a dependable rooftop solar solution specifically designed for healthcare facilities, ensuring uninterrupted operation, enhanced energy efficiency, and long-term system reliability.",
+        "We delivered a dependable rooftop solar solution specifically engineered for the unique demands of healthcare facilities, ensuring uninterrupted operation, enhanced energy efficiency, and long-term system reliability. The solution incorporated redundant safety systems, specialized mounting approaches for sensitive roof environments, and a phased implementation strategy that respected all medical facility protocols.",
 
       items: [
         "Healthcare Energy Analysis",
@@ -437,7 +437,7 @@ const projects = [
       title: "The Results",
 
       description:
-        "The completed installation significantly reduced electricity costs while improving the hospital's overall energy efficiency and sustainability. The medical center now benefits from dependable renewable energy, lower operating expenses, reduced carbon emissions, and a future-ready power solution that supports continuous healthcare operations.",
+        "The completed installation significantly reduced electricity costs while improving the hospital's overall energy efficiency, operational resilience, and sustainability profile. The medical center now benefits from dependable renewable energy that reduces dependency on grid power, lowers operating expenses, and decreases carbon emissions. This future-ready power solution supports continuous healthcare operations while demonstrating the organization's commitment to both fiscal responsibility and environmental stewardship, creating lasting value for the facility and the community it serves.",
     },
 
     testimonial: {

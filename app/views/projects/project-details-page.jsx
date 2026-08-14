@@ -1,6 +1,7 @@
 import React from "react";
 import { ArrowLeft, Leaf, CheckCircle2, Star, PlayCircle } from "lucide-react";
 import PageWrapper from "../../components/page-wrapper";
+import Link from "next/link";
 
 const ProjectDetailsPage = ({ project }) => {
   if (!project) return null;
@@ -25,15 +26,15 @@ const ProjectDetailsPage = ({ project }) => {
   ].filter((row) => row.value);
 
   return (
-    <PageWrapper className="bg-white" containerClassName="space-y-8">
+    <PageWrapper className="bg-white" containerClassName="space-y-8 lg:space-y-12 pt-16">
       <div className="">
-        <a
+        <Link
           href="/projects"
           className="inline-flex items-center gap-1.5 text-sm font-medium text-slate-400 transition-colors hover:text-slate-700"
         >
           <ArrowLeft className="h-4 w-4" />
           Back to projects
-        </a>
+        </Link>
       </div>
 
       {/* Hero image */}
@@ -57,9 +58,8 @@ const ProjectDetailsPage = ({ project }) => {
         </div>
       </div>
 
-      <div className="">
         {/* Title + intro + floating detail card */}
-        <div className="grid grid-cols-1 gap-10 pt-10 md:grid-cols-3">
+        <div className="grid grid-cols-1 gap-10 md:grid-cols-3">
           <div className="md:col-span-2">
             <h1 className="text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">
               {hero?.title}
@@ -77,7 +77,7 @@ const ProjectDetailsPage = ({ project }) => {
             )}
 
             {about?.content && (
-              <p className="mt-5 text-sm leading-relaxed text-slate-500">
+              <p className="mt-5 leading-relaxed text-slate-500">
                 {about.content}
               </p>
             )}
@@ -87,7 +87,7 @@ const ProjectDetailsPage = ({ project }) => {
             <div className="rounded-3xl bg-teal-900 p-7 text-white md:col-span-1">
               <div className="divide-y divide-white/10">
                 {detailRows.map(({ label, value }) => (
-                  <div key={label} className="py-3.5 first:pt-0 last:pb-0">
+                  <div key={label} className="py-3.5 first:pt-0 last:pb-0 ">
                     <p className="text-xs font-medium text-slate-300">
                       {label} :
                     </p>
@@ -103,18 +103,9 @@ const ProjectDetailsPage = ({ project }) => {
 
         {/* Gallery */}
         {gallery.length > 0 && (
-          <div className="mt-14 grid grid-cols-1 gap-4 sm:grid-cols-2">
-            {gallery[0] && (
-              <div className="overflow-hidden rounded-3xl sm:row-span-2">
-                <img
-                  src={gallery[0].image}
-                  alt={gallery[0].alt || "Project image 1"}
-                  className="h-64 w-full object-cover transition-transform duration-500 hover:scale-105 sm:h-full"
-                />
-              </div>
-            )}
-            <div className="grid grid-cols-1 gap-4 sm:grid-rows-2">
-              {gallery.slice(1, 3).map((item, index) => (
+
+            <div className="grid grid-cols-1 gap-4 sm:grid-rows-2 lg:grid-cols-4">
+              {gallery.map((item, index) => (
                 <div key={index} className="overflow-hidden rounded-3xl">
                   <img
                     src={item.image}
@@ -124,16 +115,15 @@ const ProjectDetailsPage = ({ project }) => {
                 </div>
               ))}
             </div>
-          </div>
         )}
 
         {/* Challenge */}
         {challenges && (
-          <section className="mt-16">
+          <section >
             <h2 className="text-xl font-bold tracking-tight text-slate-900">
               {challenges.title}
             </h2>
-            <p className="mt-3 text-sm leading-relaxed text-slate-500">
+            <p className="mt-3  leading-relaxed text-slate-500">
               {challenges.description}
             </p>
           </section>
@@ -141,13 +131,13 @@ const ProjectDetailsPage = ({ project }) => {
 
         {/* Solution */}
         {solution && (
-          <section className="mt-14">
+          <section >
             <h2 className="text-xl font-bold tracking-tight text-slate-900">
               {solution.title}
             </h2>
 
             {solution.description && (
-              <p className="mt-3  text-sm leading-relaxed text-slate-500">
+              <p className="mt-3  leading-relaxed text-slate-500">
                 {solution.description}
               </p>
             )}
@@ -161,7 +151,7 @@ const ProjectDetailsPage = ({ project }) => {
                       strokeWidth={2.25}
                     />
 
-                    <span className="text-sm text-slate-600">{item}</span>
+                    <span className=" text-slate-600">{item}</span>
                   </div>
                 ))}
               </div>
@@ -171,11 +161,11 @@ const ProjectDetailsPage = ({ project }) => {
 
         {/* Results */}
         {results && (
-          <section className="mt-14">
+          <section>
             <h2 className="text-xl font-bold tracking-tight text-slate-900">
               {results.title}
             </h2>
-            <p className="mt-3 text-sm leading-relaxed text-slate-500">
+            <p className="mt-3 leading-relaxed text-slate-500">
               {results.description}
             </p>
           </section>
@@ -183,7 +173,7 @@ const ProjectDetailsPage = ({ project }) => {
 
         {/* Testimonial */}
         {testimonial && (
-          <section className="mt-16 border-t border-slate-100 pt-10 pb-16">
+          <section className="">
             <div className="flex flex-col gap-6 sm:flex-row">
               <div className="relative h-44 w-44 shrink-0 overflow-hidden rounded-3xl">
                 <img
@@ -222,11 +212,11 @@ const ProjectDetailsPage = ({ project }) => {
                   </span>
                 </div>
 
-                <p className="mt-4 max-w-2xl text-sm leading-relaxed text-slate-600">
+                <p className="mt-4 max-w-2xl leading-relaxed text-slate-600">
                   {testimonial.review}
                 </p>
 
-                <p className="mt-5 text-sm font-bold text-slate-900">
+                <p className="mt-5 font-bold text-slate-900">
                   {testimonial.name}
                 </p>
                 <p className="text-xs text-slate-400">
@@ -236,7 +226,6 @@ const ProjectDetailsPage = ({ project }) => {
             </div>
           </section>
         )}
-      </div>
     </PageWrapper>
   );
 };

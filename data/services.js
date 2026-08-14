@@ -38,7 +38,9 @@ export const services = [
     },
 
     hero: {
+      eyebrow: "Solar Panel Solutions",
       title: "Power Your Property with Smart Solar Energy Solutions",
+      highlight: "Smart Solar Energy Solutions",
 
       subtitle:
         "Reduce electricity costs, improve energy efficiency, and embrace a sustainable future with expertly designed solar power systems tailored to your property's unique energy needs.",
@@ -94,6 +96,7 @@ export const services = [
         alt: "Commercial solar panel installation project",
       },
     ],
+
     process: {
       title: "Our Process",
 
@@ -207,7 +210,9 @@ export const services = [
     },
 
     hero: {
+      eyebrow: "Solar Inverter Systems",
       title: "Smart Solar Inverter Systems for Maximum Energy Performance",
+      highlight: "Smart Solar Inverter Systems",
 
       subtitle:
         "Convert every unit of solar energy into reliable, usable electricity with intelligent inverter solutions designed to improve efficiency, enhance safety, and deliver dependable performance every day.",
@@ -376,8 +381,10 @@ export const services = [
     },
 
     hero: {
+      eyebrow: "Installation & Maintenance",
       title:
         "Professional Installation & Reliable Maintenance for Lasting Solar Performance",
+      highlight: "Professional Installation & Reliable Maintenance",
 
       subtitle:
         "A properly installed and well-maintained solar system delivers better performance, greater reliability, and long-term savings. Our experienced team ensures your investment continues generating clean energy efficiently year after year.",
@@ -531,3 +538,9 @@ export function getServiceCards() {
     ...service.card,
   }));
 }
+
+export const generateServiceDropdownMenu = () =>
+  services.map(({ id, card }) => ({
+    label: card.title,
+    href: `/services/${id}`,
+  }));
