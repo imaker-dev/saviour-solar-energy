@@ -2,7 +2,7 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   distDir: "dist",
-  allowedDevOrigins: ["https://savior.imaker.in"],
+  allowedDevOrigins: [""],
   /* config options here */
 };
 

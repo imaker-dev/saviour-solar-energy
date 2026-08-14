@@ -12,7 +12,7 @@ import { SITE_CONFIG } from "@/app/const";
 import PageWrapper from "@/app/components/page-wrapper";
 import Link from "next/link";
 import Image from "next/image";
-
+import { Eyebrow } from "@/app/components/section-header";
 
 const stats = [
   { value: "1500+", label: "Solar Installations" },
@@ -32,45 +32,42 @@ export default function AboutUsSection() {
   return (
     <PageWrapper>
       <div className="relative mx-auto grid  grid-cols-1 items-center gap-14 lg:grid-cols-2 lg:gap-16">
-{/* ---------- Image column ---------- */}
-<div className="relative mx-auto w-full max-w-md md:max-w-none lg:max-w-none">
-  {/* Frame */}
-  <div className="relative overflow-hidden rounded-[2.5rem] shadow-2xl shadow-slate-900/10">
-    <Image
-      src="/images/about-us.webp"
-      alt="Certified solar engineers installing rooftop solar panels for a residential property"
-      width={700}
-      height={850}
-      className="w-full object-cover lg:h-[520px]"
-    />
+        {/* ---------- Image column ---------- */}
+        <div className="relative mx-auto w-full max-w-md md:max-w-none lg:max-w-none">
+          {/* Frame */}
+          <div className="relative overflow-hidden rounded-[2.5rem] shadow-2xl shadow-slate-900/10">
+            <Image
+              src="/images/about-us.webp"
+              alt="Certified solar engineers installing rooftop solar panels for a residential property"
+              width={700}
+              height={850}
+              className="w-full object-cover lg:h-[520px]"
+            />
 
-    {/* Subtle gradient for tag legibility */}
-    <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-slate-900/70 via-slate-900/10 to-transparent" />
+            {/* Subtle gradient for tag legibility */}
+            <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-slate-900/70 via-slate-900/10 to-transparent" />
 
-    {/* Floating capability tags */}
-    <div className="hidden absolute inset-x-0 bottom-5 lg:flex flex-wrap justify-center gap-2 px-5">
-      {tags.map(({ label, icon: Icon }) => (
-        <span
-          key={label}
-          className="inline-flex items-center gap-1.5 rounded-full border border-white/40 bg-white/15 px-3.5 py-1.5 text-xs font-medium text-white backdrop-blur-md transition-colors hover:bg-white/25 sm:text-sm"
-        >
-          <Icon className="h-3.5 w-3.5 shrink-0" strokeWidth={2} />
-          {label}
-        </span>
-      ))}
-    </div>
-  </div>
-</div>
+            {/* Floating capability tags */}
+            <div className="hidden absolute inset-x-0 bottom-5 lg:flex flex-wrap justify-center gap-2 px-5">
+              {tags.map(({ label, icon: Icon }) => (
+                <span
+                  key={label}
+                  className="inline-flex items-center gap-1.5 rounded-full border border-white/40 bg-white/15 px-3.5 py-1.5 text-xs font-medium text-white backdrop-blur-md transition-colors hover:bg-white/25 sm:text-sm"
+                >
+                  <Icon className="h-3.5 w-3.5 shrink-0" strokeWidth={2} />
+                  {label}
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
 
         {/* ---------- Content column ---------- */}
         <div className="relative">
           {/* Eyebrow */}
-          <p className="mb-4 flex items-center gap-3">
-            <span className="h-px w-8 bg-primary-500" aria-hidden="true" />
-            <span className="text-xs font-bold uppercase tracking-[0.25em] text-slate-500">
-              About Us
-            </span>
-          </p>
+          <div className="mb-4 ">
+            <Eyebrow>About Us</Eyebrow>
+          </div>
 
           {/* Heading */}
           <h2 className="text-4xl font-bold leading-[1.1] tracking-tight text-slate-900 sm:text-5xl">

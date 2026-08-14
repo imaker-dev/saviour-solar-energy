@@ -15,6 +15,7 @@ export default function GujaratCoverageSection() {
           <SectionHeader
             badge="Gujarat Wide Coverage"
             title="Powering Every Corner of Gujarat"
+            highlight={'Gujarat'}
             description="From Kutch to Valsad, we design, install, maintain, and support premium solar solutions across every district of Gujarat."
             align="start"
           />

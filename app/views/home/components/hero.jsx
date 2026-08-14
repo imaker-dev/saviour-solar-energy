@@ -6,6 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import VideoOverlay from "@/app/components/video-overlay";
 import PlayButton from "@/app/components/play-button";
+import { Eyebrow } from "@/app/components/section-header";
 
 function GetInTouchBadge() {
   return (
@@ -60,24 +61,15 @@ const Hero = () => {
   const [playVideo, setPlayVideo] = useState(false);
   return (
     <PageWrapper
-      className="overflow-hidden"
-      containerClassName="pt-20 lg:pt-16"
+      className="overflow-hidden min-h-screen"
+      containerClassName="pt-24 lg:pt-20"
     >
       {/* ---------------- DECORATIVE BACKGROUND ---------------- */}
       <div className="absolute inset-0 overflow-hidden z-0">
-        {/* clean light base */}
         <div className="absolute inset-0 bg-gradient-to-b from-white via-gray-50 to-white" />
 
-        {/* dot grid — full hero coverage, no mask */}
-        <div
-          className="absolute inset-0 opacity-[0.18]"
-          style={{
-            backgroundImage: "radial-gradient(#3F4347 1px, transparent 1px)",
-            backgroundSize: "18px 18px",
-          }}
-        />
+        <div className="absolute inset-0 bg-[radial-gradient(#3F4347_1px,transparent_1px)] bg-[length:18px_18px] opacity-[0.18]" />
 
-        {/* very light glow blobs — subtle accents only */}
         <div
           className="absolute -top-20 -left-20 h-64 w-64 rounded-full bg-primary-400/10 
                blur-2xl animate-pulse [animation-duration:7s] motion-reduce:animate-none
@@ -91,23 +83,19 @@ const Hero = () => {
                lg:top-1/3 lg:-right-20 lg:h-[26rem] lg:w-[26rem]"
         />
 
-        {/* fade bottom into page */}
         <div className="absolute inset-x-0 bottom-0 h-24 sm:h-32 lg:h-40 bg-gradient-to-t from-gray-50 to-transparent" />
       </div>
 
       {/* ---------------- HERO CONTENT ---------------- */}
-      <div className="relative z-10 flex flex-col items-center gap-14 lg:flex-row lg:items-center lg:justify-between lg:gap-16">
+      <div className="relative z-10 grid gap-14 lg:grid-cols-2 lg:items-center lg:gap-16">
         {/* Left: copy */}
-        <div className="">
+        <div>
           <div className="mb-5 flex items-center gap-3">
-            <span className="text-xs font-semibold tracking-[0.35em] text-neutral-500">
-              RUSTED SOLAR EXPERTS SINCE 2004
-            </span>
+            <Eyebrow>RUSTED SOLAR EXPERTS SINCE 2004</Eyebrow>
           </div>
 
-          <h1 className="text-4xl font-extrabold leading-[1.12] text-[#3F4347] sm:text-5xl lg:text-[3.35rem]">
-            Solar Energy Solutions for
-            <br />
+          <h1 className="max-w-lg text-4xl font-semibold leading-[1.15] text-[#3F4347] sm:text-5xl lg:text-[3.35rem]">
+            Solar Energy Solutions for{" "}
             <span className="text-primary-500">Homes & Businesses</span>
           </h1>
 
@@ -139,12 +127,14 @@ const Hero = () => {
         </div>
 
         {/* Right: image */}
-        <div className="relative w-full max-w-lg">
-          <div className="relative aspect-square overflow-hidden rounded-[38px]">
+        <div className="relative mx-auto w-full lg:mx-0">
+          <div className="relative aspect-[4/3] w-full overflow-hidden rounded-[28px] sm:rounded-[38px]">
             <Image
               src="/Images/intro.webp"
               alt="Renewable Energy"
               fill
+              priority
+              sizes="(min-width: 1024px) 50vw, 100vw"
               className="object-cover"
             />
             <PlayButton
