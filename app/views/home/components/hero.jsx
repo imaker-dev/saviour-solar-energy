@@ -91,7 +91,7 @@ const Hero = () => {
         {/* Left: copy */}
         <div>
           <div className="mb-5 flex items-center gap-3">
-            <Eyebrow>RUSTED SOLAR EXPERTS SINCE 2004</Eyebrow>
+            <Eyebrow>TRUSTED SOLAR EXPERTS SINCE 2004</Eyebrow>
           </div>
 
           <h1 className="max-w-lg text-4xl font-semibold leading-[1.15] text-[#3F4347] sm:text-5xl lg:text-[3.35rem]">
@@ -124,23 +124,17 @@ const Hero = () => {
         </div>
 
         {/* Right: image */}
-        <div className="relative mx-auto w-full lg:mx-0">
-          <div className="relative aspect-[4/3] w-full overflow-hidden rounded-[28px] sm:rounded-[38px]">
+        <div className="relative mx-auto flex w-[90%] items-center justify-center lg:mx-0 lg:h-full">
+          <div className="relative aspect-square w-full overflow-hidden rounded-full">
             <Image
-              src="/Images/intro.webp"
+              src="/Images/new-hero.webp"
               alt="Renewable Energy"
               fill
               priority
               sizes="(min-width: 1024px) 50vw, 100vw"
-              className="object-cover"
-            />
-            <PlayButton
-              onClick={() => setPlayVideo(true)}
-              className="group absolute left-1/2 top-1/2 flex -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border-[3px] border-white backdrop-blur-sm transition-all duration-300 hover:scale-110"
+              className="object-cover animate-[spin_40s_linear_infinite] motion-reduce:animate-none"
             />
           </div>
-
-          <GetInTouchBadge />
         </div>
       </div>
 
