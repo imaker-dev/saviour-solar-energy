@@ -1,13 +1,13 @@
 import Link from "next/link";
-import { MapPin, Phone, Mail, ArrowUpRight } from "lucide-react";
+import { MapPin, Phone, Mail } from "lucide-react";
 import PageWrapper from "../page-wrapper";
 import { BRAND_LOGO, SITE_CONFIG } from "@/app/const";
 
 // Social Media SVG Icons
 const FacebookIcon = () => (
   <svg
-    width="16"
-    height="16"
+    width="15"
+    height="15"
     viewBox="0 0 24 24"
     fill="currentColor"
     xmlns="http://www.w3.org/2000/svg"
@@ -18,8 +18,8 @@ const FacebookIcon = () => (
 
 const TwitterIcon = () => (
   <svg
-    width="16"
-    height="16"
+    width="15"
+    height="15"
     viewBox="0 0 24 24"
     fill="currentColor"
     xmlns="http://www.w3.org/2000/svg"
@@ -30,8 +30,8 @@ const TwitterIcon = () => (
 
 const YoutubeIcon = () => (
   <svg
-    width="16"
-    height="16"
+    width="15"
+    height="15"
     viewBox="0 0 24 24"
     fill="currentColor"
     xmlns="http://www.w3.org/2000/svg"
@@ -42,8 +42,8 @@ const YoutubeIcon = () => (
 
 const InstagramIcon = () => (
   <svg
-    width="16"
-    height="16"
+    width="15"
+    height="15"
     viewBox="0 0 24 24"
     fill="currentColor"
     xmlns="http://www.w3.org/2000/svg"
@@ -81,6 +81,13 @@ const companyLinks = [
   { label: "Help Center", href: "/help-center" },
 ];
 
+const resourceLinks = [
+  { label: "Solar Savings Calculator", href: "/resources/calculator" },
+  { label: "Financing Options", href: "/resources/financing" },
+  { label: "Warranty & Support", href: "/resources/warranty" },
+  { label: "Installation Guide", href: "/resources/installation-guide" },
+];
+
 const socialLinks = [
   { label: "Facebook", href: "https://facebook.com", icon: FacebookIcon },
   { label: "Instagram", href: "https://instagram.com", icon: InstagramIcon },
@@ -96,11 +103,11 @@ const legalLinks = [
 
 function FooterHeading({ children }) {
   return (
-    <div className="mb-6">
-      <h3 className="text-[13px] font-semibold uppercase tracking-widest text-white">
+    <div className="mb-5">
+      <h3 className="text-[12px] font-bold uppercase tracking-[0.12em] text-gray-900">
         {children}
       </h3>
-      <div className="mt-3 h-0.5 w-9 rounded-full bg-white/15" />
+      <div className="mt-2.5 h-[3px] w-5 rounded-full bg-primary-500" />
     </div>
   );
 }
@@ -109,15 +116,16 @@ function FooterNavColumn({ title, links }) {
   return (
     <div>
       <FooterHeading>{title}</FooterHeading>
-      <ul className="space-y-4">
+      <ul className="space-y-3.5">
         {links.map(({ label, href }) => (
           <li key={label}>
             <Link
               href={href}
-              className="group inline-flex items-center text-[15px] text-slate-300 transition-colors duration-200 hover:text-[#71B843]"
+              className="group inline-flex items-center text-[14px] font-medium text-gray-500 transition-colors duration-200 hover:text-gray-900"
             >
-              <span className="transition-transform duration-200 group-hover:translate-x-0.5">
+              <span className="relative">
                 {label}
+                <span className="absolute -bottom-0.5 left-0 h-px w-0 bg-primary-500 transition-all duration-200 group-hover:w-full" />
               </span>
             </Link>
           </li>
@@ -132,27 +140,38 @@ export default function Footer() {
 
   return (
     <PageWrapper
-      className="relative overflow-hidden bg-secondary-500"
+      className="relative overflow-hidden bg-gray-50"
       topEdge
-      edgeClassName="text-secondary-500"
+      edgeClassName="text-gray-50"
     >
-      <div>
-        <div className="grid grid-cols-1 gap-x-10 gap-y-14 sm:grid-cols-2 lg:grid-cols-[20rem_9rem_13rem_8rem_17rem] lg:items-start lg:justify-between lg:gap-x-8 lg:gap-y-0">
-          {/* Info: logo, description, socials */}
-          <div className="max-w-md sm:col-span-2 lg:col-span-1 lg:max-w-[20rem]">
+      {/* subtle top hairline */}
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-gray-900/10 to-transparent" />
+
+      <div className="relative">
+        {/* Top strip: brand + CTA */}
+        <div className="flex flex-col items-start justify-between gap-8 border-b border-gray-200 pb-10 lg:flex-row lg:items-center">
+          <div className="flex max-w-lg flex-col gap-4 lg:flex-row lg:items-center lg:gap-5">
             <Link
               href="/"
-              className="inline-flex w-12 items-center gap-2.5 lg:w-16"
+              className="inline-flex w-11 flex-shrink-0 items-center gap-2.5 lg:w-14"
             >
               <img src={BRAND_LOGO} alt="logo" />
             </Link>
-
-            <p className="mt-5 max-w-sm text-[15px] leading-7 text-slate-300">
-              We provide modern and reliable solar energy solutions to help you
-              reduce electricity costs and build a sustainable future.
+            <span className="hidden h-9 w-px flex-shrink-0 bg-gray-200 lg:block" />
+            <p className="max-w-sm text-[14px] leading-6 text-gray-500">
+              Modern, reliable solar energy solutions to help you reduce
+              electricity costs and build a sustainable future.
             </p>
+          </div>
 
-            <div className="mt-6 flex items-center gap-3">
+          <div className="flex flex-shrink-0 items-center gap-3">
+            <Link
+              href="/contact"
+              className="btn btn-primary btn-shine"
+            >
+              Get a free quote
+            </Link>
+            <div className="flex items-center gap-2">
               {socialLinks.map(({ label, href, icon: Icon }) => (
                 <a
                   key={label}
@@ -160,76 +179,68 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={label}
-                  className="flex h-10 w-10 items-center justify-center rounded-full border border-white/15 text-white/90 transition-all duration-200 hover:border-[#71B843]/40 hover:bg-[#71B843]/10 hover:text-[#71B843]"
+                  className="flex h-9 w-9 items-center justify-center rounded-full border border-gray-200 bg-white text-gray-500 shadow-sm transition-all duration-200 hover:border-primary-500/40 hover:text-primary-500"
                 >
-                  <Icon className="h-4.5 w-4.5" strokeWidth={1.75} />
+                  <Icon />
                 </a>
               ))}
             </div>
           </div>
+        </div>
 
+        {/* Link columns */}
+        <div className="grid grid-cols-2 gap-x-8 gap-y-10 py-12 sm:grid-cols-3 lg:grid-cols-[repeat(4,minmax(0,1fr))_18rem]">
           <FooterNavColumn title="Quick Links" links={quickLinks} />
           <FooterNavColumn title="Services" links={serviceLinks} />
           <FooterNavColumn title="Company" links={companyLinks} />
+          <FooterNavColumn title="Resources" links={resourceLinks} />
 
-          {/* Get in Touch */}
-          <div className="max-w-md lg:max-w-[17rem]">
+          <div className="col-span-2 sm:col-span-3 lg:col-span-1">
             <FooterHeading>Get in Touch</FooterHeading>
-            <ul className="space-y-4">
+            <ul className="grid grid-cols-1 gap-3.5 sm:grid-cols-3 sm:gap-6 lg:grid-cols-1 lg:gap-3.5">
               <li>
                 <a
                   href={SITE_CONFIG.map.url}
-                  className="flex items-start gap-3 text-[15px] text-slate-300 transition-colors duration-200 hover:text-[#71B843]"
+                  className="group flex items-start gap-3 text-[14px] font-medium text-gray-500 transition-colors duration-200 hover:text-gray-900"
                 >
-                  <span className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-white/10">
-                    <MapPin className="h-4.5 w-4.5" strokeWidth={1.75} />
-                  </span>
-                  <span>
-                    {SITE_CONFIG.address.full}
-                  </span>
+                  <MapPin
+                    className="mt-0.5 h-4 w-4 flex-shrink-0 text-gray-400 transition-colors duration-200 group-hover:text-primary-500"
+                    strokeWidth={1.75}
+                  />
+                  <span className="leading-5">{SITE_CONFIG.address.full}</span>
                 </a>
               </li>
               <li>
                 <a
                   href="tel:+8801234567890"
-                  className="flex items-center gap-3 text-[15px] text-slate-300 transition-colors duration-200 hover:text-[#71B843]"
+                  className="group flex items-center gap-3 text-[14px] font-medium text-gray-500 transition-colors duration-200 hover:text-gray-900"
                 >
-                  <span className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-white/10">
-                    <Phone className="h-4.5 w-4.5" strokeWidth={1.75} />
-                  </span>
+                  <Phone
+                    className="h-4 w-4 flex-shrink-0 text-gray-400 transition-colors duration-200 group-hover:text-primary-500"
+                    strokeWidth={1.75}
+                  />
                   +880 1234-567890
                 </a>
               </li>
               <li>
                 <a
                   href="mailto:info@savior.com"
-                  className="flex items-center gap-3 text-[15px] text-slate-300 transition-colors duration-200 hover:text-[#71B843]"
+                  className="group flex items-center gap-3 text-[14px] font-medium text-gray-500 transition-colors duration-200 hover:text-gray-900"
                 >
-                  <span className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-white/10">
-                    <Mail className="h-4.5 w-4.5" strokeWidth={1.75} />
-                  </span>
+                  <Mail
+                    className="h-4 w-4 flex-shrink-0 text-gray-400 transition-colors duration-200 group-hover:text-primary-500"
+                    strokeWidth={1.75}
+                  />
                   info@savior.com
                 </a>
               </li>
             </ul>
-
-            <Link
-              href="/contact"
-              className="mt-6 btn btn-primary btn-shine"
-            >
-              Get a free quote
-            </Link>
-
-
           </div>
         </div>
 
-        {/* Divider */}
-        <div className="mt-14 border-t border-white/15 sm:mt-16" />
-
         {/* Bottom bar */}
-        <div className="flex flex-col items-center justify-between gap-4 py-6 sm:flex-row">
-          <p className="order-2 text-[13px] text-slate-400 sm:order-1">
+        <div className="flex flex-col items-center justify-between gap-4 border-t border-gray-200 py-6 sm:flex-row">
+          <p className="order-2 text-[12.5px] text-gray-400 sm:order-1">
             © {year} Savior. All rights reserved.
           </p>
           <ul className="order-1 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 sm:order-2">
@@ -237,7 +248,7 @@ export default function Footer() {
               <li key={label}>
                 <Link
                   href={href}
-                  className="text-[13px] text-slate-400 transition-colors duration-200 hover:text-white/80"
+                  className="text-[12.5px] text-gray-400 transition-colors duration-200 hover:text-gray-700"
                 >
                   {label}
                 </Link>
@@ -248,11 +259,11 @@ export default function Footer() {
       </div>
 
       {/* Watermark wordmark */}
-      <div className="relative select-none overflow-hidden">
-        <p className="translate-y-[0.18em] text-center text-[18vw] font-extrabold leading-none tracking-tight text-white/[0.04] sm:text-[16vw] lg:text-[13vw]">
+      {/* <div className="relative select-none overflow-hidden">
+        <p className="translate-y-[0.18em] text-center text-[18vw] font-extrabold leading-none tracking-tight text-gray-900/[0.03] sm:text-[16vw] lg:text-[13vw]">
           SAVIOR
         </p>
-      </div>
+      </div> */}
     </PageWrapper>
   );
 }

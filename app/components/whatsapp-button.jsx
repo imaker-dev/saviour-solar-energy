@@ -10,38 +10,55 @@ const WhatsAppButton = ({
 }) => {
   const [isHovered, setIsHovered] = useState(false);
 
-  const positionClasses = position === "bottom-left" ? "left-6" : "right-6";
+  const positionClasses =
+    position === "bottom-left" ? "left-6" : "right-6";
 
   const handleClick = () => {
     const cleanedNumber = phoneNumber.replace(/[^\d]/g, "");
     const encodedMessage = encodeURIComponent(message);
-    const url = `https://wa.me/${cleanedNumber}?text=${encodedMessage}`;
-    window.open(url, "_blank");
+
+    window.open(
+      `https://wa.me/${cleanedNumber}?text=${encodedMessage}`,
+      "_blank"
+    );
   };
 
   return (
-    <button
-      onClick={handleClick}
+    <div
+      className={`fixed bottom-6 ${positionClasses} z-50 h-14 w-14`}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      aria-label="Chat on WhatsApp"
-      className={`fixed bottom-6 ${positionClasses} z-50 flex items-center rounded-full bg-[#25D366] px-4 py-3 text-white shadow-lg transition-all duration-500 hover:bg-[#20BD5A] hover:shadow-xl`}
     >
-      <img
-        src="/Images/whatsapp.png"
-        alt="WhatsApp Icon"
-        className="h-6 w-6 shrink-0"
-      />
-      <span
-        className={`overflow-hidden whitespace-nowrap text-sm font-medium transition-all duration-500 ${
+      <button
+        onClick={handleClick}
+        aria-label="Chat on WhatsApp"
+        className={`absolute bottom-0 flex h-14 items-center overflow-hidden rounded-full bg-[#25D366] text-white shadow-lg transition-[width] duration-300 ease-out hover:bg-[#20BD5A] hover:shadow-xl ${
+          position === "bottom-left"
+            ? "left-0"
+            : "right-0"
+        } ${
           isHovered
-            ? "max-w-[160px] ml-2 opacity-100"
-            : "max-w-0 ml-0 opacity-0"
+            ? "w-[150px] px-4"
+            : "w-14 justify-center px-0"
         }`}
       >
-        Chat with us
-      </span>
-    </button>
+        <img
+          src="/Images/whatsapp.png"
+          alt="WhatsApp Icon"
+          className="h-7 w-7 shrink-0"
+        />
+
+        <span
+          className={`whitespace-nowrap text-sm font-medium transition-all duration-300 ${
+            isHovered
+              ? "ml-2 max-w-[160px] opacity-100"
+              : "ml-0 max-w-0 opacity-0"
+          }`}
+        >
+          Chat with us
+        </span>
+      </button>
+    </div>
   );
 };
 
