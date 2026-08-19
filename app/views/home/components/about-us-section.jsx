@@ -37,7 +37,7 @@ export default function AboutUsSection() {
           {/* Frame */}
           <div className="relative overflow-hidden rounded-[2.5rem] shadow-2xl shadow-slate-900/10">
             <Image
-              src="/images/about-us.webp"
+              src="/Images/about-us.webp"
               alt="Certified solar engineers installing rooftop solar panels for a residential property"
               width={700}
               height={850}
