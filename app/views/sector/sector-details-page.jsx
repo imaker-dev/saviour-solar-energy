@@ -298,7 +298,7 @@ const CtaSection = ({ cta }) => {
           {cta.primaryButton && (
             <a
               href={cta.primaryButton.href}
-              className="group inline-flex items-center gap-2 rounded-full bg-primary-500 px-6 py-3 text-sm font-semibold text-white transition hover:bg-primary-400"
+              className="group btn btn-lg btn-primary"
             >
               {cta.primaryButton.text}
               <ArrowRight className="h-4 w-4 transition group-hover:translate-x-0.5" />
@@ -307,7 +307,7 @@ const CtaSection = ({ cta }) => {
           {cta.secondaryButton && (
             <a
               href={cta.secondaryButton.href}
-              className="inline-flex items-center gap-2 rounded-full border border-white/20 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10"
+              className="btn btn-lg btn-secondary"
             >
               {cta.secondaryButton.text}
             </a>

@@ -36,55 +36,6 @@ export default function ContactPage() {
     <>
       <PageHeader title={"Contact Us"} />
 
-      <PageWrapper className="bg-white">
-        {/* ── Header ── */}
-        <SectionHeader
-          badge={"Contact Us"}
-          title={`Let's start a conversation`}
-          description={
-            " Our team typically responds within 2 hours on working days."
-          }
-        />
-
-        {/* Contact Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-gray-100 border border-gray-100">
-          {contacts.map(({ icon: Icon, label, values, href }) => (
-            <a
-              key={label}
-              href={href ?? undefined}
-              target={href?.startsWith("http") ? "_blank" : undefined}
-              rel="noopener noreferrer"
-              className={`group bg-white flex flex-col gap-3 p-6 transition-colors duration-150 ${href ? "hover:bg-gray-50 cursor-pointer" : "cursor-default"}`}
-            >
-              {/* Icon */}
-              <div className="w-9 h-9 rounded-full border border-gray-200 flex items-center justify-center group-hover:border-primary-300 group-hover:bg-primary-50 transition-colors duration-150">
-                <Icon
-                  size={15}
-                  className="text-gray-400 group-hover:text-primary-500 transition-colors duration-150"
-                />
-              </div>
-
-              {/* Label */}
-              <p className="text-[10px] font-semibold text-gray-400 uppercase tracking-[0.13em]">
-                {label}
-              </p>
-
-              {/* Values */}
-              <div className="flex flex-col gap-0.5">
-                {values.map((v, i) => (
-                  <p
-                    key={i}
-                    className={`leading-snug ${i === 0 ? "text-[13.5px] font-semibold text-gray-950" : "text-[12px] text-gray-400"}`}
-                  >
-                    {v}
-                  </p>
-                ))}
-              </div>
-            </a>
-          ))}
-        </div>
-      </PageWrapper>
-
       <ContactSection />
 
       <PageWrapper>

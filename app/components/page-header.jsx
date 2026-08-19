@@ -11,7 +11,7 @@ const formatSegment = (segment) =>
     .replace(/-/g, " ")
     .replace(/\b\w/g, (char) => char.toUpperCase());
 
-export default function SectionHeader({
+export default function PageHeader({
   title,
   breadcrumbs,
   backgroundImage = "/Images/page-header-bg.png", // Change this to your image path

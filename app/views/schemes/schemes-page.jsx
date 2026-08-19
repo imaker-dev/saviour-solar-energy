@@ -4,7 +4,7 @@ import { useState } from "react";
 import { ArrowUpRight, Check, ChevronDown, Sun } from "lucide-react";
 import PageWrapper from "@/app/components/page-wrapper";
 import PageHeader from "../../components/page-header";
-
+import { Eyebrow } from "@/app/components/section-header";
 const slabs = [
   { kw: "1 kW", subsidy: "₹30,000", monthly: "₹1,200" },
   { kw: "2 kW", subsidy: "₹60,000", monthly: "₹2,400" },
@@ -54,14 +54,9 @@ export default function SchemesPage() {
       >
         {/* Left */}
         <div>
-          <div className="text-xs font-semibold text-primary-500 uppercase tracking-widest mb-6">
-            Solar Subsidy
-          </div>
+          <Eyebrow>Solar Subsidy</Eyebrow>
 
-          <h1
-            className="text-4xl sm:text-5xl xl:text-[56px] font-bold text-gray-950 leading-[1.1] tracking-tight mb-5"
-            style={{ fontFamily: "'Instrument Serif', serif" }}
-          >
+          <h1 className="text-4xl sm:text-5xl xl:text-[56px] font-semibold text-gray-950 leading-[1.1] tracking-tight mb-5">
             Get up to <em className="not-italic text-primary-500">₹78,000</em>{" "}
             subsidy on rooftop solar
           </h1>
@@ -76,7 +71,7 @@ export default function SchemesPage() {
               href="https://consumer.pmsuryaghar.gov.in/consumer/#/login"
               target="_blank"
               rel="noopener noreferrer"
-              className="btn btn-primary "
+              className="btn btn-lg btn-primary "
             >
               Apply for Subsidy
               <ArrowUpRight size={15} />
@@ -85,7 +80,7 @@ export default function SchemesPage() {
               href="https://pmsuryaghar.gov.in/#/"
               target="_blank"
               rel="noopener noreferrer"
-              className="btn border border-gray-200 hover:border-gray-300 text-gray-700"
+              className="btn btn-lg btn-secondary"
             >
               Official Scheme Info
               <ArrowUpRight size={15} />

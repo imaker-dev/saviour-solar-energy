@@ -84,7 +84,7 @@ export default function SolarSubsidyTeaser() {
         {/* CTA */}
         <Link
           href="/schemes"
-          className="btn btn-primary inline-flex items-center gap-2"
+          className="btn btn-lg btn-primary "
         >
           View subsidy details
           <ArrowRight size={16} />

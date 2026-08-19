@@ -6,6 +6,7 @@ import PageWrapper from "@/app/components/page-wrapper";
 import * as Yup from "yup";
 import { useFormik } from "formik";
 import { Check, Loader, Send } from "lucide-react";
+import { Eyebrow } from "@/app/components/section-header";
 
 const TABS = ["Residential", "Housing", "Commercial"];
 
@@ -122,9 +123,8 @@ export default function ContactSection() {
         <div>
           {/* Header */}
           <div className="mb-8">
-            <p className="text-sm font-medium text-gray-500 uppercase tracking-wider mb-3">
-              CONTACT US
-            </p>
+            <Eyebrow>CONTACT US</Eyebrow>
+           
             <h2 className="text-3xl lg:text-4xl font-normal text-gray-900 mb-3">
               Let's talk about your future project
             </h2>
@@ -292,7 +292,7 @@ export default function ContactSection() {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="btn btn-primary w-full md:w-auto disabled:opacity-50 flex items-center justify-center gap-2"
+                className="btn btn-lg btn-primary w-full md:w-auto disabled:opacity-50 flex items-center justify-center gap-2"
               >
                 {isSubmitting ? (
                   <>

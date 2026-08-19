@@ -1,12 +1,13 @@
 import Link from "next/link";
-import { Sun, MapPin, Phone, Mail, ArrowUpRight } from "lucide-react";
+import { MapPin, Phone, Mail, ArrowUpRight } from "lucide-react";
 import PageWrapper from "../page-wrapper";
+import { BRAND_LOGO, SITE_CONFIG } from "@/app/const";
 
 // Social Media SVG Icons
 const FacebookIcon = () => (
   <svg
-    width="15"
-    height="15"
+    width="16"
+    height="16"
     viewBox="0 0 24 24"
     fill="currentColor"
     xmlns="http://www.w3.org/2000/svg"
@@ -17,8 +18,8 @@ const FacebookIcon = () => (
 
 const TwitterIcon = () => (
   <svg
-    width="15"
-    height="15"
+    width="16"
+    height="16"
     viewBox="0 0 24 24"
     fill="currentColor"
     xmlns="http://www.w3.org/2000/svg"
@@ -29,8 +30,8 @@ const TwitterIcon = () => (
 
 const YoutubeIcon = () => (
   <svg
-    width="15"
-    height="15"
+    width="16"
+    height="16"
     viewBox="0 0 24 24"
     fill="currentColor"
     xmlns="http://www.w3.org/2000/svg"
@@ -41,8 +42,8 @@ const YoutubeIcon = () => (
 
 const InstagramIcon = () => (
   <svg
-    width="15"
-    height="15"
+    width="16"
+    height="16"
     viewBox="0 0 24 24"
     fill="currentColor"
     xmlns="http://www.w3.org/2000/svg"
@@ -52,7 +53,14 @@ const InstagramIcon = () => (
 );
 
 const quickLinks = [
-  { label: "Help Center", href: "/help-center" },
+  { label: "Home", href: "/" },
+  { label: "Our Projects", href: "/projects" },
+  { label: "Testimonials", href: "/testimonials" },
+  { label: "FAQs", href: "/faqs" },
+  { label: "Contact Us", href: "/contact" },
+];
+
+const serviceLinks = [
   {
     label: "Solar Panel Installation",
     href: "/services/solar-panel-installation",
@@ -62,13 +70,15 @@ const quickLinks = [
     label: "Residential & Commercial",
     href: "/services/residential-commercial",
   },
+  { label: "Maintenance & Repair", href: "/services/maintenance-repair" },
+  { label: "Solar Consultation", href: "/services/consultation" },
 ];
 
 const companyLinks = [
   { label: "About us", href: "/about" },
-  { label: "Help Center", href: "/help-center" },
   { label: "Careers", href: "/careers" },
   { label: "Blog", href: "/blog" },
+  { label: "Help Center", href: "/help-center" },
 ];
 
 const socialLinks = [
@@ -84,38 +94,63 @@ const legalLinks = [
   { label: "Cookies Policy", href: "/cookies-policy" },
 ];
 
+function FooterHeading({ children }) {
+  return (
+    <div className="mb-6">
+      <h3 className="text-[13px] font-semibold uppercase tracking-widest text-white">
+        {children}
+      </h3>
+      <div className="mt-3 h-0.5 w-9 rounded-full bg-white/15" />
+    </div>
+  );
+}
+
+function FooterNavColumn({ title, links }) {
+  return (
+    <div>
+      <FooterHeading>{title}</FooterHeading>
+      <ul className="space-y-4">
+        {links.map(({ label, href }) => (
+          <li key={label}>
+            <Link
+              href={href}
+              className="group inline-flex items-center text-[15px] text-slate-300 transition-colors duration-200 hover:text-[#71B843]"
+            >
+              <span className="transition-transform duration-200 group-hover:translate-x-0.5">
+                {label}
+              </span>
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
 export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <PageWrapper className="relative overflow-hidden bg-secondary-500" topEdge edgeClassName="text-secondary-500">
+    <PageWrapper
+      className="relative overflow-hidden bg-secondary-500"
+      topEdge
+      edgeClassName="text-secondary-500"
+    >
       <div>
-        <div className="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-[35%_1fr_1fr_1fr] lg:gap-10">
-          {/* Brand */}
-          <div className="max-w-md">
-            <Link href="/" className="inline-flex items-center gap-2.5">
-              <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[#71B843]/15 ring-1 ring-[#71B843]/30">
-                <Sun className="h-5 w-5 text-[#71B843]" strokeWidth={2} />
-              </span>
-              <span className="text-xl font-semibold tracking-tight text-white">
-                Savior
-              </span>
+        <div className="grid grid-cols-1 gap-x-10 gap-y-14 sm:grid-cols-2 lg:grid-cols-[20rem_9rem_13rem_8rem_17rem] lg:items-start lg:justify-between lg:gap-x-8 lg:gap-y-0">
+          {/* Info: logo, description, socials */}
+          <div className="max-w-md sm:col-span-2 lg:col-span-1 lg:max-w-[20rem]">
+            <Link
+              href="/"
+              className="inline-flex w-12 items-center gap-2.5 lg:w-16"
+            >
+              <img src={BRAND_LOGO} alt="logo" />
             </Link>
 
-            <p className="mt-4 max-w-sm text-sm leading-7 text-slate-200">
+            <p className="mt-5 max-w-sm text-[15px] leading-7 text-slate-300">
               We provide modern and reliable solar energy solutions to help you
               reduce electricity costs and build a sustainable future.
             </p>
-
-            <div className="mt-6 flex items-start gap-2.5 text-sm text-slate-200">
-              <MapPin
-                className="mt-0.5 h-4 w-4 flex-shrink-0 text-[#71B843]"
-                strokeWidth={1.75}
-              />
-              <span>
-                123 Sunrise Boulevard, Bopal, Ahmedabad, Gujarat 380058
-              </span>
-            </div>
 
             <div className="mt-6 flex items-center gap-3">
               {socialLinks.map(({ label, href, icon: Icon }) => (
@@ -125,65 +160,42 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={label}
-                  className="flex h-9 w-9 items-center justify-center rounded-full border border-white/15 text-white/90 transition-all duration-200 hover:border-[#71B843]/40 hover:bg-[#71B843]/10 hover:text-[#71B843]"
+                  className="flex h-10 w-10 items-center justify-center rounded-full border border-white/15 text-white/90 transition-all duration-200 hover:border-[#71B843]/40 hover:bg-[#71B843]/10 hover:text-[#71B843]"
                 >
-                  <Icon className="h-4 w-4" strokeWidth={1.75} />
+                  <Icon className="h-4.5 w-4.5" strokeWidth={1.75} />
                 </a>
               ))}
             </div>
           </div>
 
-          {/* Quick Links */}
-          <div className="">
-            <h3 className="text-xs font-semibold uppercase tracking-widest text-white">
-              Quick Links
-            </h3>
-            <ul className="mt-6 space-y-4">
-              {quickLinks.map(({ label, href }) => (
-                <li key={label}>
-                  <Link
-                    href={href}
-                    className="text-sm text-slate-200 transition-colors duration-200 hover:text-[#71B843]"
-                  >
-                    {label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Company */}
-          <div className="">
-            <h3 className="text-xs font-semibold uppercase tracking-widest text-white">
-              Company
-            </h3>
-            <ul className="mt-6 space-y-4">
-              {companyLinks.map(({ label, href }) => (
-                <li key={label}>
-                  <Link
-                    href={href}
-                    className="text-sm text-slate-200 transition-colors duration-200 hover:text-[#71B843]"
-                  >
-                    {label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+          <FooterNavColumn title="Quick Links" links={quickLinks} />
+          <FooterNavColumn title="Services" links={serviceLinks} />
+          <FooterNavColumn title="Company" links={companyLinks} />
 
           {/* Get in Touch */}
-          <div className="max-w-md">
-            <h3 className="text-xs font-semibold uppercase tracking-widest text-white">
-              Get in Touch
-            </h3>
-            <ul className="mt-5 space-y-4">
+          <div className="max-w-md lg:max-w-[17rem]">
+            <FooterHeading>Get in Touch</FooterHeading>
+            <ul className="space-y-4">
+              <li>
+                <a
+                  href={SITE_CONFIG.map.url}
+                  className="flex items-start gap-3 text-[15px] text-slate-300 transition-colors duration-200 hover:text-[#71B843]"
+                >
+                  <span className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-white/10">
+                    <MapPin className="h-4.5 w-4.5" strokeWidth={1.75} />
+                  </span>
+                  <span>
+                    {SITE_CONFIG.address.full}
+                  </span>
+                </a>
+              </li>
               <li>
                 <a
                   href="tel:+8801234567890"
-                  className="flex items-center gap-3 text-sm text-slate-200 transition-colors duration-200 hover:text-[#71B843]"
+                  className="flex items-center gap-3 text-[15px] text-slate-300 transition-colors duration-200 hover:text-[#71B843]"
                 >
-                  <span className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full bg-white/10">
-                    <Phone className="h-4 w-4" strokeWidth={1.75} />
+                  <span className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-white/10">
+                    <Phone className="h-4.5 w-4.5" strokeWidth={1.75} />
                   </span>
                   +880 1234-567890
                 </a>
@@ -191,10 +203,10 @@ export default function Footer() {
               <li>
                 <a
                   href="mailto:info@savior.com"
-                  className="flex items-center gap-3 text-sm text-slate-200 transition-colors duration-200 hover:text-[#71B843]"
+                  className="flex items-center gap-3 text-[15px] text-slate-300 transition-colors duration-200 hover:text-[#71B843]"
                 >
-                  <span className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full bg-white/10">
-                    <Mail className="h-4 w-4" strokeWidth={1.75} />
+                  <span className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-white/10">
+                    <Mail className="h-4.5 w-4.5" strokeWidth={1.75} />
                   </span>
                   info@savior.com
                 </a>
@@ -203,11 +215,12 @@ export default function Footer() {
 
             <Link
               href="/contact"
-              className="mt-6 inline-flex items-center gap-1.5 rounded-full bg-[#71B843] px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-[#71B843]/30 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl"
+              className="mt-6 btn btn-primary btn-shine"
             >
               Get a free quote
-              <ArrowUpRight className="h-4 w-4" strokeWidth={2.25} />
             </Link>
+
+
           </div>
         </div>
 
@@ -216,7 +229,7 @@ export default function Footer() {
 
         {/* Bottom bar */}
         <div className="flex flex-col items-center justify-between gap-4 py-6 sm:flex-row">
-          <p className="order-2 text-xs text-slate-400 sm:order-1">
+          <p className="order-2 text-[13px] text-slate-400 sm:order-1">
             © {year} Savior. All rights reserved.
           </p>
           <ul className="order-1 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 sm:order-2">
@@ -224,7 +237,7 @@ export default function Footer() {
               <li key={label}>
                 <Link
                   href={href}
-                  className="text-xs text-slate-400 transition-colors duration-200 hover:text-white/80"
+                  className="text-[13px] text-slate-400 transition-colors duration-200 hover:text-white/80"
                 >
                   {label}
                 </Link>

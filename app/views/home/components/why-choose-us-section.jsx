@@ -39,21 +39,10 @@ export default function WhyChooseUsSection() {
       <div className="relative overflow-hidden">
         <SectionHeader
           badge="Why Choose Us"
-          title={
-            <>
-              Why Choose Our <br />{" "}
-              <HighlightText>Green Energy Solutions</HighlightText>
-            </>
+          title={" Why Choose Our Green Energy Solutions"
           }
           highlight="Green Energy Solutions"
-          actions={
-            <Link
-              href="/contact"
-              className="inline-flex items-center justify-center rounded-full bg-primary-500 px-9 py-4 text-sm font-semibold text-white transition-all hover:-translate-y-0.5 hover:bg-primary-600 "
-            >
-              Get A Quote
-            </Link>
-          }
+          
         />
 
         {/* Image + features */}

@@ -29,13 +29,10 @@ const ServiceCard = ({ service }) => {
         {/* Read more — reveals on hover */}
         <div className="mt-4 grid transition-all duration-300 ease-out grid-rows-[0fr] opacity-0 group-hover:grid-rows-[1fr] group-hover:opacity-100">
           <div className="overflow-hidden">
-            <Link
-              href={`/services/${service.id}`}
-              className="inline-flex items-center gap-3 rounded-full bg-primary-500 py-1.5 pl-4 pr-1.5 text-sm font-semibold text-white transition-colors hover:bg-primary-600"
-            >
+            <Link href={`/services/${service.id}`} className="btn btn-primary">
               Read more
-              <span className="flex h-7 w-7 items-center justify-center rounded-full bg-white/20">
-                <ArrowRight className="h-3.5 w-3.5 text-white" />
+              <span className="btn-icon text-primary-500">
+                <ArrowRight className="h-3.5 w-3.5 " />
               </span>
             </Link>
           </div>

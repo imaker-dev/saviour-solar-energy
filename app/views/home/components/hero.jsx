@@ -109,7 +109,7 @@ const Hero = () => {
           <div className="mt-9 flex flex-wrap items-center gap-8">
             <Link
               href="/contact"
-              className="btn btn-primary btn-shine group py-2"
+              className="btn btn-lg btn-primary btn-shine group"
             >
               Get Free Quote
               <span className="btn-icon">
@@ -117,10 +117,7 @@ const Hero = () => {
               </span>
             </Link>
 
-            <Link
-              href="/services"
-              className="text-sm font-semibold text-[#3F4347] underline decoration-[#3F4347]/40 decoration-2 underline-offset-4 hover:decoration-[#3F4347] focus:outline-none"
-            >
+            <Link href="/services" className="btn btn-lg btn-secondary">
               View All Services
             </Link>
           </div>

@@ -12,7 +12,7 @@ import { SITE_CONFIG } from "@/app/const";
 import PageWrapper from "@/app/components/page-wrapper";
 import Link from "next/link";
 import Image from "next/image";
-import { Eyebrow } from "@/app/components/section-header";
+import SectionHeader from "@/app/components/section-header";
 
 const stats = [
   { value: "1500+", label: "Solar Installations" },
@@ -64,25 +64,16 @@ export default function AboutUsSection() {
 
         {/* ---------- Content column ---------- */}
         <div className="relative">
-          {/* Eyebrow */}
-          <div className="mb-4 ">
-            <Eyebrow>About Us</Eyebrow>
-          </div>
-
-          {/* Heading */}
-          <h2 className="text-4xl font-bold leading-[1.1] tracking-tight text-slate-900 sm:text-5xl">
-            Powering Homes with
-            <br />
-            <span className="text-primary-500">Clean Solar Energy</span>
-          </h2>
-
-          {/* Body copy */}
-          <p className="mt-6 text-base leading-relaxed text-slate-500 sm:text-[17px]">
-            We design, install, and maintain high-efficiency solar panel systems
+          <SectionHeader
+            badge={"About Us"}
+            title={"Powering Homes with Clean Solar Energy"}
+            highlight={"Clean Solar Energy"}
+            description={` We design, install, and maintain high-efficiency solar panel systems
             that lower electricity bills and reduce your home or business's
             carbon footprint. Our certified solar installers deliver dependable
-            systems backed by long-term warranties and ongoing support.
-          </p>
+            systems backed by long-term warranties and ongoing support.`}
+            align={"start"}
+          />
 
           {/* Stats */}
           <div className="mt-10 flex divide-x divide-slate-200">
@@ -103,7 +94,7 @@ export default function AboutUsSection() {
 
           {/* CTA + trust strip */}
           <div className="mt-10 flex flex-wrap items-center gap-6 border-t border-slate-100 pt-8">
-            <Link href="/about" className="btn btn-primary btn-shine">
+            <Link href="/about" className="btn btn-lg btn-primary btn-shine">
               Discover Our Story
               <div className="btn-icon">
                 <ArrowRight className="h-4 w-4 text-primary-500 transition-transform group-hover:translate-x-0.5" />
@@ -111,26 +102,28 @@ export default function AboutUsSection() {
             </Link>
 
             {/* Phone */}
-            <div className="flex items-center gap-3">
-              <div className="w-11 h-11 rounded-full border border-primary-500/40 flex items-center justify-center shrink-0">
+            <a
+              href={`tel:${SITE_CONFIG.contact.phone}`}
+              className="flex items-center gap-3"
+            >
+              <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-primary-500/40">
                 <Phone
                   size={17}
                   className="text-primary-500"
                   strokeWidth={1.8}
                 />
               </div>
+
               <div>
-                <p className="text-gray-400 text-xs mb-0.5">
+                <p className="mb-0.5 text-xs text-gray-400">
                   Have any questions?
                 </p>
-                <a
-                  href={`tel:${SITE_CONFIG.contact.phone}`}
-                  className="text-[#1a1a1a] text-base font-bold"
-                >
+
+                <p className="text-base font-bold text-[#1a1a1a]">
                   {SITE_CONFIG.contact.phone}
-                </a>
+                </p>
               </div>
-            </div>
+            </a>
           </div>
         </div>
       </div>

@@ -2,7 +2,7 @@ import PageWrapper from "@/app/components/page-wrapper";
 import SectionHeader from "@/app/components/section-header";
 import { ArrowRight, Zap } from "lucide-react";
 import Link from "next/link";
-import {getSectorsCards} from "@/data/sectors";
+import { getSectorsCards } from "@/data/sectors";
 
 function CapacityMeter({ scale }) {
   const bars = 4;
@@ -56,9 +56,12 @@ function SectorCard({ sector }) {
         <div className="mt-4 flex items-center justify-between border-t border-slate-100 pt-4">
           <CapacityMeter scale={sector.scale} />
 
-          <Link href={`/sectors/${sector.id}`} className="inline-flex items-center gap-2 rounded-full bg-primary-500 py-1.5 pl-4 pr-1.5 text-sm font-bold text-white transition-colors hover:bg-primary-600">
+          <Link
+            href={`/sectors/${sector.id}`}
+            className="btn btn-primary"
+          >
             Explore
-            <span className="flex h-6 w-6 items-center justify-center rounded-full bg-white text-primary-500">
+            <span className="btn-icon text-primary-500">
               <ArrowRight size={13} strokeWidth={2.5} />
             </span>
           </Link>
@@ -72,19 +75,17 @@ export default function SolutionsSection() {
   const sectors = getSectorsCards();
   return (
     <PageWrapper className="bg-gray-50">
+      <SectionHeader
+        badge="Who We Serve"
+        title="Solutions for Every Scale"
+        highlight="Every Scale"
+      />
 
-
-<SectionHeader
-  badge="Who We Serve"
-  title="Solutions for Every Scale"
-  highlight="Every Scale"
-/>
-
-        <div className="mt-14 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {sectors.map((sector) => (
-            <SectorCard key={sector.id} sector={sector} />
-          ))}
-        </div>
+      <div className="mt-14 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        {sectors.map((sector) => (
+          <SectorCard key={sector.id} sector={sector} />
+        ))}
+      </div>
     </PageWrapper>
   );
 }

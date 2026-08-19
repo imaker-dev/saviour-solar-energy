@@ -28,3 +28,7 @@ export const SITE_CONFIG = {
   },
 };
 export const BASE_URL = "https://saviorenergy.in";
+
+
+export const BRAND_LOGO = "/Images/logo.png";
+export const BRAND_ICON = "/Images/logo.png";

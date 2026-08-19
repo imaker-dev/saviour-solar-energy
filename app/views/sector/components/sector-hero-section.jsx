@@ -1,8 +1,10 @@
-import { ArrowRight, Play, CheckCircle2, Sun } from "lucide-react";
+import { ArrowRight, Sun } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import PageWrapper from "../../../components/page-wrapper";
 import PlayButton from "../../../components/play-button";
+import { Eyebrow } from "../../../components/section-header";
+
 const SectorHeroSection = ({ hero }) => {
   const renderTitle = (title, highlight) => {
     if (!highlight) return title;
@@ -87,16 +89,11 @@ const SectorHeroSection = ({ hero }) => {
           className={`relative order-1 lg:order-2 transition-all duration-700 ease-out delay-100 `}
         >
           {/* Eyebrow */}
-          <div className="inline-flex items-center gap-2">
-            <Sun className="h-4 w-4 text-primary-500" strokeWidth={2} />
-            <span className="text-xs font-semibold uppercase tracking-[0.14em] text-[#647082]">
-              {hero?.eyebrow}
-            </span>
-          </div>
+          <Eyebrow>{hero?.eyebrow}</Eyebrow>
 
           {/* Headline */}
 
-          <h1 className="mt-5 text-4xl font-extrabold leading-[1.12] tracking-tight text-[#2E3A45] sm:text-5xl lg:text-[3.1rem]">
+          <h1 className="mt-5 text-4xl font-bold leading-[1.12] tracking-tight text-[#2E3A45] sm:text-5xl lg:text-[3.1rem]">
             {renderTitle(hero?.title, hero?.highlight)}
           </h1>
 
@@ -107,20 +104,14 @@ const SectorHeroSection = ({ hero }) => {
 
           {/* CTA Buttons */}
           <div className="mt-9 flex flex-wrap items-center gap-6">
-            <Link
-              href="/contact"
-              className="group inline-flex items-center gap-3 rounded-full bg-primary-500 py-2 pl-6 pr-2 text-sm font-semibold text-white transition-all duration-200 hover:bg-[#4C8A2B] active:scale-[0.98]"
-            >
+            <Link href="/contact" className="btn btn-lg btn-primary">
               Get Free Quote
-              <span className="flex h-8 w-8 items-center justify-center rounded-full bg-white text-primary-500 transition-transform duration-200 group-hover:translate-x-0.5">
+              <span className="btn-icon text-primary-500">
                 <ArrowRight className="h-4 w-4" />
               </span>
             </Link>
 
-            <Link
-              href="/services"
-              className="text-sm font-semibold text-[#2E3A45] underline decoration-[#647082]/40 decoration-2 underline-offset-[5px] transition-colors duration-200 hover:decoration-primary-500"
-            >
+            <Link href="/services" className="btn btn-lg btn-secondary">
               View All Services
             </Link>
           </div>

@@ -44,7 +44,7 @@ const CtaBanner = () => {
         </div>
 
         {/* Right Button */}
-        <Link href="/contact" className="btn btn-primary btn-shine group py-2">
+        <Link href="/contact" className="btn btn-lg btn-primary btn-shine group">
           Get Free Quote
           <span className="btn-icon">
             <ArrowRight className="h-4 w-4 text-primary-500 transition-transform group-hover:translate-x-0.5" />

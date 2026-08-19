@@ -5,6 +5,7 @@ import { ChevronDown, ChevronsRight, Menu, X, Settings2 } from "lucide-react";
 import Link from "next/link";
 import { generateServiceDropdownMenu } from "@/data/services";
 import { usePathname } from "next/navigation";
+import { BRAND_LOGO } from "@/app/const";
 
 const NAV_ITEMS = [
   {
@@ -19,10 +20,19 @@ const NAV_ITEMS = [
   },
   { label: "Projects", href: "/projects" },
   // { label: "Blog", href: "/blogs" },
-  { label: "Contact", href: "/contact" },
+  // { label: "Contact", href: "/contact" },
+  {
+    label: "Resources",
+    href: "#",
+    dropdown: [
+      { label: "Blogs", href: "/blogs" },
+      { label: "Gallery", href: "/gallery" },
+      { label: "Contact", href: "/contact" },
+    ],
+  },
 ];
 
-export default function SolstarNavbar() {
+export default function Navbar() {
   const pathname = usePathname();
 
   const isItemActive = (item) => {
@@ -81,7 +91,7 @@ export default function SolstarNavbar() {
     setMobileOpen(false);
     setMobileSubOpen(null);
   }, [pathname]);
-  
+
   return (
     <>
       {/* Backdrop — click to close, blurs the page behind the mobile menu */}
@@ -109,8 +119,12 @@ export default function SolstarNavbar() {
           }`}
         >
           {/* Logo */}
-          <Link href="/" className="flex shrink-0 items-center gap-2">
-            <img src="/Images/logo.png" alt="logo" className="w-10 lg:w-14" />
+
+          <Link
+            href="/"
+            className="inline-flex w-12 items-center gap-2.5 lg:w-16"
+          >
+            <img src={BRAND_LOGO} alt="logo" />
           </Link>
 
           {/* Desktop nav */}
@@ -122,7 +136,7 @@ export default function SolstarNavbar() {
                 <li key={item.label} className="group relative">
                   <Link
                     href={item.href}
-                    className={`relative flex items-center gap-1 py-2 text-[15px] font-medium transition-colors ${
+                    className={`relative flex items-center gap-1.5 py-2 text-[16px] font-medium transition-colors ${
                       isActive
                         ? "text-primary-500"
                         : "text-teal-900 hover:text-primary-600"
@@ -131,7 +145,7 @@ export default function SolstarNavbar() {
                     {item.label}
                     {item.dropdown && (
                       <ChevronDown
-                        className="h-4 w-4 text-current opacity-70 transition-transform duration-200 group-hover:rotate-180"
+                        className="h-4.5 w-4.5 text-current opacity-70 transition-transform duration-200 group-hover:rotate-180"
                         strokeWidth={2}
                       />
                     )}
@@ -143,14 +157,14 @@ export default function SolstarNavbar() {
                   </Link>
 
                   {item.dropdown && (
-                    <div className="invisible absolute left-1/2 top-full z-20 -translate-x-1/2 pt-3 opacity-0 transition-all duration-200 group-hover:visible group-hover:opacity-100">
-                      <div className="w-52 rounded-2xl border border-neutral-100 bg-white p-2 shadow-lg shadow-neutral-900/10">
+                    <div className="invisible absolute left-0 top-full z-20 pt-3 opacity-0 transition-all duration-200 group-hover:visible group-hover:opacity-100">
+                      <div className="w-56 rounded-2xl border border-neutral-100 bg-white p-2.5 shadow-lg shadow-neutral-900/10">
                         {item.dropdown.map((sub) => (
                           <Link
                             key={sub.href}
                             href={sub.href}
                             title={sub.label}
-                            className="block rounded-xl px-3 py-2 text-sm text-neutral-600 transition-colors hover:bg-primary-50 hover:text-neutral-900 truncate"
+                            className="block rounded-xl px-3.5 py-2.5 text-[15px] font-medium text-neutral-600 transition-colors hover:bg-primary-50 hover:text-neutral-900 truncate"
                           >
                             {sub.label}
                           </Link>
@@ -166,7 +180,7 @@ export default function SolstarNavbar() {
           {/* CTA */}
           <Link
             href="/contact"
-            className="hidden btn btn-primary btn-shine shrink-0  lg:flex"
+            className="hidden btn btn-primary btn-shine lg:flex"
           >
             Get a quote
           </Link>
@@ -177,15 +191,15 @@ export default function SolstarNavbar() {
             aria-label="Toggle menu"
             aria-expanded={mobileOpen}
             onClick={() => setMobileOpen((v) => !v)}
-            className="relative flex h-9 w-9 items-center justify-center rounded-full text-teal-900 lg:hidden"
+            className="relative flex h-10 w-10 items-center justify-center rounded-full text-teal-900 lg:hidden"
           >
             <Menu
-              className={`absolute h-5 w-5 transition-all duration-300 ${
+              className={`absolute h-6 w-6 transition-all duration-300 ${
                 mobileOpen ? "rotate-90 opacity-0" : "rotate-0 opacity-100"
               }`}
             />
             <X
-              className={`absolute h-5 w-5 transition-all duration-300 ${
+              className={`absolute h-6 w-6 transition-all duration-300 ${
                 mobileOpen ? "rotate-0 opacity-100" : "-rotate-90 opacity-0"
               }`}
             />
@@ -214,7 +228,7 @@ export default function SolstarNavbar() {
                           onClick={() => {
                             if (!item.dropdown) setMobileOpen(false);
                           }}
-                          className={`flex-1 py-2.5 text-left text-[15px] font-medium ${
+                          className={`flex-1 py-3 text-left text-[16px] font-semibold ${
                             isActive ? "text-primary-600" : "text-teal-900"
                           }`}
                         >
@@ -229,10 +243,10 @@ export default function SolstarNavbar() {
                                 cur === item.label ? null : item.label,
                               )
                             }
-                            className="p-2.5"
+                            className="p-3"
                           >
                             <ChevronDown
-                              className={`h-4 w-4 text-teal-900/70 transition-transform duration-300 ${
+                              className={`h-5 w-5 text-teal-900/70 transition-transform duration-300 ${
                                 mobileSubOpen === item.label ? "rotate-180" : ""
                               }`}
                             />
@@ -248,12 +262,12 @@ export default function SolstarNavbar() {
                           }`}
                         >
                           <div className="overflow-hidden">
-                            <div className="ml-1 flex flex-col gap-0.5 border-l-2 border-neutral-100 pb-2 pl-3">
+                            <div className="ml-1 flex flex-col gap-1 border-l-2 border-neutral-100 pb-2 pl-4">
                               {item.dropdown.map((sub) => (
                                 <Link
                                   key={sub.href}
                                   href={sub.href}
-                                  className="block rounded-lg px-3 py-2 text-sm text-neutral-600 transition-colors hover:bg-primary-50 hover:text-neutral-900"
+                                  className="block rounded-lg px-3.5 py-2.5 text-[15px] font-medium text-neutral-600 transition-colors hover:bg-primary-50 hover:text-neutral-900"
                                 >
                                   {sub.label}
                                 </Link>
@@ -269,10 +283,10 @@ export default function SolstarNavbar() {
               <div className="py-4">
                 <Link
                   href="/contact"
-                  className="btn btn-primary flex items-center justify-center gap-1.5 rounded-full"
+                  className="btn btn-primary w-full"
                 >
                   Get a quote
-                  <ChevronsRight className="h-4 w-4" strokeWidth={2.5} />
+                  <ChevronsRight className="h-4.5 w-4.5" strokeWidth={2.5} />
                 </Link>
               </div>
             </div>

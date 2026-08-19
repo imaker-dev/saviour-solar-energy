@@ -17,11 +17,12 @@ import ContactSection from "./components/contact-section.jsx";
 import TestimonialSlider from "./components/testimonial-slider.jsx";
 import BlogSlider from "./components/blog-slider.jsx";
 import FeaturesSection from "./components/features-section.jsx";
-
+import SocialMediaSection from "./components/social-media-section.jsx";
 const HomePage = () => {
   return (
     <>
       <Hero />
+      
       <ClientsSlider />
       <AboutUsSection />
       <CtaBanner />
@@ -37,6 +38,7 @@ const HomePage = () => {
       <FaqSection />
       <OurBenefits />
       <ContactSection />
+      {/* <SocialMediaSection /> */}
       <TestimonialSlider />
       <BlogSlider />
     </>

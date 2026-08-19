@@ -52,35 +52,106 @@ button {
 }
 
 @layer components {
+  /* ========================================
+     Base Button
+     ======================================== */
 
-  /* 🔹 Layout */
   .btn {
-    @apply inline-flex items-center rounded-full py-2.5 px-4 text-[13.5px] font-semibold transition-all duration-200;
+    @apply inline-flex min-h-10 items-center justify-center gap-2 whitespace-nowrap rounded-full px-5 text-sm font-semibold leading-none text-white transition duration-200 ease-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500/30 disabled:pointer-events-none disabled:opacity-50;
   }
 
-  .btn:has(.btn-icon) {
-    @apply gap-3 pl-6 pr-2;
+  /* ========================================
+     Button Sizes
+     ======================================== */
+
+  .btn-sm {
+    @apply min-h-8 px-3.5 text-xs;
   }
 
-  .btn-icon {
-    @apply flex h-8 w-8 items-center justify-center rounded-full bg-white;
+  .btn-lg {
+    @apply min-h-12 px-7 text-sm;
   }
+
+  .btn-xl {
+    @apply min-h-14 px-8 text-base;
+  }
+
+  /* ========================================
+     Primary Button
+     ======================================== */
 
   .btn-primary {
     @apply bg-primary-500 text-white;
   }
 
   .btn-primary:hover {
-    box-shadow: 0 12px 30px color-mix(in srgb,
-        var(--color-primary-500) 35%,
+    @apply -translate-y-px bg-primary-600;
+
+    box-shadow: 0 8px 24px color-mix(in srgb,
+        var(--color-primary-500) 22%,
         transparent);
   }
 
   .btn-primary:active {
+    @apply translate-y-0 bg-primary-700;
+
     box-shadow: none;
   }
 
-  /* ✨ Shine Effect */
+  /* ========================================
+     Secondary Button
+     ======================================== */
+
+  .btn-secondary {
+    @apply border border-secondary-100 bg-white text-secondary-500;
+  }
+
+  .btn-secondary:hover {
+    @apply -translate-y-px border-primary-200 bg-primary-50 text-primary-600;
+
+    box-shadow: 0 6px 18px color-mix(in srgb,
+        var(--color-secondary-500) 8%,
+        transparent);
+  }
+
+  .btn-secondary:active {
+    @apply translate-y-0 bg-primary-100;
+
+    box-shadow: none;
+  }
+
+  /* ========================================
+     Ghost Button
+     ======================================== */
+
+  .btn-ghost {
+    @apply bg-transparent text-secondary-500;
+  }
+
+  .btn-ghost:hover {
+    @apply bg-secondary-50 text-primary-600;
+  }
+
+  .btn-ghost:active {
+    @apply bg-secondary-100;
+  }
+
+  /* ========================================
+     Icon
+     ======================================== */
+
+  .btn:has(.btn-icon) {
+    @apply gap-3 pl-6 pr-2;
+  }
+
+  .btn-icon {
+    @apply flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-white;
+  }
+
+  /* ========================================
+     Shine Effect
+     ======================================== */
+
   .btn-shine {
     position: relative;
     overflow: hidden;
@@ -90,18 +161,124 @@ button {
     content: "";
     position: absolute;
     top: 0;
+    bottom: 0;
     left: -100%;
     width: 60%;
-    height: 100%;
+
     background: linear-gradient(to right,
         transparent,
         rgba(255, 255, 255, 0.25),
         transparent);
+
     transition: left 0.5s ease;
+    pointer-events: none;
   }
 
   .btn-shine:hover::before {
     left: 150%;
+  }
+
+  /* ========================================
+     Tablet
+     ======================================== */
+
+  @media (max-width: 1023px) {
+    .btn {
+      min-height: 38px;
+      padding-left: 18px;
+      padding-right: 18px;
+      font-size: 13px;
+    }
+
+    .btn-sm {
+      min-height: 32px;
+      padding-left: 14px;
+      padding-right: 14px;
+      font-size: 11px;
+    }
+
+    .btn-lg {
+      min-height: 44px;
+      padding-left: 24px;
+      padding-right: 24px;
+      font-size: 13px;
+    }
+
+    .btn-xl {
+      min-height: 52px;
+      padding-left: 28px;
+      padding-right: 28px;
+      font-size: 15px;
+    }
+  }
+
+  /* ========================================
+     Mobile
+     ======================================== */
+
+  @media (max-width: 639px) {
+    .btn {
+      min-height: 36px;
+      padding-left: 16px;
+      padding-right: 16px;
+      font-size: 13px;
+    }
+
+    .btn-sm {
+      min-height: 32px;
+      padding-left: 12px;
+      padding-right: 12px;
+      font-size: 11px;
+    }
+
+    .btn-lg {
+      min-height: 42px;
+      padding-left: 20px;
+      padding-right: 20px;
+      font-size: 13px;
+    }
+
+    .btn-xl {
+      min-height: 48px;
+      padding-left: 24px;
+      padding-right: 24px;
+      font-size: 14px;
+    }
+  }
+
+  /* ========================================
+     Very Small Phones
+     ======================================== */
+
+  @media (max-width: 374px) {
+    .btn {
+      gap: 6px;
+      min-height: 36px;
+      padding-left: 14px;
+      padding-right: 14px;
+      font-size: 12px;
+    }
+
+    .btn-sm {
+      min-height: 32px;
+      padding-left: 10px;
+      padding-right: 10px;
+      font-size: 10px;
+    }
+
+    .btn-lg {
+      min-height: 40px;
+      padding-left: 16px;
+      padding-right: 16px;
+      font-size: 12px;
+    }
+
+    .btn-xl {
+      min-height: 44px;
+      padding-left: 20px;
+      padding-right: 20px;
+      font-size: 13px;
+    }
   }
 }
 
@@ -110,20 +287,24 @@ button {
 }
 
 @keyframes float {
+
   0%,
   100% {
     transform: translateY(0px);
   }
+
   50% {
     transform: translateY(-20px);
   }
 }
 
 @keyframes floatReverse {
+
   0%,
   100% {
     transform: translateY(0px);
   }
+
   50% {
     transform: translateY(20px);
   }
@@ -133,6 +314,7 @@ button {
   from {
     transform: rotate(45deg);
   }
+
   to {
     transform: rotate(405deg);
   }

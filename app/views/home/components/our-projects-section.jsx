@@ -7,30 +7,16 @@ import "swiper/css";
 import { Autoplay } from "swiper/modules";
 import { getProjectCards } from "@/data/projects.js";
 import Link from "next/link";
-import { ArrowUpRight, MapPin, Zap } from "lucide-react";
+import { ArrowRight, ArrowUpRight, MapPin, Zap } from "lucide-react";
 
 export default function OurProjectSection() {
   const projects = getProjectCards();
   return (
     <PageWrapper className="bg-white">
-
       <SectionHeader
         badge="Our Latest Projects"
-        align="left"
-        title={
-          <>
-            <HighlightText>Explore Our Portfolio</HighlightText> of Featured
-            Projects
-          </>
-        }
-        actions={
-          <Link
-            href="/projects"
-            className="inline-flex items-center justify-center rounded-full bg-primary-500 px-9 py-4 text-sm font-semibold text-white shadow-lg shadow-primary-500/25 transition-all hover:-translate-y-0.5 hover:bg-primary-600 hover:shadow-xl hover:shadow-primary-500/30"
-          >
-            View All Projects
-          </Link>
-        }
+        title={"Explore Our Portfolio of Featured Projects"}
+        highlight={"Featured Projects"}
       />
 
       {/* SLIDER */}
@@ -50,6 +36,17 @@ export default function OurProjectSection() {
           </SwiperSlide>
         ))}
       </Swiper>
+
+      <div className="mt-8 flex justify-center">
+        <Link
+          href="/projects"
+          className="btn btn-lg btn-primary"
+          // className="inline-flex items-center justify-center rounded-full bg-primary-500 px-9 py-4 text-sm font-semibold text-white shadow-lg shadow-primary-500/25 transition-all hover:-translate-y-0.5 hover:bg-primary-600 hover:shadow-xl hover:shadow-primary-500/30"
+        >
+          View All Projects
+          <ArrowRight size={16}/>
+        </Link>
+      </div>
     </PageWrapper>
   );
 }
