@@ -150,13 +150,12 @@ export default function Footer() {
       <div className="relative">
         {/* Top strip: brand + CTA */}
         <div className="flex flex-col items-start justify-between gap-8 border-b border-gray-200 pb-10 lg:flex-row lg:items-center">
-          <div className="flex max-w-lg flex-col gap-4 lg:flex-row lg:items-center lg:gap-5">
-            <Link
-              href="/"
-              className="inline-flex w-11 flex-shrink-0 items-center gap-2.5 lg:w-14"
-            >
+          <div className="flex  flex-col gap-4 lg:flex-row lg:items-center lg:gap-5">
+            {/* Logo */}
+            <Link href="/" className="w-28 md:w-30 lg:w-36">
               <img src={BRAND_LOGO} alt="logo" />
             </Link>
+
             <span className="hidden h-9 w-px flex-shrink-0 bg-gray-200 lg:block" />
             <p className="max-w-sm text-[14px] leading-6 text-gray-500">
               Modern, reliable solar energy solutions to help you reduce
@@ -165,10 +164,7 @@ export default function Footer() {
           </div>
 
           <div className="flex flex-shrink-0 items-center gap-3">
-            <Link
-              href="/contact"
-              className="btn btn-primary btn-shine"
-            >
+            <Link href="/contact" className="btn btn-primary btn-shine">
               Get a free quote
             </Link>
             <div className="flex items-center gap-2">

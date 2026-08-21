@@ -119,11 +119,7 @@ export default function Navbar() {
           }`}
         >
           {/* Logo */}
-
-          <Link
-            href="/"
-            className="inline-flex w-12 items-center gap-2.5 lg:w-16"
-          >
+          <Link href="/" className="w-28 md:w-30 lg:w-36">
             <img src={BRAND_LOGO} alt="logo" />
           </Link>
 
@@ -281,10 +277,7 @@ export default function Navbar() {
                 })}
               </ul>
               <div className="py-4">
-                <Link
-                  href="/contact"
-                  className="btn btn-primary w-full"
-                >
+                <Link href="/contact" className="btn btn-primary w-full">
                   Get a quote
                   <ChevronsRight className="h-4.5 w-4.5" strokeWidth={2.5} />
                 </Link>

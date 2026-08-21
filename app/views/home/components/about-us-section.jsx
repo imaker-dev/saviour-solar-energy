@@ -1,13 +1,5 @@
 import React from "react";
-import {
-  Sun,
-  BatteryCharging,
-  PlugZap,
-  Wrench,
-  Gauge,
-  ArrowRight,
-  Phone,
-} from "lucide-react";
+import { ArrowRight, Phone } from "lucide-react";
 import { SITE_CONFIG } from "@/app/const";
 import PageWrapper from "@/app/components/page-wrapper";
 import Link from "next/link";
@@ -20,14 +12,6 @@ const stats = [
   { value: "99%", label: "Satisfaction Rate" },
 ];
 
-const tags = [
-  { label: "Solar Panels", icon: Sun },
-  { label: "Solar Batteries", icon: BatteryCharging },
-  { label: "Solar Inverters", icon: PlugZap },
-  { label: "System Maintenance", icon: Wrench },
-  { label: "Energy Monitoring", icon: Gauge },
-];
-
 export default function AboutUsSection() {
   return (
     <PageWrapper>
@@ -37,28 +21,12 @@ export default function AboutUsSection() {
           {/* Frame */}
           <div className="relative overflow-hidden rounded-[2.5rem] shadow-2xl shadow-slate-900/10">
             <Image
-              src="/Images/about-us.webp"
+              src="/Images/about.webp"
               alt="Certified solar engineers installing rooftop solar panels for a residential property"
               width={700}
               height={850}
               className="w-full object-cover lg:h-[520px]"
             />
-
-            {/* Subtle gradient for tag legibility */}
-            <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-slate-900/70 via-slate-900/10 to-transparent" />
-
-            {/* Floating capability tags */}
-            <div className="hidden absolute inset-x-0 bottom-5 lg:flex flex-wrap justify-center gap-2 px-5">
-              {tags.map(({ label, icon: Icon }) => (
-                <span
-                  key={label}
-                  className="inline-flex items-center gap-1.5 rounded-full border border-white/40 bg-white/15 px-3.5 py-1.5 text-xs font-medium text-white backdrop-blur-md transition-colors hover:bg-white/25 sm:text-sm"
-                >
-                  <Icon className="h-3.5 w-3.5 shrink-0" strokeWidth={2} />
-                  {label}
-                </span>
-              ))}
-            </div>
           </div>
         </div>
 
