@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { ArrowRight, ArrowUpRight, X } from "lucide-react";
 import PageWrapper from "@/app/components/page-wrapper";
 import Image from "next/image";
@@ -57,8 +57,58 @@ function GetInTouchBadge() {
   );
 }
 
+function useTypewriterCycle(
+  words,
+  { typingSpeed = 65, deletingSpeed = 32, pauseDuration = 2200 } = {},
+) {
+  const [wordIndex, setWordIndex] = useState(0);
+  const [text, setText] = useState("");
+  const [phase, setPhase] = useState("typing"); // "typing" | "deleting"
+
+  useEffect(() => {
+    const currentWord = words[wordIndex];
+    const jitter = (base) => base + Math.random() * (base * 0.35);
+
+    if (phase === "typing") {
+      if (text.length < currentWord.length) {
+        const t = setTimeout(() => {
+          setText(currentWord.slice(0, text.length + 1));
+        }, jitter(typingSpeed));
+        return () => clearTimeout(t);
+      }
+      const t = setTimeout(() => setPhase("deleting"), pauseDuration);
+      return () => clearTimeout(t);
+    }
+
+    if (phase === "deleting") {
+      if (text.length > 0) {
+        const t = setTimeout(() => {
+          setText(currentWord.slice(0, text.length - 1));
+        }, jitter(deletingSpeed));
+        return () => clearTimeout(t);
+      }
+      setWordIndex((i) => (i + 1) % words.length);
+      setPhase("typing");
+    }
+  }, [
+    text,
+    phase,
+    wordIndex,
+    words,
+    typingSpeed,
+    deletingSpeed,
+    pauseDuration,
+  ]);
+
+  return text;
+}
+
+const CYCLE_WORDS = ["Homes", "Businesses", "Societies", "Industries"];
+
 const Hero = () => {
   const [playVideo, setPlayVideo] = useState(false);
+  const cyclingWord = useTypewriterCycle(CYCLE_WORDS);
+
   return (
     <PageWrapper
       className="overflow-hidden min-h-screen"
@@ -89,36 +139,42 @@ const Hero = () => {
       {/* ---------------- HERO CONTENT ---------------- */}
       <div className="relative z-10 grid gap-14 lg:grid-cols-2 lg:items-center lg:gap-16">
         {/* Left: copy */}
-        <div>
-          <div className="mb-5 flex items-center gap-3">
-            <Eyebrow>TRUSTED SOLAR EXPERTS SINCE 2004</Eyebrow>
+        <div className="text-center lg:text-left">
+          <div className="mb-5 flex items-center justify-center gap-3 lg:justify-start">
+            <Eyebrow>Complete Solar Solutions in Gujarat</Eyebrow>
           </div>
 
-          <h1 className="max-w-lg text-4xl font-semibold leading-[1.15] text-[#3F4347] sm:text-5xl lg:text-[3.35rem]">
-            Solar Energy Solutions for{" "}
-            <span className="text-primary-500">Homes & Businesses</span>
+          <h1 className="mx-auto max-w-lg text-4xl font-semibold leading-[1.15] tracking-[-0.025em] text-slate-900 sm:text-5xl lg:mx-0 lg:text-[3.35rem]">
+            Complete Solar Energy Solutions for{" "}
+            <span className="relative inline-block min-w-[7ch] text-left text-primary-500">
+              <span className="whitespace-nowrap">{cyclingWord}</span>
+              <span
+                aria-hidden="true"
+                className="ml-0.5 inline-block h-[0.9em] w-[2px] animate-pulse bg-primary-500 align-middle"
+              />
+            </span>
           </h1>
 
-          <p className="mt-6 max-w-md text-[15px] leading-relaxed text-[#58595B]">
-            Reduce electricity costs with high-performance solar panel
-            installations, rooftop solar systems, battery storage, and renewable
-            energy solutions designed for residential, commercial, and
-            industrial properties.
+          <p className="mx-auto mt-6 max-w-md text-[15px] leading-relaxed text-[#58595B] lg:mx-0">
+            From trusted solar panels and inverters to complete installation,
+            government-benefit assistance and after-sales support, Savior
+            Renewable Energy delivers customized solar systems designed around
+            your energy requirements and budget.
           </p>
 
-          <div className="mt-9 flex flex-wrap items-center gap-8">
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-4 lg:gap-8 lg:justify-start">
             <Link
               href="/contact"
               className="btn btn-lg btn-primary btn-shine group"
             >
-              Get Free Quote
+              Get a Free Solar Quote
               <span className="btn-icon">
                 <ArrowRight className="h-4 w-4 text-primary-500 transition-transform group-hover:translate-x-0.5" />
               </span>
             </Link>
 
             <Link href="/services" className="btn btn-lg btn-secondary">
-              View All Services
+              Explore Solar Solutions
             </Link>
           </div>
         </div>

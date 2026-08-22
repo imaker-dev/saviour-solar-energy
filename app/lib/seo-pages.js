@@ -1,147 +1,361 @@
 import { generateSEO } from "./seo-config";
 
 export const seoPages = {
+  /**
+   * -------------------------------------------------------
+   * HOMEPAGE
+   * Primary intent:
+   * Complete solar solutions + Gujarat + commercial intent
+   * -------------------------------------------------------
+   */
   home: generateSEO({
-    title: "Solar Panels, Inverters & Installation Services",
+    title: "Solar Solutions in Gujarat | Panels, Inverters & Installation",
 
     description:
-      "Savior Solar Energy provides complete solar power solutions for residential, commercial, and industrial projects.",
+      "Savior Renewable Energy provides customized solar solutions across Gujarat, including solar panels, inverters, on-grid, off-grid and hybrid systems, installation, maintenance and assistance with applicable government benefits.",
 
     keywords: [
-      "solar panels",
-      "solar energy company",
-      "solar installation",
-      "solar inverter",
-      "rooftop solar",
-      "solar power solutions",
-      "renewable energy",
-      "commercial solar",
-      "industrial solar",
-      "residential solar",
-      "solar company India",
+      "solar solutions in Gujarat",
+      "solar company in Gujarat",
+      "solar panel company in Gujarat",
+      "solar panel installation in Gujarat",
+      "solar system installation in Gujarat",
+      "solar energy company Gujarat",
+      "rooftop solar Gujarat",
+      "solar panels Gujarat",
+      "solar inverter Gujarat",
+      "residential solar Gujarat",
+      "commercial solar Gujarat",
+      "industrial solar Gujarat",
+      "solar installation company Gujarat",
+      "complete solar solutions Gujarat",
     ],
 
     path: "/",
   }),
 
+  /**
+   * -------------------------------------------------------
+   * ABOUT
+   * Primary intent:
+   * Brand + company trust + Gujarat
+   * -------------------------------------------------------
+   */
   about: generateSEO({
-    title: "About Us",
+    title: "About Savior Renewable Energy | Solar Company in Gujarat",
 
     description:
-      "Learn more about Savior Solar Energy and our renewable energy solutions.",
+      "Learn about Savior Renewable Energy Pvt. Ltd., a Gujarat-based solar company providing customized solar systems, installation, maintenance and complete renewable energy solutions for homes, businesses and industries.",
 
     keywords: [
-      "about solar company",
-      "solar energy experts",
-      "renewable energy company",
-      "solar company India",
-      "solar panel provider",
-      "clean energy solutions",
-      "solar EPC company",
+      "Savior Renewable Energy",
+      "Savior Renewable Energy Gujarat",
+      "about Savior Renewable Energy",
+      "solar company Gujarat",
+      "solar energy company Gujarat",
+      "solar solution provider Gujarat",
+      "solar installation company Gujarat",
+      "renewable energy company Gujarat",
+      "solar system provider Gujarat",
     ],
 
     path: "/about",
   }),
 
+  /**
+   * -------------------------------------------------------
+   * SERVICES
+   * Primary intent:
+   * Solar service searches
+   * -------------------------------------------------------
+   */
   services: generateSEO({
-    title: "Solar Services",
+    title: "Solar Services in Gujarat | Installation, Maintenance & Support",
 
     description:
-      "Professional solar panel installation, maintenance, and renewable energy services.",
+      "Explore Savior Renewable Energy's complete solar services, including consultation, site assessment, system design, installation, net metering assistance, maintenance, repairs and after-sales support across Gujarat.",
 
     keywords: [
-      "solar services",
-      "solar panel installation",
-      "solar maintenance",
-      "rooftop solar installation",
-      "solar inverter installation",
-      "commercial solar services",
-      "industrial solar solutions",
-      "solar EPC services",
-      "renewable energy services",
+      "solar services Gujarat",
+      "solar installation services Gujarat",
+      "solar panel installation Gujarat",
+      "rooftop solar installation Gujarat",
+      "solar system installation Gujarat",
+      "solar maintenance Gujarat",
+      "solar repair services Gujarat",
+      "solar consultation Gujarat",
+      "solar site survey Gujarat",
+      "solar system design Gujarat",
+      "solar inverter installation Gujarat",
+      "solar after sales service Gujarat",
+      "solar AMC Gujarat",
+      "net metering assistance Gujarat",
     ],
 
     path: "/services",
   }),
 
-  projects: generateSEO({
-    title: "Our Projects",
+  /**
+   * -------------------------------------------------------
+   * SECTORS / SOLUTIONS
+   * Primary intent:
+   * Residential + society + commercial + industrial
+   * -------------------------------------------------------
+   */
+  sectors: generateSEO({
+    title: "Solar Solutions for Homes, Societies, Businesses & Industries",
 
     description:
-      "Explore completed solar energy projects delivered by Savior Solar Energy.",
+      "Explore customized solar solutions from Savior Renewable Energy for homes, housing societies, commercial properties and industrial facilities across Gujarat.",
 
     keywords: [
-      "solar projects",
-      "completed solar projects",
-      "solar installations",
-      "commercial solar projects",
-      "industrial solar projects",
-      "residential solar systems",
-      "solar EPC projects",
-      "renewable energy projects",
+      "residential solar Gujarat",
+      "home solar system Gujarat",
+      "rooftop solar for home Gujarat",
+      "housing society solar Gujarat",
+      "society solar system Gujarat",
+      "commercial solar Gujarat",
+      "commercial rooftop solar Gujarat",
+      "industrial solar Gujarat",
+      "industrial solar system Gujarat",
+      "solar for factories Gujarat",
+      "solar solutions for businesses Gujarat",
+      "solar solutions for industries Gujarat",
+      "solar solutions for housing societies Gujarat",
+    ],
+
+    path: "/sectors",
+  }),
+
+  /**
+   * -------------------------------------------------------
+   * PROJECTS
+   * Primary intent:
+   * Proof + completed installations
+   * -------------------------------------------------------
+   */
+  projects: generateSEO({
+    title: "Solar Projects in Gujarat | Residential, Commercial & Industrial",
+
+    description:
+      "Explore solar projects completed by Savior Renewable Energy for residential properties, housing societies, commercial buildings and industrial facilities across Gujarat.",
+
+    keywords: [
+      "solar projects Gujarat",
+      "solar installation projects Gujarat",
+      "completed solar projects Gujarat",
+      "residential solar projects Gujarat",
+      "commercial solar projects Gujarat",
+      "industrial solar projects Gujarat",
+      "rooftop solar projects Gujarat",
+      "housing society solar projects Gujarat",
+      "solar installation company projects Gujarat",
     ],
 
     path: "/projects",
   }),
 
+  /**
+   * -------------------------------------------------------
+   * CONTACT
+   * Primary intent:
+   * Quote + consultation
+   * -------------------------------------------------------
+   */
   contact: generateSEO({
-    title: "Contact Us",
+    title: "Contact Savior Renewable Energy | Get a Solar Quote in Gujarat",
 
     description:
-      "Get in touch with Savior Solar Energy for solar panel installation, rooftop solar systems, and renewable energy solutions.",
+      "Contact Savior Renewable Energy for a customized solar quote, site assessment, installation, maintenance and complete solar solutions for homes, businesses and industries across Gujarat.",
 
     keywords: [
-      "contact solar company",
-      "solar consultation",
-      "solar installation inquiry",
-      "solar services India",
-      "renewable energy consultation",
-      "solar support",
-      "solar energy solutions",
+      "solar quote Gujarat",
+      "solar consultation Gujarat",
+      "solar company contact Gujarat",
+      "solar installation quote Gujarat",
+      "solar panel quote Gujarat",
+      "solar system price quote Gujarat",
+      "solar installation inquiry Gujarat",
+      "solar service Gujarat",
     ],
 
     path: "/contact",
   }),
 
+  /**
+   * -------------------------------------------------------
+   * GOVERNMENT SCHEMES / SUBSIDY
+   * Primary intent:
+   * Government solar benefits
+   * -------------------------------------------------------
+   */
   schemes: generateSEO({
-    title: "Solar Schemes",
+    title: "Solar Subsidy & Government Schemes | Gujarat Solar Guide",
 
     description:
-      "Explore solar subsidy programs, government solar schemes, and renewable energy initiatives.",
+      "Learn about applicable solar subsidies, government schemes and financial support for rooftop solar in Gujarat, with assistance from Savior Renewable Energy for eligible customers.",
 
     keywords: [
-      "solar subsidy",
-      "government solar schemes",
-      "PM solar yojana",
+      "solar subsidy Gujarat",
+      "rooftop solar subsidy Gujarat",
+      "solar government schemes Gujarat",
       "solar subsidy India",
-      "renewable energy schemes",
-      "solar panel subsidy",
-      "rooftop solar subsidy",
-      "solar government programs",
+      "rooftop solar subsidy India",
+      "PM Surya Ghar subsidy",
+      "PM Surya Ghar Yojana",
+      "government solar subsidy",
+      "solar financial assistance",
+      "solar subsidy eligibility",
+      "solar subsidy application",
+      "rooftop solar government scheme",
     ],
 
     path: "/schemes",
   }),
 
+  /**
+   * -------------------------------------------------------
+   * BLOGS
+   * Primary intent:
+   * Informational searches + topical authority
+   * -------------------------------------------------------
+   */
   blogs: generateSEO({
-    title: "Blogs",
+    title: "Solar Energy Blog | Solar Guides, Prices, Subsidies & Insights",
 
     description:
-      "Read the latest insights, news, and expert articles on solar panels, renewable energy, rooftop solar systems, solar subsidies, energy savings, and sustainable power solutions.",
+      "Explore practical solar guides covering solar panels, inverters, system types, installation, pricing, maintenance, subsidies, energy savings and renewable energy in Gujarat.",
 
     keywords: [
-      "solar blog",
-      "solar energy articles",
-      "renewable energy news",
-      "solar panel tips",
+      "solar energy blog",
+      "solar blog Gujarat",
+      "solar panel guide",
+      "solar panel buying guide",
+      "solar system guide",
+      "solar inverter guide",
       "rooftop solar guide",
-      "solar installation blog",
-      "solar subsidy updates",
-      "clean energy blog",
-      "solar power insights",
-      "energy saving tips",
+      "solar installation guide",
+      "solar panel price guide",
+      "solar subsidy guide",
+      "solar maintenance tips",
+      "solar energy savings",
+      "renewable energy articles",
     ],
 
     path: "/blogs",
+  }),
+
+  /**
+   * -------------------------------------------------------
+   * SOLAR CALCULATOR
+   * Primary intent:
+   * Tool + high commercial intent
+   * -------------------------------------------------------
+   */
+  solarCalculator: generateSEO({
+    title: "Solar Calculator | Calculate Solar Capacity, Cost & Savings",
+
+    description:
+      "Use Savior Renewable Energy's solar calculator to estimate the solar capacity, system requirements, potential electricity savings and estimated solar cost for your property.",
+
+    keywords: [
+      "solar calculator",
+      "solar panel calculator",
+      "solar system calculator",
+      "rooftop solar calculator",
+      "solar savings calculator",
+      "solar capacity calculator",
+      "solar power calculator",
+      "solar calculator Gujarat",
+      "solar panel requirement calculator",
+      "solar cost calculator",
+    ],
+
+    path: "/solar-calculator",
+  }),
+
+  /**
+   * -------------------------------------------------------
+   * FAQS
+   * Primary intent:
+   * Informational + long-tail search
+   * -------------------------------------------------------
+   */
+  faqs: generateSEO({
+    title: "Solar FAQs | Solar Panels, Installation, Pricing & Subsidy",
+
+    description:
+      "Find answers to common questions about solar panels, solar systems, installation, pricing, maintenance, subsidies, inverters and solar solutions from Savior Renewable Energy.",
+
+    keywords: [
+      "solar FAQs",
+      "solar panel FAQs",
+      "solar system FAQs",
+      "solar installation FAQs",
+      "solar panel price FAQs",
+      "rooftop solar FAQs",
+      "solar subsidy FAQs",
+      "solar inverter FAQs",
+      "solar maintenance FAQs",
+      "solar questions and answers",
+      "solar FAQs Gujarat",
+    ],
+
+    path: "/faqs",
+  }),
+
+  /**
+   * -------------------------------------------------------
+   * TESTIMONIALS
+   * Primary intent:
+   * Brand trust + customer experience
+   * -------------------------------------------------------
+   */
+  testimonials: generateSEO({
+    title: "Solar Customer Reviews & Testimonials | Savior Renewable Energy",
+
+    description:
+      "Read customer testimonials and experiences from people and organizations who chose Savior Renewable Energy for residential, commercial and industrial solar solutions.",
+
+    keywords: [
+      "Savior Renewable Energy reviews",
+      "Savior Renewable Energy testimonials",
+      "solar company reviews Gujarat",
+      "solar customer reviews Gujarat",
+      "solar installation reviews",
+      "solar company testimonials",
+      "solar installer reviews Gujarat",
+      "solar customer experience",
+    ],
+
+    path: "/testimonials",
+  }),
+
+  /**
+   * -------------------------------------------------------
+   * GALLERY
+   * Primary intent:
+   * Visual proof + installations
+   * -------------------------------------------------------
+   */
+  gallery: generateSEO({
+    title: "Solar Installation Gallery | Savior Renewable Energy Gujarat",
+
+    description:
+      "View photos from Savior Renewable Energy's solar installations, projects, equipment and completed residential, commercial and industrial solar systems across Gujarat.",
+
+    keywords: [
+      "solar installation gallery",
+      "solar project gallery",
+      "solar panel installation photos",
+      "solar rooftop installation photos",
+      "solar projects photos Gujarat",
+      "solar installation Gujarat",
+      "residential solar installation photos",
+      "commercial solar installation photos",
+      "industrial solar installation photos",
+    ],
+
+    path: "/gallery",
   }),
 };

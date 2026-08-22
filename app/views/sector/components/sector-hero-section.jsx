@@ -25,7 +25,7 @@ const SectorHeroSection = ({ hero }) => {
   return (
     <PageWrapper
       className="relative overflow-hidden"
-      containerClassName="pt-16"
+      containerClassName="pt-24 lg:pt-20"
     >
       {/* ─── Dot Pattern Background ─── */}
       <div
@@ -38,16 +38,6 @@ const SectorHeroSection = ({ hero }) => {
             "linear-gradient(to bottom, #000 0%, #000 60%, transparent 100%)",
           WebkitMaskImage:
             "linear-gradient(to bottom, #000 0%, #000 60%, transparent 100%)",
-        }}
-        aria-hidden="true"
-      />
-
-      {/* ─── Green Glow Blob ─── */}
-      <div
-        className="absolute -top-12 -left-12 h-[420px] w-[420px] rounded-full blur-md"
-        style={{
-          background:
-            "radial-gradient(circle, rgba(95,166,54,0.16) 0%, rgba(95,166,54,0) 70%)",
         }}
         aria-hidden="true"
       />

@@ -24,7 +24,7 @@ const ServiceHeroSection = ({ hero }) => {
   return (
     <PageWrapper
       className="relative overflow-hidden"
-      containerClassName="pt-16"
+      containerClassName="pt-24 lg:pt-20"
     >
       {/* ─── Dot Pattern Background ─── */}
       <div
@@ -81,7 +81,7 @@ const ServiceHeroSection = ({ hero }) => {
           <Eyebrow>{hero?.eyebrow}</Eyebrow>
 
           {/* Headline */}
-          <h1 className="mt-5 text-4xl font-bold leading-[1.12] tracking-tight text-[#2E3A45] sm:text-5xl lg:text-[3.1rem]">
+          <h1 className="mt-5 text-4xl font-semibold leading-[1.12] tracking-tight text-[#2E3A45] sm:text-5xl lg:text-[3.1rem]">
             {renderTitle(hero?.title, hero?.highlight)}
           </h1>
 

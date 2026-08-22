@@ -82,7 +82,7 @@ const companyLinks = [
 ];
 
 const resourceLinks = [
-  { label: "Solar Savings Calculator", href: "/resources/calculator" },
+  { label: "Solar Savings Calculator", href: "/solar-calculator" },
   { label: "Financing Options", href: "/resources/financing" },
   { label: "Warranty & Support", href: "/resources/warranty" },
   { label: "Installation Guide", href: "/resources/installation-guide" },
@@ -140,9 +140,9 @@ export default function Footer() {
 
   return (
     <PageWrapper
-      className="relative overflow-hidden bg-gray-50"
+      className="relative overflow-hidden bg-gray-100"
       topEdge
-      edgeClassName="text-gray-50"
+      edgeClassName="text-gray-100"
     >
       {/* subtle top hairline */}
       <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-gray-900/10 to-transparent" />

@@ -7,7 +7,7 @@ export const sectors = [
       subtitle: "Solar for homes",
       description:
         "Custom rooftop solar systems designed to reduce electricity bills and power your home with clean, renewable energy.",
-      image: "/Images/Sectors/homes.webp",
+    image: "/Images/Sectors/Homes/card.webp",
       badge: "Most Requested",
       range: "3–10 kW",
     },
@@ -244,7 +244,7 @@ export const sectors = [
       subtitle: "Solar for societies & flats",
       description:
         "Centralized solar power solutions for apartment complexes, housing societies, and multi-story residential buildings to reduce common area electricity costs.",
-      image: "/Images/Sectors/society.webp",
+      image: "/Images/Sectors/Housing/card.webp",
       badge: "Popular Choice",
       range: "10–100 kW",
     },
@@ -479,7 +479,7 @@ export const sectors = [
       subtitle: "Solar for businesses",
       description:
         "Custom solar solutions for offices, shops, hotels, hospitals, schools, and other commercial establishments to reduce operational costs.",
-      image: "/Images/Sectors/commercial.webp",
+      image: "/Images/Sectors/Commercial/card.webp",
       badge: "High ROI",
       range: "10–500 kW",
     },
@@ -713,7 +713,7 @@ export const sectors = [
       subtitle: "Solar for industries",
       description:
         "High-capacity industrial solar power plants for manufacturing units, factories, warehouses, and processing facilities with heavy energy requirements.",
-      image: "/Images/Sectors/industries.webp",
+      image: "/Images/Sectors/Industrial/card.webp",
       badge: "Maximum Savings",
       range: "50 kW–5 MW",
     },

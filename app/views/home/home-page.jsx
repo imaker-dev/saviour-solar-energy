@@ -10,36 +10,65 @@ import WhyChooseUsSection from "./components/why-choose-us-section.jsx";
 import CtaBanner from "./components/cta-banner.jsx";
 import WorkingProcess from "./components/working-process.jsx";
 import OurProjectSection from "./components/our-projects-section.jsx";
-import SolutionsSection from "./components/solutions-section.jsx";
-import SolarSubsidySection from "./components/solar-subsidy-section.jsx";
 import FaqSection from "./components/faq-section.jsx";
 import ContactSection from "./components/contact-section.jsx";
 import TestimonialSlider from "./components/testimonial-slider.jsx";
 import BlogSlider from "./components/blog-slider.jsx";
 import FeaturesSection from "./components/features-section.jsx";
 import SocialMediaSection from "./components/social-media-section.jsx";
+import GovernmentSchemesSection from "./components/government-schemes-section.jsx";
+import SectorsSection from "./components/sectors-section.jsx";
+
 const HomePage = () => {
   return (
     <>
+      {/* 1. First impression + core value proposition */}
       <Hero />
-      
+
+      {/* 2. Brand / client trust */}
       <ClientsSlider />
+
+      {/* 3. Who is Savior Renewable Energy? */}
       <AboutUsSection />
-      <CtaBanner />
+
+      {/* 4. Who do we provide solar solutions for? */}
+      <SectorsSection />
+
+      {/* 5. What do we do for our customers? */}
       <ServicesSection />
+
+      {/* 6. Why should customers choose Savior? */}
       <WhyChooseUsSection />
+
+      {/* 7. Solar system capabilities / components / flexibility */}
       <FeaturesSection />
-      <SolutionsSection />
-      <SolarSubsidySection />
-      <OurProjectSection />
-      <StatsSection />
-      <GujaratCoverageSection />
-      <WorkingProcess />
-      <FaqSection />
+
+      {/* 8. What benefits can customers get from going solar? */}
       <OurBenefits />
-      <ContactSection />
-      {/* <SocialMediaSection /> */}
+
+      {/* 9. Government schemes, subsidy & financial assistance */}
+      <GovernmentSchemesSection />
+
+      {/* 10. Proof of real-world experience */}
+      <StatsSection />
+      <OurProjectSection />
+
+      {/* 11. What customers say about Savior */}
       <TestimonialSlider />
+
+      {/* 12. Where Savior provides solar solutions */}
+      <GujaratCoverageSection />
+
+      {/* 13. How the solar journey works */}
+      <WorkingProcess />
+
+      {/* 14. Remove doubts before conversion */}
+      <FaqSection />
+
+      {/* 15. Final conversion */}
+      <ContactSection />
+
+      {/* 16. Educational content / SEO discovery */}
       <BlogSlider />
     </>
   );

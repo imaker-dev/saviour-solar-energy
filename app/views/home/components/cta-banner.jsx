@@ -7,10 +7,10 @@ import Link from "next/link";
 const CtaBanner = () => {
   return (
     <PageWrapper
-      className="relative overflow-hidden bg-secondary-500"
+      className="relative overflow-hidden bg-gray-100"
       topEdge
       bottomEdge
-      edgeClassName="text-secondary-500"
+      edgeClassName="text-gray-100"
     >
       {/* ---------------- DECORATIVE BACKGROUND ---------------- */}
       <div className="pointer-events-none absolute inset-0 z-0">
@@ -31,10 +31,10 @@ const CtaBanner = () => {
           <div className="hidden h-16 w-[5px] shrink-0 rounded-full bg-primary-500 sm:block sm:h-24" />
 
           <div className="max-w-3xl">
-            <span className="mb-2 block text-xs font-semibold uppercase tracking-[0.3em] text-white/50">
+            <span className="mb-2 block text-xs font-semibold uppercase tracking-[0.3em] text-primary-500">
               Let's Go Solar
             </span>
-            <h2 className="text-2xl font-semibold leading-[1.2] text-white sm:text-3xl md:text-4xl lg:text-[48px] lg:leading-[1.15]">
+            <h2 className="text-2xl font-medium leading-[1.2]  sm:text-3xl md:text-4xl lg:text-[48px] lg:leading-[1.15]">
               <span className="text-primary-500">Safest and Swiftest:</span>{" "}
               Securing
               <br className="hidden sm:block" />
@@ -44,7 +44,10 @@ const CtaBanner = () => {
         </div>
 
         {/* Right Button */}
-        <Link href="/contact" className="btn btn-lg btn-primary btn-shine group">
+        <Link
+          href="/contact"
+          className="btn btn-lg btn-primary btn-shine group"
+        >
           Get Free Quote
           <span className="btn-icon">
             <ArrowRight className="h-4 w-4 text-primary-500 transition-transform group-hover:translate-x-0.5" />

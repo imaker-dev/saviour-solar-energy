@@ -12,25 +12,26 @@ const CLIENTS = [
   { name: "Stratos", logo: "https://placehold.co/120x40?text=Stratos" },
 ];
 
-// Duplicate once — the CSS animation scrolls exactly one set-width,
-// then loops back to 0, and since the second copy is identical,
-// the loop point is invisible.
 const LOOP_SET = [...CLIENTS, ...CLIENTS];
 
 export default function ClientsSlider() {
   return (
-    <PageWrapper>
+    <PageWrapper containerWidth="max-w-container mx-auto">
       <div className="group relative overflow-hidden">
-        <div className="flex w-max animate-marquee gap-5 group-hover:[animation-play-state:paused]">
+        <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-20 bg-gradient-to-r from-white to-transparent sm:w-32" />
+        <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-20 bg-gradient-to-l from-white to-transparent sm:w-32" />
+
+        <div className="flex w-max animate-marquee items-center gap-10 group-hover:[animation-play-state:paused] sm:gap-14">
           {LOOP_SET.map(({ name, logo }, index) => (
             <div
               key={`${name}-${index}`}
-              className="flex shrink-0 items-center gap-3 border border-neutral-200 bg-white px-7 py-5 grayscale opacity-60 transition-all duration-300 ease-out hover:opacity-100 hover:grayscale-0"
+              className="flex h-10 w-28 shrink-0 items-center justify-center sm:h-12 sm:w-32"
             >
               <img
-                src={"/Images/logo.png"}
+                src={'/Images/logo.svg'}
+                // src={logo}
                 alt={name}
-                className="h-10 w-auto object-contain lg:h-16"
+                className="h-full w-full object-contain"
               />
             </div>
           ))}
@@ -47,7 +48,7 @@ export default function ClientsSlider() {
           }
         }
         .animate-marquee {
-          animation: marquee 25s linear infinite;
+          animation: marquee 30s linear infinite;
         }
         @media (prefers-reduced-motion: reduce) {
           .animate-marquee {

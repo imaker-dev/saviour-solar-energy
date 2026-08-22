@@ -1,12 +1,12 @@
-const siteName = "Savior Solar Energy";
-import {BASE_URL} from '../const.js';
+const siteName = SITE_CONFIG.name || "Savior Renewable Energy Pvt. Ltd.";
+import { BASE_URL, SITE_CONFIG } from "../const.js";
 
 export function generateSEO({
   title,
   description,
   keywords = [],
   path = "",
-  image = "/Images/og-image.png",
+  image = "/Images/og-image.webp",
 }) {
   const url = `${BASE_URL}${path}`;
 
@@ -16,8 +16,8 @@ export function generateSEO({
 
     keywords,
 
-    creator: "iMaker Technology Pvt. Ltd.",
-    publisher: "iMaker Technology Pvt. Ltd.",
+    creator: "Savior Renewable Energy Pvt. Ltd.",
+    publisher: "Savior Renewable Energy Pvt. Ltd.",
 
     alternates: {
       canonical: url,

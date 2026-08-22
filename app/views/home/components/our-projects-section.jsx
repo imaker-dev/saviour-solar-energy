@@ -7,44 +7,42 @@ import "swiper/css";
 import { Autoplay } from "swiper/modules";
 import { getProjectCards } from "@/data/projects.js";
 import Link from "next/link";
-import { ArrowRight, ArrowUpRight, MapPin, Zap } from "lucide-react";
+import { ArrowRight, ArrowUpRight, MapPin, Ruler } from "lucide-react";
 
 export default function OurProjectSection() {
   const projects = getProjectCards();
+
   return (
     <PageWrapper className="bg-white">
       <SectionHeader
         badge="Our Latest Projects"
-        title={"Explore Our Portfolio of Featured Projects"}
-        highlight={"Featured Projects"}
+        title={"Explore Our Portfolio"}
+        highlight={"Portfolio"}
       />
 
       {/* SLIDER */}
       <Swiper
         modules={[Autoplay]}
-        spaceBetween={20}
+        spaceBetween={28}
         autoplay={{ delay: 2500, disableOnInteraction: false }}
         breakpoints={{
           0: { slidesPerView: 1 },
           640: { slidesPerView: 2 },
           1024: { slidesPerView: 3 },
         }}
+        className="!pb-2"
       >
         {projects.map((project) => (
-          <SwiperSlide key={project.id}>
+          <SwiperSlide key={project.id} className="!h-auto">
             <ProjectCard project={project} />
           </SwiperSlide>
         ))}
       </Swiper>
 
-      <div className="mt-8 flex justify-center">
-        <Link
-          href="/projects"
-          className="btn btn-lg btn-primary"
-          // className="inline-flex items-center justify-center rounded-full bg-primary-500 px-9 py-4 text-sm font-semibold text-white shadow-lg shadow-primary-500/25 transition-all hover:-translate-y-0.5 hover:bg-primary-600 hover:shadow-xl hover:shadow-primary-500/30"
-        >
+      <div className="mt-10 flex justify-center">
+        <Link href="/projects" className="btn btn-lg btn-primary">
           View All Projects
-          <ArrowRight size={16}/>
+          <ArrowRight size={16} />
         </Link>
       </div>
     </PageWrapper>
@@ -52,52 +50,78 @@ export default function OurProjectSection() {
 }
 
 const ProjectCard = ({ project }) => {
+  const primaryTag = project.tags?.[0];
+  const statusTag = project.tags?.[project.tags.length - 1];
+  const areaNumber = project.totalArea?.split(" ")[0]; // "18,500"
+  const areaUnit = project.totalArea?.split(" ").slice(1).join(" "); // "sq.ft."
+
   return (
-    <Link href={"#"} className="group block">
+    <Link
+      href={`/projects/${project.id}`}
+      className="group relative flex h-full flex-col overflow-hidden rounded-3xl bg-white ring-1 ring-gray-950/[0.06] transition-all duration-500 hover:-translate-y-1 hover:shadow hover:shadow-gray-900/10 hover:ring-gray-950/[0.08]"
+    >
       {/* Image */}
-      <div className="relative overflow-hidden aspect-[4/3] bg-gray-100 mb-5">
+      <div className="relative aspect-[16/12] overflow-hidden bg-gray-100">
         <img
           src={project.image}
           alt={project.title}
-          className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.05]"
+          className="h-full w-full object-cover transition-transform duration-[900ms] ease-out group-hover:scale-105"
         />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 to-transparent" />
 
-        {/* Type badge */}
-        <div className="absolute top-4 left-4">
-          <span className="bg-white/95 backdrop-blur-sm text-gray-700 text-[10px] font-bold uppercase tracking-widest px-3 py-1.5">
-            {project.type}
+        {/* Status, top left, quiet */}
+        {statusTag && (
+          <span className="absolute left-4 top-4 flex items-center gap-1.5 rounded-full bg-black/30 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-widest text-white backdrop-blur-md">
+            <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
+            {statusTag}
           </span>
+        )}
+
+        {/* Hero stat, top right — the "catchy" anchor */}
+        <div className="absolute right-4 top-4 flex flex-col items-end">
+          <span className="text-[1.4rem] font-bold leading-none text-white">
+            {areaNumber}
+          </span>
+          <span className="text-[9px] font-semibold uppercase tracking-widest text-amber-400">
+            {areaUnit} installed
+          </span>
+        </div>
+
+        {/* Title on image */}
+        <div className="absolute inset-x-0 bottom-0 p-5">
+          {primaryTag && (
+            <span className="mb-1.5 inline-block text-[10.5px] font-bold uppercase tracking-widest text-amber-400">
+              {primaryTag}
+            </span>
+          )}
+          <h3 className="text-[1.25rem] font-semibold leading-tight tracking-tight text-white">
+            {project.title}
+          </h3>
         </div>
       </div>
 
       {/* Content */}
-      <div className=" ">
-        {/* Title row */}
-        <div className="flex items-start justify-between gap-3 mb-3">
-          <h3 className="text-[1.1rem] font-semibold text-gray-950 leading-snug tracking-tight group-hover:text-amber-600 transition-colors duration-200">
-            {project.title}
-          </h3>
-          <ArrowUpRight
-            size={16}
-            className="flex-shrink-0 mt-0.5 text-gray-300 group-hover:text-amber-500 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-200"
-          />
-        </div>
-
-        {/* Description */}
-        <p className="text-[13px] text-gray-400 leading-relaxed line-clamp-2 mb-4">
+      <div className="relative flex flex-1 flex-col p-5">
+        {/* Description, slides up and fades on hover to reveal footer sooner */}
+        <p className="mb-4 line-clamp-2 text-[13px] leading-relaxed text-gray-500 transition-all duration-300 group-hover:text-gray-700">
           {project.description}
         </p>
 
-        {/* Meta pills */}
-        <div className="flex items-center gap-3 flex-wrap">
-          <span className="flex items-center gap-1.5 text-[11.5px] text-gray-500 font-medium">
-            <MapPin size={11} className="text-amber-400" />
-            {project.location}
-          </span>
-          <span className="w-px h-3 bg-gray-200" />
-          <span className="flex items-center gap-1.5 text-[11.5px] text-gray-500 font-medium">
-            <Zap size={11} className="text-amber-400" />
-            {project.capacity}
+        <div className="mt-auto flex items-center justify-between border-t border-gray-100 pt-4">
+          <div className="flex items-center gap-1.5 text-[12px] text-gray-500">
+            <MapPin size={12} className="text-primary-500" />
+            <span className="font-medium text-gray-700">
+              {project.location}
+            </span>
+          </div>
+
+          {/* CTA — the click trigger */}
+          <span className="flex items-center gap-1.5 text-[12px] font-semibold text-gray-900 transition-all duration-300 group-hover:gap-2.5 group-hover:text-primary-500">
+            View Project
+            <ArrowUpRight
+              size={14}
+              className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+            />
           </span>
         </div>
       </div>

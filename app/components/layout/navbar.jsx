@@ -25,6 +25,7 @@ const NAV_ITEMS = [
     label: "Resources",
     href: "#",
     dropdown: [
+      { label: "Solar Calculator", href: "/solar-calculator" },
       { label: "Blogs", href: "/blogs" },
       { label: "Gallery", href: "/gallery" },
       { label: "Contact", href: "/contact" },
@@ -135,7 +136,7 @@ export default function Navbar() {
                     className={`relative flex items-center gap-1.5 py-2 text-[16px] font-medium transition-colors ${
                       isActive
                         ? "text-primary-500"
-                        : "text-teal-900 hover:text-primary-600"
+                        : "text-slate-700 hover:text-primary-600"
                     }`}
                   >
                     {item.label}
@@ -187,7 +188,7 @@ export default function Navbar() {
             aria-label="Toggle menu"
             aria-expanded={mobileOpen}
             onClick={() => setMobileOpen((v) => !v)}
-            className="relative flex h-10 w-10 items-center justify-center rounded-full text-teal-900 lg:hidden"
+            className="relative flex h-10 w-10 items-center justify-center rounded-full text-slate-900 lg:hidden"
           >
             <Menu
               className={`absolute h-6 w-6 transition-all duration-300 ${
@@ -225,7 +226,7 @@ export default function Navbar() {
                             if (!item.dropdown) setMobileOpen(false);
                           }}
                           className={`flex-1 py-3 text-left text-[16px] font-semibold ${
-                            isActive ? "text-primary-600" : "text-teal-900"
+                            isActive ? "text-primary-600" : "text-slate-700"
                           }`}
                         >
                           {item.label}
@@ -242,7 +243,7 @@ export default function Navbar() {
                             className="p-3"
                           >
                             <ChevronDown
-                              className={`h-5 w-5 text-teal-900/70 transition-transform duration-300 ${
+                              className={`h-5 w-5 text-slate-900/70 transition-transform duration-300 ${
                                 mobileSubOpen === item.label ? "rotate-180" : ""
                               }`}
                             />

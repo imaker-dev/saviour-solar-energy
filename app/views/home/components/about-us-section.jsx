@@ -61,7 +61,7 @@ export default function AboutUsSection() {
           </div>
 
           {/* CTA + trust strip */}
-          <div className="mt-10 flex flex-wrap items-center gap-6 border-t border-slate-100 pt-8">
+          <div className="mt-10 flex flex-wrap items-center justify-center gap-6 border-t border-slate-100 pt-8 lg:justify-start">
             <Link href="/about" className="btn btn-lg btn-primary btn-shine">
               Discover Our Story
               <div className="btn-icon">

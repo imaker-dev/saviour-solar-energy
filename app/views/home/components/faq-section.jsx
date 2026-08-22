@@ -49,7 +49,7 @@ function FAQItem({ faq, isOpen, onClick }) {
     <div
       className={`overflow-hidden rounded-2xl transition-colors duration-300 ${
         isOpen
-          ? "bg-secondary-700 shadow-lg shadow-secondary-700/20"
+          ? "bg-primary-500 shadow-lg shadow-primary-700/20"
           : "bg-white shadow-sm shadow-slate-900/5 ring-1 ring-slate-900/5 hover:ring-slate-900/10"
       }`}
     >

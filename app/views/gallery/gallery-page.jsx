@@ -81,9 +81,6 @@ function ImageCard({ image, onOpen }) {
           </div>
         )}
 
-        <div className="absolute right-3 top-3 flex h-9 w-9 -translate-y-2 items-center justify-center rounded-full bg-white/90 text-[#1A1420] opacity-0 shadow-md backdrop-blur transition-all duration-400 group-hover:translate-y-0 group-hover:opacity-100">
-          <Expand className="h-4 w-4" />
-        </div>
       </div>
     </button>
   );
