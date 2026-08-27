@@ -1,517 +1,1070 @@
 export const services = [
   {
-    id: "solar-panel-solutions",
+    id: "solar-consultation-site-assessment",
 
     card: {
-      title: "Solar Panel Solutions",
-      subtitle: "Smart Energy. Sustainable Future.",
+      title: "Solar Consultation & Site Assessment",
+      subtitle: "Start With the Right Solar Plan.",
       description:
-        "Harness the power of the sun with customized solar panel solutions designed for residential, commercial, and industrial properties. We deliver high-efficiency systems that reduce electricity costs, increase energy independence, and create long-term value.",
-      image: "/Images/Services/solar-panel.webp",
-      badge: "Most Popular",
+        "Understand your electricity needs, property suitability, available installation space, and solar potential before making your investment.",
+      image: "/Images/Services/Solar-Consultation/card.webp",
+      badge: "Plan With Confidence",
     },
 
     seo: {
-      title:
-        "Solar Panel Solutions | Residential & Commercial Solar Installation Experts",
+      title: "Solar Consultation & Site Assessment | Savior Renewable Energy",
 
       description:
-        "Discover reliable solar panel solutions for homes, businesses, and industries. We specialize in customized solar panel installation, system design, consultation, maintenance, and long-term support to help you reduce electricity costs and maximize clean energy generation.",
+        "Get professional solar consultation and site assessment from Savior Renewable Energy. We evaluate your electricity usage, property, available space and site conditions to help plan the right solar solution.",
 
       keywords: [
-        "solar panel solutions",
-        "solar panel installation",
-        "residential solar panels",
-        "commercial solar installation",
-        "industrial solar solutions",
-        "rooftop solar systems",
-        "renewable energy company",
-        "solar energy solutions",
-        "photovoltaic systems",
-        "clean energy solutions",
-        "solar EPC company",
-        "high efficiency solar panels",
-        "solar power systems",
-        "energy saving solutions",
-        "best solar company",
+        "solar consultation",
+        "solar site assessment",
+        "solar site survey",
+        "solar feasibility study",
+        "solar consultant",
+        "solar consultation Gujarat",
+        "solar site survey Gujarat",
+        "solar system consultation",
+        "solar rooftop assessment",
+        "solar project feasibility",
+        "solar energy consultation",
       ],
     },
 
     hero: {
-      eyebrow: "Solar Panel Solutions",
-      title: "Power Your Property with Smart Solar Energy Solutions",
-      highlight: "Smart Solar Energy Solutions",
+      eyebrow: "SOLAR CONSULTATION & SITE ASSESSMENT",
+
+      title: "Know What Your Property Needs Before You Invest in Solar",
+
+      highlight: "Before You Invest in Solar",
 
       subtitle:
-        "Reduce electricity costs, improve energy efficiency, and embrace a sustainable future with expertly designed solar power systems tailored to your property's unique energy needs.",
+        "A good solar system starts with a good understanding of your property and energy needs. We assess your electricity consumption, available space, site conditions and future requirements to help you move forward with clarity.",
 
-      image: "/Images/Services/solar-panel.webp",
-      alt: "Professional rooftop solar panel installation",
+      image: "/Images/Services/solar-consultation.webp",
+
+      alt: "Solar expert conducting a site assessment for a rooftop solar installation",
+
       videoUrl: "/Videos/service-1.mp4",
     },
 
     about: {
-      title:
-        "Professional Solar Panel Solutions Designed Around Your Energy Goals",
+      title: "The Right Solar System Starts With the Right Assessment",
 
       description:
-        "Switching to solar energy is more than installing panels on your roof—it's about making a long-term investment in lower electricity bills, greater energy independence, and a more sustainable future. Our solar panel solutions are carefully planned for residential, commercial, and industrial properties, helping every customer generate clean, renewable electricity while reducing dependence on conventional power sources. Every project is tailored to your property's unique requirements, ensuring you receive a reliable system that delivers outstanding performance, maximum efficiency, and long-lasting value.",
+        "Solar is a long-term investment, and the right system depends on much more than the number of panels that can fit on your roof. Our consultation and site assessment helps you understand what your property can support and what your energy requirements actually call for.",
 
       paragraphs:
-        "Our process begins with understanding your energy consumption, available installation space, and future power requirements before recommending the most suitable solar solution. From engineering and system design to professional installation and commissioning, every stage is managed by experienced specialists using premium-quality components and proven installation practices. Even after your system becomes operational, we continue supporting you through performance monitoring, preventive maintenance, and responsive technical assistance, ensuring your investment continues generating dependable renewable energy and delivering measurable savings for many years to come.",
+        "We begin by understanding your electricity consumption, property type, current energy requirements and expectations from solar. Our team then evaluates the proposed installation area, roof or site conditions, available space, shading and other practical considerations that can influence system performance and installation. Based on these findings, we provide clear guidance for the next stage of your solar project. Whether you are planning solar for a home, housing society, commercial property or industrial facility, our assessment-first approach helps you make a more informed decision before committing to equipment or installation.",
     },
 
     services: {
-      title: "Our Solar Panel Services",
+      title: "What We Assess Before Your Solar Installation",
 
       description:
-        "Every property has different energy requirements, which is why we never believe in one-size-fits-all solutions. Our comprehensive solar panel services cover everything from the initial consultation and feasibility assessment to custom system design, professional installation, performance monitoring, and long-term maintenance. Whether you're installing solar panels for your home, expanding your commercial facility, or planning an industrial-scale project, our experienced team delivers reliable solutions designed to maximize energy production, improve system efficiency, and provide exceptional long-term returns on your investment.",
+        "Our assessment looks at the practical factors that can influence your solar investment, helping create a stronger foundation for system design and installation.",
 
       items: [
         "Solar Consultation",
-        "Site Assessment",
-        "Residential Installation",
-        "Commercial Installation",
-        "Industrial Solutions",
-        "Custom System Design",
-        "Rooftop Solar",
-        "Ground Mounted Systems",
-        "PV Panel Installation",
-        "Battery Storage",
-        "Hybrid Solar Systems",
-        "Net Metering",
-        "Energy Monitoring",
-        "Preventive Maintenance",
-        "System Upgrades",
+        "Electricity Consumption Analysis",
+        "Solar Site Survey",
+        "Rooftop Assessment",
+        "Available Space Evaluation",
+        "Shading Assessment",
+        "Roof & Site Condition Review",
+        "Energy Requirement Analysis",
+        "Solar Feasibility Assessment",
+        "Future Energy Requirement Planning",
+        "System Requirement Recommendation",
       ],
     },
 
     gallery: [
       {
-        image: "/Images/service-1.jpg",
-        alt: "Residential rooftop solar panel installation",
+        image: "/Images/Services/solar-consultation.webp",
+        alt: "Solar site assessment and consultation",
       },
       {
         image: "/Images/service-1.jpg",
-        alt: "Commercial solar panel installation project",
+        alt: "Solar installation site evaluation",
       },
     ],
 
     process: {
-      title: "Our Process",
+      title: "A Simple Process Before You Go Solar",
 
       description:
-        "Installing a solar power system shouldn't be complicated. That's why we've developed a streamlined process that keeps everything simple, transparent, and efficient from start to finish. Every stage is carefully planned to ensure your system is designed for maximum energy generation, installed with precision, and supported long after commissioning. Our goal is not only to deliver a high-performing solar solution but also to provide a smooth, hassle-free experience that gives you complete confidence in your investment.",
+        "We keep the first stage straightforward: understand your requirements, assess your property, and give you a clear direction for the next step.",
 
       steps: [
         {
           number: 1,
-          title: "Consultation",
+          title: "Understand",
           description:
-            "We begin by understanding your energy consumption, inspecting your property, and evaluating sunlight availability to recommend the ideal solar solution that fits both your energy goals and your budget.",
+            "We discuss your electricity usage, property, current requirements, future plans and what you expect from your solar system.",
         },
-
         {
           number: 2,
-          title: "Installation",
+          title: "Assess",
           description:
-            "Once your system is approved, our certified technicians complete the installation using high-quality components while following strict engineering practices to ensure safe operation, reliable performance, and lasting durability.",
+            "We evaluate the available installation area, site conditions, shading, roof characteristics and other factors that can influence the project.",
         },
-
         {
           number: 3,
-          title: "Support",
+          title: "Recommend",
           description:
-            "After commissioning, we thoroughly test your system, verify its performance, and provide continuous monitoring, preventive maintenance, and technical support to maximize energy production throughout its lifetime.",
+            "We use the assessment findings to guide you toward a suitable solar system direction and the next stage of planning.",
         },
       ],
     },
 
     benefits: {
-      title: "Why Choose Our Solar Panel Solutions?",
+      title: "Why Begin With a Solar Assessment?",
 
       description:
-        "Choosing the right solar partner can make a significant difference in the performance and lifespan of your solar power system. We combine industry expertise, quality workmanship, and trusted technology to deliver solutions that help you save more, generate cleaner energy, and enjoy dependable performance every day. From personalized system design and professional installation to ongoing maintenance and responsive customer support, every service we provide is focused on maximizing your investment while making your transition to renewable energy simple, reliable, and rewarding.",
+        "A proper assessment gives you more clarity before making decisions about system size, equipment and installation.",
 
       items: [
-        "Reduce your monthly electricity bills with efficient solar power generation tailored to your energy needs.",
-        "Generate clean renewable energy while lowering your dependence on conventional electricity sources.",
-        "Increase your property's long-term value with professionally designed and installed solar solutions.",
-        "Protect yourself from rising electricity costs through greater energy independence and stability.",
-        "Benefit from premium solar components engineered for reliable performance and extended service life.",
-        "Receive a customized solar system designed specifically for your property's energy requirements.",
-        "Maximize energy production with expert engineering, precision installation, and optimized system design.",
-        "Track your system's performance through intelligent monitoring for complete visibility and control.",
-        "Expand or upgrade your solar installation easily as your future energy demands continue to grow.",
-        "Enjoy dependable after-sales service, preventive maintenance, and dedicated technical support whenever needed.",
+        "Understand whether your property is suitable for solar.",
+        "Plan around your actual electricity consumption.",
+        "Identify roof, space and shading considerations early.",
+        "Avoid making system decisions based on guesswork.",
+        "Understand the factors that can affect solar generation.",
+        "Plan your solar investment around your current requirements.",
+        "Consider future energy requirements before finalizing the system.",
+        "Move into system design with better information.",
       ],
     },
 
     faq: [
       {
-        question: "How much can I save by installing solar panels?",
+        question: "Why is a solar site assessment important?",
         answer:
-          "Your savings depend on factors such as electricity consumption, system size, location, and available sunlight. Most customers experience significant reductions in their monthly electricity bills while benefiting from long-term energy savings and increased energy independence.",
+          "A solar site assessment helps evaluate factors such as electricity consumption, available space, shading, roof or site conditions and other practical considerations that can influence system planning and installation.",
       },
       {
-        question: "Are solar panels suitable for commercial properties?",
+        question: "What happens during a solar site survey?",
         answer:
-          "Absolutely. We design and install customized solar solutions for offices, factories, warehouses, educational institutions, and commercial facilities, helping businesses reduce operating costs and improve overall energy efficiency.",
+          "The assessment may include reviewing your energy requirements and evaluating the proposed installation area, available space, shading, roof or site conditions and other factors relevant to the solar project.",
       },
       {
-        question: "How long do solar panels last?",
+        question: "Do you provide solar consultation for homes and businesses?",
         answer:
-          "High-quality solar panels are designed to deliver reliable performance for more than 25 years. With routine inspections and regular maintenance, your solar power system can continue producing clean energy efficiently for decades.",
+          "Yes. We provide solar consultation for residential properties, housing societies, commercial properties and industrial projects.",
       },
       {
-        question: "Do you provide maintenance after installation?",
+        question: "Can you assess my existing rooftop before installation?",
         answer:
-          "Yes. We offer comprehensive maintenance services, including system inspections, panel cleaning, performance monitoring, preventive maintenance, troubleshooting, and technical support to ensure your solar system continues operating at peak efficiency throughout its lifespan.",
+          "Yes. The proposed rooftop or installation area can be assessed to identify practical considerations that may affect solar system design and installation.",
       },
     ],
+
+    cta: {
+      eyebrow: "READY TO EXPLORE SOLAR?",
+      title: "Let's Find the Right Solar Solution for Your Property",
+
+      description:
+        "Tell us about your property and electricity requirements. Our team can help you understand the next steps, assess your solar potential and plan a solution around your needs.",
+
+      primaryCta: "Book a Solar Consultation",
+      primaryHref: "/contact",
+
+      secondaryCta: "Calculate Your Solar Needs",
+      secondaryHref: "/solar-calculator",
+    },
   },
 
   {
-    id: "solar-inverter-systems",
+    id: "solar-system-design-engineering",
 
     card: {
-      title: "Solar Inverter Systems",
-      subtitle: "The Intelligence Behind Every Solar System",
+      title: "Solar System Design & Engineering",
+      subtitle: "Designed Around Your Energy.",
       description:
-        "Maximize the performance of your solar investment with advanced inverter systems engineered for efficient energy conversion, real-time monitoring, and dependable power management.",
-      image: "/Images/Services/solar-inverter.webp",
-      badge: "Advanced Technology",
+        "Get a solar system designed around your electricity consumption, property, available space, system configuration and long-term performance requirements.",
+      image: "/Images/Services/System-Design/card.webp",
+      badge: "Engineered Solutions",
     },
 
     seo: {
-      title:
-        "Solar Inverter Systems | Smart Solar Inverter Installation & Energy Management",
+      title: "Solar System Design & Engineering | Customized Solar Solutions",
 
       description:
-        "Looking for reliable solar inverter systems? We provide professional inverter selection, installation, configuration, monitoring, repairs, and maintenance for residential, commercial, and industrial solar power systems.",
+        "Savior Renewable Energy provides customized solar system design and engineering based on electricity consumption, property conditions, available space, system type and project requirements across Gujarat.",
 
       keywords: [
-        "solar inverter systems",
-        "solar inverter installation",
-        "hybrid solar inverter",
-        "on grid inverter",
-        "off grid inverter",
-        "string inverter",
-        "solar inverter company",
-        "solar energy management",
-        "solar inverter service",
-        "smart inverter systems",
-        "high efficiency inverter",
-        "renewable energy inverter",
-        "solar monitoring system",
-        "battery inverter",
-        "commercial solar inverter",
+        "solar system design",
+        "solar system engineering",
+        "solar system sizing",
+        "solar design company",
+        "solar engineering company",
+        "solar system design Gujarat",
+        "solar engineering Gujarat",
+        "custom solar system design",
+        "rooftop solar design",
+        "solar project engineering",
+        "solar system planning",
+        "solar capacity design",
       ],
     },
 
     hero: {
-      eyebrow: "Solar Inverter Systems",
-      title: "Smart Solar Inverter Systems for Maximum Energy Performance",
-      highlight: "Smart Solar Inverter Systems",
+      eyebrow: "SOLAR SYSTEM DESIGN & ENGINEERING",
+
+      title: "Engineer a Solar System Around the Way You Use Energy",
+
+      highlight: "Around the Way You Use Energy",
 
       subtitle:
-        "Convert every unit of solar energy into reliable, usable electricity with intelligent inverter solutions designed to improve efficiency, enhance safety, and deliver dependable performance every day.",
+        "The right solar system is not simply about installing more panels. We bring together your energy consumption, property, available space, system configuration and equipment requirements to develop a practical solar design.",
 
-      image: "/Images/Services/solar-inverter.webp",
-      alt: "Advanced solar inverter installation",
-      videoUrl: "",
+      image: "/Images/Services/solar-system-design.webp",
+
+      alt: "Solar system design and engineering planning for a rooftop installation",
+
+      videoUrl: "/Videos/service-1.mp4",
     },
 
     about: {
-      title:
-        "Intelligent Solar Inverter Solutions That Maximize Every Unit of Energy",
+      title: "Thoughtful Engineering Behind Every Solar System",
 
       description:
-        "A solar inverter is the heart of every solar power system, responsible for converting the electricity generated by your solar panels into safe, usable power for your home or business. Choosing the right inverter directly affects your system's efficiency, reliability, and long-term performance. Our advanced solar inverter solutions are carefully selected to ensure maximum energy conversion, stable operation, and seamless integration with modern solar installations, helping you get the most from every ray of sunlight.",
+        "A solar installation performs best when its components are planned as one complete system. Our design and engineering process translates your energy requirements and site information into a solar solution designed around your property.",
 
       paragraphs:
-        "Whether you're installing a new solar system, replacing an existing inverter, or upgrading to a smarter energy management solution, our specialists help you choose the right technology based on your property's energy requirements and future expansion plans. We work with trusted inverter manufacturers and follow proven installation practices to ensure reliable operation, intelligent monitoring, and long-lasting performance. From consultation and installation to software configuration, maintenance, and technical support, we make sure your solar inverter continues operating efficiently throughout its entire lifespan.",
+        "We use the findings from consultation and site assessment to determine the appropriate direction for your solar system. This includes considering system capacity, available installation area, system configuration, equipment compatibility, component placement and practical installation requirements. We can plan solutions for residential properties, housing societies, commercial facilities and industrial projects, including suitable on-grid, off-grid and hybrid configurations where required. Our objective is to create a balanced design that makes sensible use of available space while supporting safe operation, dependable generation and long-term usability.",
     },
 
     services: {
-      title: "Our Solar Inverter Services",
+      title: "Our Solar Design & Engineering Capabilities",
 
       description:
-        "Every solar installation requires the right inverter to achieve maximum efficiency and reliable energy conversion. Our complete inverter services cover everything from selecting the ideal inverter for your property to professional installation, intelligent configuration, system upgrades, troubleshooting, and ongoing maintenance. Whether you need a residential inverter, a commercial solution, or a hybrid energy management system, we deliver reliable technology backed by expert support and years of industry experience.",
+        "From system sizing to configuration planning, we bring the technical elements of your solar project together before installation begins.",
 
       items: [
-        "Inverter Consultation",
-        "System Assessment",
-        "Residential Inverters",
-        "Commercial Inverters",
-        "Industrial Solutions",
-        "Hybrid Inverters",
-        "On-Grid Systems",
-        "Off-Grid Systems",
-        "Battery Integration",
-        "Smart Monitoring",
-        "Remote Diagnostics",
-        "System Configuration",
-        "Firmware Updates",
-        "Preventive Maintenance",
-        "Inverter Upgrades",
+        "Solar System Sizing",
+        "Solar System Design",
+        "Energy Requirement Analysis",
+        "Solar Generation Planning",
+        "On-Grid Solar Design",
+        "Off-Grid Solar Design",
+        "Hybrid Solar Design",
+        "Rooftop Solar Design",
+        "Ground-Mounted System Planning",
+        "Component Selection",
+        "System Layout Planning",
+        "Performance-Oriented Design",
       ],
     },
 
     gallery: [
       {
-        image: "/images/services/solar-inverter-systems/gallery-1.webp",
-        alt: "Smart hybrid solar inverter installation",
+        image: "/Images/Services/solar-system-design.webp",
+        alt: "Solar system design and engineering",
       },
       {
-        image: "/images/services/solar-inverter-systems/gallery-2.webp",
-        alt: "Solar inverter monitoring system",
+        image: "/Images/service-1.jpg",
+        alt: "Solar project design and planning",
       },
     ],
+
     process: {
-      title: "Our Process",
+      title: "From Energy Requirements to Final Design",
 
       description:
-        "Selecting the right solar inverter is essential for achieving maximum energy efficiency and reliable system performance. Our structured process ensures every inverter is carefully matched to your energy requirements, professionally installed, thoroughly tested, and optimized for long-term operation. From the first consultation to ongoing technical support, we focus on delivering a seamless experience while helping you get the highest possible performance from your solar investment.",
+        "We turn site information and energy requirements into a structured solar system designed for your property.",
 
       steps: [
         {
           number: 1,
-          title: "Consultation",
+          title: "Analyze",
           description:
-            "We assess your solar system, energy consumption, battery requirements, and future expansion plans to recommend the ideal inverter solution that delivers maximum efficiency and reliable performance.",
+            "We review electricity consumption, site assessment findings, available space, property requirements and your expectations from the system.",
         },
-
         {
           number: 2,
-          title: "Installation",
+          title: "Engineer",
           description:
-            "Our experienced technicians install and configure your inverter using industry-approved practices, ensuring seamless integration, safe operation, and dependable energy conversion from the very beginning.",
+            "We determine suitable system capacity, configuration, component combination, layout and other important design considerations.",
         },
-
         {
           number: 3,
-          title: "Optimization",
+          title: "Finalize",
           description:
-            "After installation, we thoroughly test system performance, configure intelligent monitoring, and provide ongoing maintenance and technical support to ensure consistent energy production and long-term reliability.",
+            "We review the proposed system with you, clarify the configuration and prepare it for the next stage of procurement and installation.",
         },
       ],
     },
 
     benefits: {
-      title: "Why Choose Our Solar Inverter Systems?",
+      title: "Why Professional Solar Design Matters",
 
       description:
-        "A high-quality solar inverter does far more than convert electricity—it improves the overall performance, safety, and efficiency of your entire solar power system. Our inverter solutions are carefully selected to provide stable energy conversion, intelligent monitoring, and dependable long-term operation for residential, commercial, and industrial applications. Combined with professional installation and dedicated after-sales support, our solutions help you maximize every unit of solar energy while ensuring reliable performance for years to come.",
+        "A carefully planned system helps ensure your solar investment is based on your actual requirements rather than a one-size-fits-all configuration.",
 
       items: [
-        "Convert more solar energy into usable electricity with high-efficiency inverter technology.",
-        "Monitor system performance in real time through intelligent smart monitoring platforms.",
-        "Improve system safety with advanced protection against electrical faults and voltage fluctuations.",
-        "Support battery backup systems for greater energy independence and uninterrupted power supply.",
-        "Reduce energy losses with optimized power conversion and intelligent load management.",
-        "Choose scalable inverter solutions that grow with your future energy requirements.",
-        "Enjoy dependable operation with durable equipment built for long-term performance.",
-        "Benefit from professional installation completed by experienced renewable energy specialists.",
-        "Receive proactive maintenance that helps prevent unexpected downtime and costly repairs.",
-        "Rely on dedicated technical support whenever you need expert assistance or system upgrades.",
+        "System sizing based on your energy requirements.",
+        "Better use of available rooftop or installation space.",
+        "A solar configuration suited to your property and usage.",
+        "Thoughtful selection of compatible equipment.",
+        "Clear understanding of how your proposed system is structured.",
+        "Better preparation for installation and commissioning.",
+        "Design considerations focused on long-term system performance.",
+        "Ability to account for future energy requirements where practical.",
       ],
     },
 
     faq: [
       {
-        question: "Why is a solar inverter important?",
+        question: "How do you determine the right solar system size?",
         answer:
-          "A solar inverter converts the direct current (DC) electricity generated by your solar panels into alternating current (AC), making it safe and usable for your home or business. It also plays a key role in monitoring system performance and improving overall energy efficiency.",
+          "System sizing considers factors such as electricity consumption, available installation space, site conditions, system configuration and project requirements. These factors are assessed before recommending a suitable capacity.",
       },
       {
-        question: "Which type of solar inverter is best for my property?",
+        question: "Do you design on-grid, off-grid and hybrid solar systems?",
         answer:
-          "The right inverter depends on your property's energy consumption, solar system size, battery requirements, and future expansion plans. Our specialists evaluate your needs and recommend the most suitable solution for maximum performance and reliability.",
+          "Yes. Depending on the project requirements, we can plan suitable on-grid, off-grid and hybrid solar system configurations.",
+      },
+      {
+        question: "Do you design solar systems for industrial projects?",
+        answer:
+          "Yes. Solar system design can be developed for residential, housing society, commercial and industrial requirements.",
+      },
+      {
+        question: "Can future electricity requirements be considered?",
+        answer:
+          "Yes. Where practical, future energy requirements can be considered during the design stage so the system can be planned with potential expansion in mind.",
+      },
+    ],
+
+    cta: {
+      eyebrow: "LET'S DESIGN YOUR SYSTEM",
+      title: "Have a Property in Mind? Let's Design Around It",
+
+      description:
+        "Share your electricity requirements and property details with us. We'll help you understand the solar configuration that can suit your needs.",
+
+      primaryCta: "Discuss Your Solar Requirement",
+      primaryHref: "/contact",
+
+      secondaryCta: "Calculate Your Solar Needs",
+      secondaryHref: "/solar-calculator",
+    },
+  },
+
+  {
+    id: "solar-epc-installation",
+
+    card: {
+      title: "Solar EPC & Installation",
+      subtitle: "From Approved Design to Solar Power.",
+      description:
+        "Complete solar project execution from equipment integration and installation to testing, commissioning and operational handover.",
+      image: "/Images/Services/Solar-Installation/card.webp",
+      badge: "Complete EPC",
+    },
+
+    seo: {
+      title: "Solar EPC & Installation Services | Savior Renewable Energy",
+
+      description:
+        "Savior Renewable Energy provides complete solar EPC and installation services for residential, housing society, commercial and industrial projects, from equipment installation and electrical integration to testing and commissioning.",
+
+      keywords: [
+        "solar EPC",
+        "solar EPC company",
+        "solar EPC services",
+        "solar installation",
+        "solar installation company",
+        "solar EPC Gujarat",
+        "solar installation Gujarat",
+        "rooftop solar installation",
+        "residential solar installation",
+        "commercial solar installation",
+        "industrial solar installation",
+        "solar project execution",
+        "solar system commissioning",
+      ],
+    },
+
+    hero: {
+      eyebrow: "SOLAR EPC & INSTALLATION",
+
+      title: "From Approved Design to Solar Power, Fully Installed",
+
+      highlight: "Fully Installed",
+
+      subtitle:
+        "Once your solar system is designed, our EPC and installation team brings the project to life—from equipment integration and installation to electrical work, testing, commissioning and handover.",
+
+      image: "/Images/Services/solar-installation.webp",
+
+      alt: "Professional solar panel installation and EPC project execution",
+
+      videoUrl: "/Videos/service-1.mp4",
+    },
+
+    about: {
+      title: "One Team to Take Your Solar Project From Plan to Power",
+
+      description:
+        "A strong solar design needs equally careful execution. Our EPC and installation service brings the equipment, installation work, electrical integration, testing and commissioning together as one coordinated project.",
+
+      paragraphs:
+        "We execute solar projects according to the approved system design and property requirements. Depending on the project, this can include solar panels, inverters, batteries, mounting structures, electrical connections and other required components. Our installation approach focuses on proper component integration, safe electrical work, organized execution, system testing and commissioning. We serve residential properties, housing societies, commercial facilities and industrial projects, providing a complete installation experience rather than leaving customers to coordinate different parts of the project themselves.",
+    },
+
+    services: {
+      title: "Complete Solar EPC & Installation Services",
+
+      description:
+        "We handle the practical execution required to turn your approved solar design into a working energy system.",
+
+      items: [
+        "Solar EPC Services",
+        "Rooftop Solar Installation",
+        "Residential Solar Installation",
+        "Housing Society Solar Installation",
+        "Commercial Solar Installation",
+        "Industrial Solar Installation",
+        "Solar Panel Installation",
+        "Solar Inverter Installation",
+        "Battery Installation",
+        "Mounting Structure Installation",
+        "Electrical Integration",
+        "System Testing",
+        "Solar System Commissioning",
+      ],
+    },
+
+    gallery: [
+      {
+        image: "/Images/Services/solar-installation.webp",
+        alt: "Professional rooftop solar installation",
+      },
+      {
+        image: "/Images/service-1.jpg",
+        alt: "Solar project installation work",
+      },
+    ],
+
+    process: {
+      title: "How We Take Your Solar System Live",
+
+      description:
+        "A structured installation process keeps the transition from approved design to operational solar system clear and organized.",
+
+      steps: [
+        {
+          number: 1,
+          title: "Prepare",
+          description:
+            "We review the approved design, equipment requirements, site conditions and installation plan before work begins.",
+        },
+        {
+          number: 2,
+          title: "Install",
+          description:
+            "Our team installs the required panels, mounting structures, inverter, battery where applicable and electrical components according to the project design.",
+        },
+        {
+          number: 3,
+          title: "Commission",
+          description:
+            "The completed system is tested and checked before commissioning and handover for operational use.",
+        },
+      ],
+    },
+
+    benefits: {
+      title: "Why Choose Complete Solar EPC & Installation?",
+
+      description:
+        "Your solar project involves many connected components. Coordinated EPC execution helps bring them together correctly from installation through commissioning.",
+
+      items: [
+        "Complete project execution through one solar partner.",
+        "Installation based on the approved system design.",
+        "Professional integration of panels, inverters and batteries where applicable.",
+        "Solutions for homes, societies, commercial and industrial properties.",
+        "Attention to electrical connections and installation safety.",
+        "System testing before commissioning.",
+        "Organized coordination throughout the installation.",
+        "Continued technical support after installation.",
+      ],
+    },
+
+    faq: [
+      {
+        question: "What does solar EPC include?",
+        answer:
+          "Solar EPC can include project execution activities such as equipment integration, installation, electrical work, testing, commissioning and related coordination according to the approved solar design.",
+      },
+      {
+        question: "Do you install solar systems for homes and businesses?",
+        answer:
+          "Yes. We provide solar installation for residential properties, housing societies, commercial facilities and industrial projects.",
+      },
+      {
+        question: "Do you install solar panels, inverters and batteries?",
+        answer:
+          "Yes. Depending on the selected solar system, we can install the required panels, inverters, batteries and other system components.",
+      },
+      {
+        question: "Do you provide support after installation?",
+        answer:
+          "Yes. We provide maintenance, monitoring, troubleshooting and technical support according to the requirements of the installed system.",
+      },
+    ],
+
+    cta: {
+      eyebrow: "READY TO GO SOLAR?",
+      title: "Turn Your Solar Plan Into a Working System",
+
+      description:
+        "From rooftop installations to larger commercial and industrial projects, our team can help take your approved solar design through installation and commissioning.",
+
+      primaryCta: "Get a Free Solar Quote",
+      primaryHref: "/contact",
+
+      secondaryCta: "View Our Projects",
+      secondaryHref: "/projects",
+    },
+  },
+
+  {
+    id: "solar-approvals-subsidy-financing",
+
+    card: {
+      title: "Solar Approvals, Subsidy & Financing",
+      subtitle: "Less Paperwork. More Clarity.",
+      description:
+        "Get assistance with applicable solar subsidies, government schemes, documentation, net metering, approvals and financing or EMI options.",
+      image: "/Images/Services/Solar-Subsidy/card.webp",
+      badge: "Guided Support",
+    },
+
+    seo: {
+      title: "Solar Subsidy, Approvals & Financing Assistance | Gujarat",
+
+      description:
+        "Get assistance with applicable solar subsidies, government schemes, documentation, net metering, approvals and financing or EMI options from Savior Renewable Energy for eligible solar customers in Gujarat.",
+
+      keywords: [
+        "solar subsidy",
+        "solar subsidy Gujarat",
+        "solar government schemes",
+        "solar subsidy assistance",
+        "solar financing",
+        "solar EMI",
+        "solar net metering",
+        "net metering assistance",
+        "solar approval assistance",
+        "solar documentation",
+        "PM Surya Ghar subsidy",
+        "rooftop solar subsidy Gujarat",
+        "solar scheme assistance",
+      ],
+    },
+
+    hero: {
+      eyebrow: "SOLAR APPROVALS, SUBSIDY & FINANCING",
+
+      title: "Make the Solar Process Easier, From Paperwork to Payment",
+
+      highlight: "From Paperwork to Payment",
+
+      subtitle:
+        "Solar involves more than panels and installation. We help you understand applicable government benefits, documentation, approvals, net metering requirements and available financing or EMI options.",
+
+      image: "/Images/Services/solar-approvals.webp",
+
+      alt: "Solar consultant helping a customer with solar subsidy and documentation",
+
+      videoUrl: "/Videos/service-1.mp4",
+    },
+
+    about: {
+      title: "Guidance for the Parts of Solar That Happen Beyond Installation",
+
+      description:
+        "Subsidies, government schemes, approvals, documentation, net metering and financing can make the solar journey feel complicated. Our team helps simplify these steps and explains what may be applicable to your project.",
+
+      paragraphs:
+        "We help customers understand the administrative and financial requirements associated with their solar project. Depending on the project and applicable rules, this can include guidance related to government solar schemes, subsidy processes, documentation, net metering and financing or EMI options. Government policies and eligibility requirements can change, so we avoid making blanket promises about benefits and instead guide customers according to the applicable requirements at the time of their project. Our goal is to make the process easier to understand while helping you move forward with greater confidence.",
+    },
+
+    services: {
+      title: "Solar Subsidy, Approval & Financing Support",
+
+      description:
+        "We help simplify the documentation, government scheme and financial steps that can accompany a solar installation.",
+
+      items: [
+        "Government Scheme Guidance",
+        "Solar Subsidy Assistance",
+        "Subsidy Eligibility Guidance",
+        "Documentation Assistance",
+        "Application Process Guidance",
+        "Net Metering Assistance",
+        "Approval Process Guidance",
+        "Solar Financing Assistance",
+        "EMI Option Guidance",
+        "Project Documentation Support",
+      ],
+    },
+
+    gallery: [
+      {
+        image: "/Images/Services/solar-approvals.webp",
+        alt: "Solar consultation and documentation assistance",
+      },
+      {
+        image: "/Images/service-1.jpg",
+        alt: "Solar project consultation",
+      },
+    ],
+
+    process: {
+      title: "Making the Administrative Side of Solar Simpler",
+
+      description:
+        "We help you understand what applies to your project, what information may be required and what steps need to be completed.",
+
+      steps: [
+        {
+          number: 1,
+          title: "Understand",
+          description:
+            "We understand your project, property type, solar requirement and the government or financing benefits you want to explore.",
+        },
+        {
+          number: 2,
+          title: "Guide",
+          description:
+            "We explain applicable documentation, subsidy or scheme requirements, net metering procedures and financing considerations.",
+        },
+        {
+          number: 3,
+          title: "Assist",
+          description:
+            "We support you through the relevant process and documentation requirements according to the applicable guidelines.",
+        },
+      ],
+    },
+
+    benefits: {
+      title: "Why Get Help With the Solar Process?",
+
+      description:
+        "Having one experienced solar partner can make the administrative and financial side of your project easier to understand and manage.",
+
+      items: [
+        "Better understanding of applicable government solar schemes.",
+        "Guidance on subsidy eligibility and requirements.",
+        "Support with relevant project documentation.",
+        "Assistance with applicable net metering procedures.",
+        "Clearer understanding of financing and EMI options.",
+        "One point of coordination for your solar project.",
+        "Less confusion around administrative requirements.",
+        "Guidance based on applicable rules at the time of your project.",
+      ],
+    },
+
+    faq: [
+      {
+        question: "Do you provide assistance with solar subsidy?",
+        answer:
+          "Yes. We assist eligible customers with understanding applicable solar subsidy schemes, requirements, documentation and the relevant process.",
+      },
+      {
+        question: "Can you help with net metering?",
+        answer:
+          "Yes. We provide guidance and assistance related to applicable net metering requirements and procedures for eligible solar projects.",
+      },
+      {
+        question: "Do you provide solar financing or EMI assistance?",
+        answer:
+          "Yes. We help customers understand available financing or EMI options applicable to their solar project and requirements.",
+      },
+      {
+        question: "Is every customer eligible for a solar subsidy?",
+        answer:
+          "Not necessarily. Eligibility and benefits depend on the applicable government scheme, customer conditions, system requirements and current guidelines. Eligibility should be confirmed before making financial decisions based on a subsidy.",
+      },
+    ],
+
+    cta: {
+      eyebrow: "NEED HELP WITH YOUR SOLAR PROJECT?",
+      title: "Let's Make the Solar Process Easier",
+
+      description:
+        "From understanding applicable government benefits to navigating documentation and financing options, our team can help you understand the next steps for your project.",
+
+      primaryCta: "Talk to a Solar Expert",
+      primaryHref: "/contact",
+
+      secondaryCta: "Explore Government Schemes",
+      secondaryHref: "/schemes",
+    },
+  },
+
+  {
+    id: "solar-maintenance-performance-monitoring",
+
+    card: {
+      title: "Solar Maintenance & Performance Monitoring",
+      subtitle: "Keep Your Solar Investment Performing.",
+      description:
+        "Protect your solar system with preventive maintenance, performance monitoring, inspections, troubleshooting, repairs and ongoing technical support.",
+      image: "/Images/Services/Solar-Maintenance/card.webp",
+      badge: "Long-Term Support",
+    },
+
+    seo: {
+      title:
+        "Solar Maintenance & Performance Monitoring | Savior Renewable Energy",
+
+      description:
+        "Keep your solar system performing reliably with professional maintenance, monitoring, inspections, troubleshooting, repairs and ongoing technical support from Savior Renewable Energy.",
+
+      keywords: [
+        "solar maintenance",
+        "solar maintenance Gujarat",
+        "solar panel maintenance",
+        "solar system maintenance",
+        "solar AMC",
+        "solar performance monitoring",
+        "solar system monitoring",
+        "solar repair service",
+        "solar troubleshooting",
+        "solar inverter maintenance",
+        "solar panel cleaning",
+        "solar after sales service",
+        "solar maintenance company",
+      ],
+    },
+
+    hero: {
+      eyebrow: "SOLAR MAINTENANCE & PERFORMANCE MONITORING",
+
+      title: "Keep Your Solar System Performing Long After Installation",
+
+      highlight: "Long After Installation",
+
+      subtitle:
+        "Your solar journey doesn't end when the system is commissioned. We help monitor, maintain, troubleshoot and optimize your installation so you can stay informed about its performance over the long term.",
+
+      image: "/Images/Services/solar-maintenance.webp",
+
+      alt: "Solar technician inspecting and maintaining a rooftop solar system",
+
+      videoUrl: "/Videos/service-1.mp4",
+    },
+
+    about: {
+      title: "Solar Is a Long-Term Investment. We Help You Look After It.",
+
+      description:
+        "Solar systems are designed for long-term operation, but like any electrical installation, they benefit from proper monitoring, inspection and maintenance. Our support helps you stay aware of system performance and address issues when they arise.",
+
+      paragraphs:
+        "Our maintenance and performance monitoring service supports solar systems after installation. Depending on your system and service requirements, this can include performance monitoring, inspections, panel cleaning, preventive maintenance, troubleshooting, repairs and technical support. We look at the system as a whole, including relevant solar panels, inverters, electrical connections and other components, to identify potential issues and help maintain dependable operation. Whether you need routine maintenance or assistance with a performance problem, our team provides practical support based on the condition and requirements of your installation.",
+    },
+
+    services: {
+      title: "Complete Solar Maintenance & Support",
+
+      description:
+        "Our maintenance services cover the practical requirements involved in keeping an installed solar system operating reliably.",
+
+      items: [
+        "Preventive Solar Maintenance",
+        "Solar Performance Monitoring",
+        "Solar System Inspection",
+        "Solar Panel Cleaning",
+        "Solar Inverter Inspection",
+        "System Performance Checks",
+        "Solar Troubleshooting",
+        "Solar Repair Support",
+        "Electrical System Inspection",
+        "Technical Support",
+        "Solar AMC",
+        "Performance Optimization",
+      ],
+    },
+
+    gallery: [
+      {
+        image: "/Images/Services/solar-maintenance.webp",
+        alt: "Solar system maintenance and inspection",
+      },
+      {
+        image: "/Images/service-1.jpg",
+        alt: "Solar technician maintaining an installed solar system",
+      },
+    ],
+
+    process: {
+      title: "How We Support Your Solar System",
+
+      description:
+        "We focus on understanding system performance, identifying potential issues and addressing maintenance requirements before they become bigger problems.",
+
+      steps: [
+        {
+          number: 1,
+          title: "Monitor",
+          description:
+            "We review available system performance information and look for changes or irregularities that may require attention.",
+        },
+        {
+          number: 2,
+          title: "Inspect",
+          description:
+            "Where required, relevant system components are inspected to understand their condition and identify potential causes of performance issues.",
+        },
+        {
+          number: 3,
+          title: "Maintain",
+          description:
+            "We provide the appropriate maintenance, troubleshooting, repair or technical support required for your system.",
+        },
+      ],
+    },
+
+    benefits: {
+      title: "Why Ongoing Solar Maintenance Matters",
+
+      description:
+        "Regular attention helps you understand how your system is performing and gives you an opportunity to address issues before they affect long-term operation.",
+
+      items: [
+        "Stay informed about your solar system's performance.",
+        "Identify potential performance issues earlier.",
+        "Keep panels and system components properly maintained.",
+        "Address operational problems before they become more disruptive.",
+        "Get professional troubleshooting when generation changes.",
+        "Support reliable inverter and electrical system operation.",
+        "Protect the long-term value of your solar investment.",
+        "Access ongoing technical support after installation.",
+      ],
+    },
+
+    faq: [
+      {
+        question: "Does a solar system need regular maintenance?",
+        answer:
+          "Yes. Solar systems generally require limited routine maintenance, but periodic inspection, cleaning where necessary, performance checks and equipment attention can help support reliable operation.",
+      },
+      {
+        question: "Do you provide solar AMC services?",
+        answer:
+          "Yes. Solar Annual Maintenance Contract or AMC services can be provided according to the system and service requirements.",
+      },
+      {
+        question: "Can you help if my solar system is producing less power?",
+        answer:
+          "Yes. We can help investigate performance issues by reviewing available system information and inspecting relevant components where required.",
+      },
+      {
+        question: "Do you maintain solar systems installed by another company?",
+        answer:
+          "Service availability depends on the system, equipment, condition and technical requirements. Share your system details with our team so we can assess the appropriate support.",
+      },
+    ],
+
+    cta: {
+      eyebrow: "NEED SOLAR SUPPORT?",
+      title: "Keep Your Solar System Working at Its Best",
+
+      description:
+        "Whether you need routine maintenance, performance monitoring or help investigating a system issue, our team is here to support your solar investment.",
+
+      primaryCta: "Request Solar Service",
+      primaryHref: "/contact",
+
+      secondaryCta: "Explore Maintenance Services",
+      secondaryHref: "/services",
+    },
+  },
+
+  {
+    id: "solar-expansion-upgrades",
+
+    card: {
+      title: "Solar Expansion & Upgrades",
+      subtitle: "Grow Your Solar With Your Energy Needs.",
+      description:
+        "Expand capacity, add suitable equipment, upgrade existing components and adapt your solar system as your electricity requirements change.",
+      image: "/Images/Services/Solar-Expansion/card.webp",
+      badge: "Future Ready",
+    },
+
+    seo: {
+      title: "Solar Expansion & System Upgrades | Savior Renewable Energy",
+
+      description:
+        "Upgrade or expand your existing solar system with Savior Renewable Energy. We assess increased energy requirements, existing equipment, available space and suitable options for additional capacity or system upgrades.",
+
+      keywords: [
+        "solar system upgrade",
+        "solar expansion",
+        "solar capacity expansion",
+        "solar upgrade Gujarat",
+        "solar expansion Gujarat",
+        "add solar panels",
+        "solar panel expansion",
+        "solar inverter upgrade",
+        "solar battery upgrade",
+        "solar system modernization",
+        "existing solar system upgrade",
+        "solar capacity upgrade",
+      ],
+    },
+
+    hero: {
+      eyebrow: "SOLAR EXPANSION & UPGRADES",
+
+      title: "Your Energy Needs Change. Your Solar System Can Too.",
+
+      highlight: "Your Solar System Can Too",
+
+      subtitle:
+        "More appliances, business growth or changing energy requirements can increase your electricity demand. We assess your existing solar system and help identify practical ways to expand, upgrade or modernize it.",
+
+      image: "/Images/Services/solar-upgrade.webp",
+
+      alt: "Solar technician assessing an existing solar system for expansion and upgrade",
+
+      videoUrl: "/Videos/service-1.mp4",
+    },
+
+    about: {
+      title: "Make Your Existing Solar System Work for What Comes Next",
+
+      description:
+        "Your electricity requirements may not stay the same forever. When energy consumption increases or existing equipment needs to change, your solar system may also need to evolve.",
+
+      paragraphs:
+        "Our expansion and upgrade service begins with understanding what is already installed and what has changed. We assess the existing solar system, installed equipment, available space, system configuration and your current electricity requirements before recommending an appropriate path forward. Depending on the installation, this may include additional solar capacity, panel additions, inverter upgrades, battery integration, component replacement or system modernization. Wherever practical, we focus on building upon your existing solar investment rather than recommending unnecessary replacement.",
+    },
+
+    services: {
+      title: "Solar Expansion & Upgrade Solutions",
+
+      description:
+        "We assess your existing installation and help identify suitable ways to adapt the system to your changing energy requirements.",
+
+      items: [
+        "Solar Capacity Expansion",
+        "Additional Solar Panel Installation",
+        "Solar Inverter Upgrade",
+        "Battery Addition",
+        "Battery System Upgrade",
+        "Existing System Assessment",
+        "System Modernization",
+        "Solar Component Upgrade",
+        "Performance Improvement",
+        "Future Energy Capacity Planning",
+      ],
+    },
+
+    gallery: [
+      {
+        image: "/Images/Services/solar-upgrade.webp",
+        alt: "Solar system expansion and upgrade assessment",
+      },
+      {
+        image: "/Images/service-1.jpg",
+        alt: "Solar system upgrade and installation work",
+      },
+    ],
+
+    process: {
+      title: "Upgrade Your Solar System With Confidence",
+
+      description:
+        "We assess what you already have before recommending what should change, helping make your next solar investment more practical.",
+
+      steps: [
+        {
+          number: 1,
+          title: "Assess",
+          description:
+            "We review your existing solar system, installed equipment, current performance, available space and updated electricity requirements.",
+        },
+        {
+          number: 2,
+          title: "Plan",
+          description:
+            "We identify suitable options for additional capacity, equipment upgrades, battery integration or system modernization.",
+        },
+        {
+          number: 3,
+          title: "Upgrade",
+          description:
+            "Once the appropriate solution is approved, the required components are added or upgraded and the system is tested for proper operation.",
+        },
+      ],
+    },
+
+    benefits: {
+      title: "When Should You Consider a Solar Upgrade?",
+
+      description:
+        "An upgrade can make sense when your energy requirements or existing system have changed. The right approach depends on the condition and configuration of your current installation.",
+
+      items: [
+        "Adapt your solar system to increased electricity consumption.",
+        "Add solar capacity where the existing system can support expansion.",
+        "Make better use of available installation space.",
+        "Upgrade equipment that no longer meets your requirements.",
+        "Add battery storage where technically suitable.",
+        "Modernize selected components instead of replacing everything.",
+        "Prepare your solar system for changing future energy requirements.",
+        "Continue building value from your existing solar investment.",
+      ],
+    },
+
+    faq: [
+      {
+        question: "Can I add more solar panels to my existing system?",
+        answer:
+          "Potentially, yes. This depends on factors such as your existing system design, inverter capacity, available space, equipment compatibility and electrical requirements. We assess the existing installation before recommending an expansion.",
       },
       {
         question: "Can I upgrade my existing solar inverter?",
         answer:
-          "Yes. We provide inverter replacement and upgrade services that improve energy conversion efficiency, introduce advanced monitoring features, and support battery storage integration without replacing your complete solar system.",
+          "An inverter may be upgraded when the existing equipment no longer suits your requirements or when additional capacity is being considered. The existing system should be assessed first to determine the appropriate solution.",
       },
       {
-        question: "Do solar inverters require regular maintenance?",
+        question: "Can I add a battery to my existing solar system?",
         answer:
-          "Modern solar inverters require minimal maintenance, but routine inspections, software updates, and performance checks help maintain peak efficiency, extend equipment lifespan, and prevent unexpected system issues.",
+          "Battery integration depends on the existing system configuration, inverter compatibility, electrical setup and intended use. We can assess your installation and recommend a suitable approach where practical.",
+      },
+      {
+        question:
+          "Should I expand my solar system if my electricity consumption increases?",
+        answer:
+          "It may make sense when your current solar generation no longer matches your electricity requirements. We can assess your existing system and consumption before recommending additional capacity or another suitable upgrade.",
       },
     ],
-  },
 
-  {
-    id: "installation-maintenance",
-
-    card: {
-      title: "Installation & Maintenance",
-      subtitle: "Protect Your Solar Investment",
-      description:
-        "From precision installation to proactive maintenance, we ensure your solar energy system operates safely, efficiently, and reliably for years to come.",
-      image: "/Images/Services/solar-maintenance.webp",
-      badge: "Expert Care",
-    },
-
-    seo: {
-      title:
-        "Solar Installation & Maintenance Services | Professional Solar System Care",
+    cta: {
+      eyebrow: "READY TO EXPAND?",
+      title: "Your Existing Solar System May Have More Potential",
 
       description:
-        "Professional solar installation and maintenance services for residential, commercial, and industrial solar systems. We provide expert installation, routine maintenance, inspections, cleaning, repairs, and performance optimization to keep your solar system operating at peak efficiency.",
+        "If your electricity needs have grown or your existing equipment needs an upgrade, let us assess your system and explore the right way forward.",
 
-      keywords: [
-        "solar installation",
-        "solar maintenance",
-        "solar panel maintenance",
-        "solar panel cleaning",
-        "solar repair services",
-        "solar inspection",
-        "solar technician",
-        "solar maintenance company",
-        "solar system servicing",
-        "preventive solar maintenance",
-        "solar health check",
-        "solar performance optimization",
-        "solar installation company",
-        "solar system repair",
-        "professional solar maintenance",
-      ],
+      primaryCta: "Discuss Your Upgrade",
+      primaryHref: "/contact",
+
+      secondaryCta: "Get a Free Solar Quote",
+      secondaryHref: "/contact",
     },
-
-    hero: {
-      eyebrow: "Installation & Maintenance",
-      title:
-        "Professional Installation & Reliable Maintenance for Lasting Solar Performance",
-      highlight: "Professional Installation & Reliable Maintenance",
-
-      subtitle:
-        "A properly installed and well-maintained solar system delivers better performance, greater reliability, and long-term savings. Our experienced team ensures your investment continues generating clean energy efficiently year after year.",
-
-      image: "/images/services/installation-maintenance/hero.webp",
-      alt: "Engineer performing solar panel maintenance",
-      videoUrl: "",
-    },
-
-    about: {
-      title:
-        "Complete Solar Installation & Maintenance Solutions You Can Trust",
-
-      description:
-        "Installing a solar power system is only the first step toward energy independence. To achieve maximum efficiency and long-lasting performance, every system must be installed with precision and maintained regularly. Our installation and maintenance services are designed to help homeowners, businesses, and industrial facilities protect their investment while ensuring consistent energy production throughout the system's lifespan. From the smallest residential installation to large commercial projects, we deliver dependable workmanship backed by years of industry expertise.",
-
-      paragraphs:
-        "Our experienced technicians carefully manage every stage of your project, from site preparation and equipment installation to electrical integration, safety testing, and final commissioning. Once your system is operational, our maintenance programs help keep it performing at its best through routine inspections, panel cleaning, performance monitoring, preventive servicing, and timely repairs whenever required. With our proactive approach, you can enjoy reliable renewable energy, improved system efficiency, and complete peace of mind knowing your solar investment is protected for years to come.",
-    },
-
-    services: {
-      title: "Our Installation & Maintenance Services",
-
-      description:
-        "We provide complete installation and maintenance solutions to ensure your solar power system performs safely and efficiently throughout its entire lifecycle. Whether you're installing a brand-new solar system, upgrading existing equipment, or scheduling routine maintenance, our experienced professionals deliver reliable services that improve performance, prevent unexpected issues, and maximize the return on your investment. Every service is carried out with careful attention to quality, safety, and long-term reliability.",
-
-      items: [
-        "Residential Installation",
-        "Commercial Installation",
-        "Industrial Projects",
-        "Solar Panel Mounting",
-        "Electrical Integration",
-        "System Commissioning",
-        "Panel Cleaning",
-        "Safety Inspection",
-        "Performance Testing",
-        "System Diagnostics",
-        "Emergency Repairs",
-        "Inverter Servicing",
-        "Battery Maintenance",
-        "Annual Health Check",
-        "System Upgrades",
-      ],
-    },
-
-    gallery: [
-      {
-        image: "/images/services/installation-maintenance/gallery-1.webp",
-        alt: "Professional solar panel installation",
-      },
-      {
-        image: "/images/services/installation-maintenance/gallery-2.webp",
-        alt: "Technician inspecting a solar power system",
-      },
-    ],
-    process: {
-      title: "Our Process",
-
-      description:
-        "A well-installed and properly maintained solar system delivers reliable performance for years, and achieving that requires more than just quality equipment. Our structured process is designed to ensure every installation meets the highest standards of safety, precision, and efficiency while every maintenance visit helps maximize energy production and extend the life of your system. From planning and installation to ongoing care, we focus on delivering a smooth experience and dependable results at every stage.",
-
-      steps: [
-        {
-          number: 1,
-          title: "Inspection",
-          description:
-            "We begin by evaluating your property, reviewing your energy requirements, and assessing the installation area to create a customized plan that ensures safe installation and reliable long-term system performance.",
-        },
-
-        {
-          number: 2,
-          title: "Installation",
-          description:
-            "Our certified technicians install every component with precision, complete all electrical connections, and perform detailed safety checks to ensure your solar system operates efficiently from day one.",
-        },
-
-        {
-          number: 3,
-          title: "Maintenance",
-          description:
-            "Once your system is operational, we provide routine inspections, preventive maintenance, performance optimization, and timely technical support to keep your solar investment performing at its best.",
-        },
-      ],
-    },
-
-    benefits: {
-      title: "Why Choose Our Installation & Maintenance Services?",
-
-      description:
-        "The performance of your solar power system depends on both expert installation and consistent maintenance. Our experienced team follows proven industry practices to ensure every component is installed correctly, operates safely, and continues delivering maximum efficiency throughout its lifespan. With regular inspections, preventive servicing, and responsive technical support, we help protect your investment, reduce unexpected downtime, and ensure your solar system continues producing clean, reliable energy year after year.",
-
-      items: [
-        "Professional installation completed with precision, safety, and strict quality standards.",
-        "Improve long-term energy production through scheduled preventive maintenance and inspections.",
-        "Extend the lifespan of solar panels, inverters, batteries, and electrical components.",
-        "Identify potential issues early before they develop into costly system failures.",
-        "Maintain consistent system efficiency with regular cleaning and performance optimization.",
-        "Reduce long-term repair costs through proactive servicing and expert technical care.",
-        "Ensure safe and reliable operation with comprehensive electrical safety inspections.",
-        "Receive fast troubleshooting and dependable repair services whenever technical issues arise.",
-        "Protect your solar investment with ongoing maintenance tailored to your system's needs.",
-        "Enjoy complete peace of mind with dedicated after-sales support from experienced specialists.",
-      ],
-    },
-
-    faq: [
-      {
-        question: "Why is regular solar maintenance important?",
-        answer:
-          "Regular maintenance helps your solar system operate safely and efficiently by identifying potential issues early, improving energy production, and extending the lifespan of key components such as panels, inverters, and electrical connections.",
-      },
-      {
-        question: "How often should my solar system be inspected?",
-        answer:
-          "We recommend scheduling a professional inspection at least once a year. Depending on your location and environmental conditions, more frequent cleaning and maintenance may be beneficial to maintain peak performance.",
-      },
-      {
-        question: "Can you service solar systems installed by another company?",
-        answer:
-          "Yes. Our technicians can inspect, maintain, troubleshoot, and repair most residential, commercial, and industrial solar systems, regardless of who originally installed them.",
-      },
-      {
-        question: "What does your maintenance service include?",
-        answer:
-          "Our maintenance services include panel cleaning, electrical inspections, system diagnostics, performance testing, inverter and battery checks, preventive maintenance, fault detection, repairs, and technical support to keep your system performing reliably.",
-      },
-    ],
   },
 ];
 

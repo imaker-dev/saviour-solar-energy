@@ -1,5 +1,5 @@
-const siteName = SITE_CONFIG.name || "Savior Renewable Energy Pvt. Ltd.";
 import { BASE_URL, SITE_CONFIG } from "../const.js";
+const siteName = SITE_CONFIG.name || "Savior Renewable Energy Pvt. Ltd.";
 
 export function generateSEO({
   title,

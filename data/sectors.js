@@ -1,13 +1,13 @@
 export const sectors = [
   {
-    id: "homes",
+    slug: "solar-for-homes",
 
     card: {
       title: "Homes",
       subtitle: "Solar for homes",
       description:
         "Custom rooftop solar systems designed to reduce electricity bills and power your home with clean, renewable energy.",
-    image: "/Images/Sectors/Homes/card.webp",
+      image: "/Images/Sectors/Homes/new-card.webp",
       badge: "Most Requested",
       range: "3–10 kW",
     },
@@ -236,15 +236,16 @@ export const sectors = [
       },
     },
   },
+
   {
-    id: "housing-society",
+    slug: "solar-for-housing-societies",
 
     card: {
       title: "Housing Society",
       subtitle: "Solar for societies & flats",
       description:
         "Centralized solar power solutions for apartment complexes, housing societies, and multi-story residential buildings to reduce common area electricity costs.",
-      image: "/Images/Sectors/Housing/card.webp",
+      image: "/Images/Sectors/Housing/new-card.webp",
       badge: "Popular Choice",
       range: "10–100 kW",
     },
@@ -472,14 +473,14 @@ export const sectors = [
   },
 
   {
-    id: "commercial",
+    slug: "commercial-solar",
 
     card: {
       title: "Commercial",
       subtitle: "Solar for businesses",
       description:
         "Custom solar solutions for offices, shops, hotels, hospitals, schools, and other commercial establishments to reduce operational costs.",
-      image: "/Images/Sectors/Commercial/card.webp",
+      image: "/Images/Sectors/Commercial/new-card.webp",
       badge: "High ROI",
       range: "10–500 kW",
     },
@@ -706,14 +707,14 @@ export const sectors = [
   },
 
   {
-    id: "industries",
+    slug: "industrial-solar",
 
     card: {
       title: "Industries",
       subtitle: "Solar for industries",
       description:
         "High-capacity industrial solar power plants for manufacturing units, factories, warehouses, and processing facilities with heavy energy requirements.",
-      image: "/Images/Sectors/Industrial/card.webp",
+      image: "/Images/Sectors/Industrial/new-card.webp",
       badge: "Maximum Savings",
       range: "50 kW–5 MW",
     },
@@ -944,14 +945,14 @@ export const sectors = [
 //GET ALL SOLUTION CARDS
 export const getSectorsCards = () => {
   return sectors.map((secotor) => ({
-    id: secotor.id,
+    slug: secotor.slug,
     ...secotor.card,
   }));
 };
 
 // GET SOLUTION DETAILS BY SLUG
-export const getSectorById = (id) => {
-  const secotor = sectors.find((secotor) => secotor.id === id);
+export const getSectorBySlug = (slug) => {
+  const secotor = sectors.find((secotor) => secotor.slug === slug);
 
   if (!secotor) return null;
 

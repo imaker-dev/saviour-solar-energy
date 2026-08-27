@@ -1,11 +1,11 @@
 import PageWrapper from "@/app/components/page-wrapper";
 import SectionHeader from "@/app/components/section-header";
-import { ArrowRight, MapPin, ShieldCheck, Sun } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 
 export default function GujaratCoverageSection() {
   return (
-    <PageWrapper>
+    <PageWrapper containerClassName="overflow-hidden">
       {/* Background Glow */}
 
       <div className="grid items-center gap-12 lg:grid-cols-[0.95fr_1.05fr]">
@@ -20,18 +20,12 @@ export default function GujaratCoverageSection() {
           />
 
           <div className="mt-8 flex flex-wrap gap-4">
-            <Link
-              href="/contact"
-              className="btn btn-lg btn-primary"
-            >
+            <Link href="/contact" className="btn btn-lg btn-primary">
               Get Free Quote
               <ArrowRight className="h-4 w-4" />
             </Link>
 
-            <Link
-              href="/projects"
-              className="btn btn-lg btn-secondary"
-            >
+            <Link href="/projects" className="btn btn-lg btn-secondary">
               View Projects
             </Link>
           </div>
@@ -69,7 +63,7 @@ export default function GujaratCoverageSection() {
           <div className="absolute h-[420px] w-[420px] rounded-full bg-primary-500/10 blur-[120px]" />
 
           <img
-            src="/Images/gujarat.png"
+            src="/Images/gujarat.webp"
             alt="Gujarat Coverage"
             className="relative w-full max-w-[650px] animate-float drop-shadow-[0_35px_60px_rgba(0,0,0,0.18)]"
           />
