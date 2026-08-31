@@ -1,145 +1,179 @@
 const projects = [
   {
-    id: "farm-solar-panel-2024",
+    id: "industrial-rooftop-solar-ahmedabad-2025",
+
+    status: "Completed",
+    projectType: "Industrial",
 
     card: {
-      title: "Farm Solar Panel 2024",
+      title: "Industrial Rooftop Solar Project",
+
+      shortDescription:
+        "350 kWp of clean rooftop power helping an Ahmedabad industrial facility lower grid dependence and energy costs.",
+
       description:
-        "A large-scale agricultural solar installation spanning 18,500 sq.ft., designed to dramatically reduce electricity costs while providing reliable, sustainable renewable energy for modern farming operations. This ground-mounted commercial system harnesses California's abundant sunshine to power irrigation systems, cold storage facilities, and daily farm operations, delivering exceptional long-term ROI and energy independence for the agricultural sector.",
+        "A large-scale rooftop solar installation developed for an industrial facility in Ahmedabad, Gujarat. The 350 kWp system was designed to offset daytime electricity consumption from manufacturing operations while making productive use of the facility's existing rooftop space.",
+
       image: "/Images/project-1.webp",
-      location: "California, USA",
-      totalArea: "18,500 sq.ft.",
-      clientName: "Green Valley Farms",
-      tags: ["Agriculture", "Ground Mounted", "Commercial", "Completed"],
+
+      location: "Ahmedabad, Gujarat, India",
+      totalArea: "32,000 sq.ft.",
+      systemSize: "350 kWp",
+      clientName: "Shree Industrial Works",
+
+      tags: [
+        "Industrial",
+        "Rooftop Solar",
+        "On-Grid",
+        "Commercial",
+        "Completed",
+      ],
     },
 
     hero: {
-      title: "Farm Solar Panel 2024",
+      title: "Industrial Rooftop Solar Project",
       subtitle:
-        "Delivering sustainable and cost-effective solar energy solutions for modern agricultural businesses.",
-      image: "/Images/projects/project-1.jpg",
-      alt: "Farm solar panel project",
+        "A high-performance rooftop solar solution designed to reduce energy costs and improve energy efficiency for an industrial facility in Ahmedabad.",
+
+      image: "/Images/project-1.webp",
+
+      alt: "Industrial rooftop solar installation in Ahmedabad",
+
       videoUrl: "",
     },
 
     details: {
-      clientName: "Green Valley Farms",
-      service: "Commercial Solar Installation",
-      duration: "4 Months",
-      location: "California, USA",
-      year: "2024",
+      clientName: "Shree Industrial Works",
+      service: "Industrial Rooftop Solar Installation",
+      systemSize: "350 kWp",
+      totalArea: "32,000 sq.ft.",
+      duration: "3 Months",
+      location: "Ahmedabad, Gujarat, India",
+      year: "2025",
     },
 
     about: {
       title: "Project Overview",
+
       description:
-        "This transformative project was designed to help Green Valley Farms significantly reduce escalating electricity expenses while dramatically improving overall energy efficiency through a meticulously customized solar power solution. By transitioning from conventional grid dependency to renewable solar energy, the farm now enjoys predictable energy costs, enhanced operational reliability, and a substantially reduced carbon footprint that aligns with sustainable agricultural practices.",
+        "The project was undertaken to help an established industrial facility in Ahmedabad reduce its growing daytime electricity consumption and make better use of its large, underutilized rooftop area. With manufacturing equipment operating primarily during daylight hours, rooftop solar provided a practical way to generate clean electricity at the point of consumption while reducing reliance on conventional grid power.",
 
       content:
-        "After conducting an exhaustive multi-week site assessment evaluating terrain variations, soil composition, and solar irradiance patterns, our engineering team designed and installed a high-performance ground-mounted solar system precisely tailored to the farm's unique energy requirements. The comprehensive installation involved strategic panel placement across the 18,500 sq.ft. area, advanced mounting systems engineered for agricultural terrain, and sophisticated electrical infrastructure integration. Throughout the four-month installation, our team maintained rigorous scheduling to ensure minimal disruption to critical ongoing operations. Today, this system consistently delivers reliable clean energy, substantially lower operating costs, and meaningful long-term sustainability benefits.",
+        "Following a detailed site assessment, our engineering team evaluated the available rooftop area, structural conditions, electrical infrastructure, shading patterns, and daily consumption profile of the facility. Based on these findings, we designed a 350 kWp rooftop solar system using high-efficiency photovoltaic modules and grid-connected inverter technology. The system was carefully planned around existing rooftop equipment, access pathways, and maintenance requirements. Installation was carried out in coordinated phases to maintain normal industrial operations and minimize disruption to the facility. After commissioning, the system was integrated with the site's existing electrical network and equipped with performance monitoring for ongoing energy generation and system health tracking.",
     },
 
     gallery: [
       {
         image: "/Images/projects/project-1.jpg",
-        alt: "Farm solar installation",
+        alt: "Solar panels installed on industrial rooftop in Ahmedabad",
       },
       {
         image: "/Images/projects/project-2.jpg",
-        alt: "Ground-mounted solar panels",
+        alt: "Industrial rooftop solar panel installation",
       },
       {
         image: "/Images/projects/project-3.jpg",
-        alt: "Completed solar project",
+        alt: "Completed rooftop solar project in Ahmedabad",
       },
     ],
 
     challenges: {
       title: "The Challenge",
+
       description:
-        "The project presented multiple complex challenges that required innovative engineering solutions. Installing a massive solar array across significantly uneven agricultural terrain demanded specialized mounting approaches to ensure optimal panel orientation and long-term structural integrity. Additionally, maintaining completely uninterrupted farm operations throughout installation was critical, as irrigation systems, cold storage facilities, and daily activities could not experience any downtime. The project also required maximizing solar exposure despite irregular landscape contours and integrating seamlessly with existing electrical infrastructure while adhering to California's strict solar installation codes.",
+        "The primary challenge was designing a large rooftop solar system around an active industrial facility without interfering with day-to-day manufacturing operations. The rooftop included existing electrical equipment, service areas, access pathways, and ventilation infrastructure that had to remain accessible after installation. The system also needed to make efficient use of the available roof space while maintaining appropriate spacing between module rows for maintenance and minimizing shading losses. In addition, the installation required careful coordination with the facility's electrical infrastructure and strict attention to rooftop safety during construction.",
     },
 
     solution: {
       title: "The Solution",
 
       description:
-        "Our engineering team developed an innovative and customized ground-mounted solar solution that masterfully addressed every challenge while exceeding performance expectations. Through meticulous site analysis and advanced modeling, we engineered a sophisticated racking system with adjustable tilt capabilities designed to accommodate uneven terrain while maximizing solar exposure throughout all seasons. We implemented a carefully orchestrated phased installation approach dividing the project into distinct work zones, allowing farm operations to continue unimpeded while construction progressed systematically. The comprehensive solution incorporated premium high-efficiency monocrystalline panels paired with cutting-edge inverter technology, reinforced deep-foundation mounting structures for superior stability, and intelligent energy management systems with real-time monitoring accessible via mobile and desktop platforms.",
+        "Our engineering team developed a customized rooftop solar layout based on the facility's available roof area, electricity consumption profile, and operational requirements. High-efficiency solar modules were positioned to maximize available generation while preserving essential maintenance and service pathways. A grid-connected inverter system was integrated with the facility's existing electrical network, allowing solar power to be consumed directly by the site's daytime operations. The installation was executed in planned stages to minimize disruption, with structural mounting, DC cabling, inverter installation, AC integration, testing, and commissioning completed under coordinated site supervision.",
 
       items: [
-        "Comprehensive Site Survey",
-        "Ground-Mounted System Design",
-        "High-Efficiency Solar Panels",
-        "Advanced Inverter Integration",
-        "Optimized Panel Positioning",
-        "Real-Time Energy Monitoring",
-        "Professional System Commissioning",
-        "Long-Term Technical Support",
+        "Detailed Rooftop Site Survey",
+        "Structural & Shadow Assessment",
+        "Customized Solar System Design",
+        "High-Efficiency Solar Modules",
+        "Grid-Connected Inverter System",
+        "Optimized Rooftop Layout",
+        "AC & DC Electrical Integration",
+        "System Testing & Commissioning",
+        "Remote Performance Monitoring",
+        "Post-Installation Support",
       ],
     },
 
     results: {
       title: "The Results",
+
       description:
-        "The completed solar installation has fundamentally transformed Green Valley Farms' energy profile, delivering exceptional and measurable outcomes across multiple performance indicators. The system now generates substantial clean renewable energy that has dramatically reduced monthly electricity costs, providing predictable and significantly lower operational expenses that directly improve bottom-line profitability. The farm has achieved remarkable energy independence, insulating the business from utility rate fluctuations and power grid instability while ensuring continuous operations. This project has established Green Valley Farms as a forward-thinking leader in sustainable agriculture, demonstrating how modern farming operations can integrate renewable energy to achieve both economic and environmental objectives that continue delivering measurable value every single day.",
+        "The completed rooftop solar system provides the facility with a dependable source of clean electricity during its primary operating hours. By generating power directly at the point of consumption, the installation helps reduce the facility's dependence on conventional grid electricity and supports better control over long-term energy costs. The project also makes productive use of previously underutilized rooftop space while contributing to the company's broader sustainability objectives.",
     },
 
     testimonial: {
-      name: "James Anderson",
-      designation: "Farm Owner",
+      name: "Rajesh Patel",
+      designation: "Director, Shree Industrial Works",
       image: "/Images/testimonials/client-1.jpg",
       rating: 5,
 
       review:
-        "Working with the team was a fantastic experience. From planning to installation, every step was handled professionally and on schedule. The system has exceeded our expectations, delivering reliable performance and noticeable savings on our electricity costs.",
+        "The entire solar installation was handled in a very organized and professional manner. The team understood our operational requirements and planned the installation carefully so that our regular work could continue. The system has been performing well, and we are pleased with the overall quality of the installation and support.",
 
       videoUrl: "",
     },
   },
+
   {
-    id: "home-solar-panel-2024",
+    id: "commercial-rooftop-solar-ahmedabad-2024",
+
+    status: "Completed",
+    projectType: "Commercial",
 
     card: {
-      title: "Home Solar Panel 2024",
-      description:
-        "A residential rooftop solar installation spanning 3,200 sq.ft., designed to significantly reduce household electricity bills while providing clean, reliable energy for everyday living. This hybrid system combines rooftop solar efficiency with smart energy management, delivering substantial long-term savings and greater energy independence for the modern homeowner.",
-      image: "/Images/project-2.webp",
-      location: "Austin, Texas, USA",
-      totalArea: "3,200 sq.ft.",
-      clientName: "Michael Johnson",
-      tags: ["Residential", "Rooftop Solar", "Hybrid System", "Completed"],
-    },
+      title: "Commercial Rooftop Solar Project",
 
-    seo: {
-      title:
-        "Home Solar Panel Project 2024 | Residential Rooftop Solar Installation",
+      shortDescription:
+        "180 kWp of rooftop solar helping a busy Ahmedabad commercial facility turn unused roof space into clean energy.",
+
       description:
-        "Explore our residential rooftop solar installation project featuring a customized home solar solution designed to improve energy efficiency, reduce electricity costs, and support sustainable living.",
-      keywords: [
-        "home solar project",
-        "residential solar installation",
-        "rooftop solar panels",
-        "solar energy project",
-        "home solar system",
-        "renewable energy",
-        "solar EPC project",
+        "A 180 kWp commercial rooftop solar installation designed to support the daily electricity requirements of a multi-use commercial facility in Ahmedabad. The system combines efficient rooftop utilization with reliable on-site renewable power generation.",
+
+      image: "/Images/project-2.webp",
+
+      location: "Ahmedabad, Gujarat, India",
+      totalArea: "18,500 sq.ft.",
+      systemSize: "180 kWp",
+      clientName: "Ahmedabad Business Centre",
+
+      tags: [
+        "Commercial",
+        "Rooftop Solar",
+        "On-Grid",
+        "Urban",
+        "Completed",
       ],
     },
 
     hero: {
-      title: "Home Solar Panel 2024",
+      title: "Commercial Rooftop Solar Project",
       subtitle:
-        "A customized rooftop solar installation helping homeowners reduce electricity costs while embracing clean, renewable energy.",
+        "Transforming unused commercial rooftop space into a reliable source of clean, cost-effective energy in Ahmedabad.",
+
       image: "/Images/projects/project-2.jpg",
-      alt: "Residential rooftop solar installation",
+
+      alt: "Commercial rooftop solar project in Ahmedabad",
+
       videoUrl: "",
     },
 
     details: {
-      clientName: "Michael Johnson",
-      service: "Residential Rooftop Solar Installation",
-      duration: "18 Days",
-      location: "Austin, Texas, USA",
+      clientName: "Ahmedabad Business Centre",
+      service: "Commercial Rooftop Solar Installation",
+      systemSize: "180 kWp",
+      totalArea: "18,500 sq.ft.",
+      duration: "2 Months",
+      location: "Ahmedabad, Gujarat, India",
       year: "2024",
     },
 
@@ -147,24 +181,24 @@ const projects = [
       title: "Project Overview",
 
       description:
-        "The homeowner wanted to significantly reduce rising electricity costs while achieving greater energy independence through a modern rooftop solar system. The goal was to create a solution that not only delivered measurable financial savings but also blended seamlessly with the property's architectural design and enhanced the home's overall value.",
+        "This commercial solar project was developed to help a busy business facility make better use of its large rooftop while reducing its dependence on conventional grid electricity. The facility's daytime electricity consumption made rooftop solar a natural fit, allowing a significant portion of generated energy to be used directly within the premises.",
 
       content:
-        "After conducting a thorough evaluation of the home's energy consumption patterns, roof orientation, shading analysis, and available installation space, our engineers designed a customized rooftop solar solution precisely calibrated to meet the family's daily electricity requirements. Completed in just 18 days with minimal disruption to the household, the system was integrated with an intelligent monitoring platform allowing the homeowner to track energy production and system performance in real time. Today, the system reliably generates clean energy, delivers substantially lower utility bills, and provides long-term financial savings while contributing to a sustainable future.",
+        "Our team began with a complete rooftop assessment covering available installation space, structural conditions, shading, electrical loads, and access requirements. The resulting design incorporated 180 kWp of solar capacity using a carefully optimized module layout. Special attention was given to maintaining clear walkways and access around existing rooftop equipment. The electrical system was integrated with the facility's existing distribution network, while a monitoring solution was installed to provide visibility into daily solar generation and system performance. The project was completed in coordinated stages while the facility continued normal business operations.",
     },
 
     gallery: [
       {
         image: "/Images/projects/project-2.jpg",
-        alt: "Residential rooftop solar panels",
+        alt: "Commercial rooftop solar panels in Ahmedabad",
       },
       {
-        image: "/Images/projects/project-2-1.jpg",
-        alt: "Solar installation in progress",
+        image: "/Images/projects/project-4.jpg",
+        alt: "Solar installation on commercial building",
       },
       {
-        image: "/Images/projects/project-2-2.jpg",
-        alt: "Completed residential solar project",
+        image: "/Images/projects/project-5.jpg",
+        alt: "Completed commercial rooftop solar system",
       },
     ],
 
@@ -172,24 +206,26 @@ const projects = [
       title: "The Challenge",
 
       description:
-        "The home featured multiple roof angles, varying pitch sections, and limited contiguous installation space, requiring careful panel placement to maximize sunlight exposure throughout the day. Additionally, maintaining the property's visual appeal and architectural integrity was a top priority, demanding a solution that balanced performance with aesthetics while working within the constraints of the existing roof structure.",
+        "The facility had limited usable rooftop space due to existing equipment, service areas, water tanks, and required maintenance pathways. Since the building remained operational throughout the project, the installation also had to be carefully coordinated around business activities. The design needed to maximize generation without compromising rooftop accessibility or creating unnecessary disruption during construction.",
     },
 
     solution: {
       title: "The Solution",
 
       description:
-        "We designed a meticulously customized rooftop solar solution that maximized the home's available roof space through strategic panel layout and orientation optimization. The system delivered reliable energy production, improved overall efficiency, and seamless integration with the existing electrical infrastructure while preserving the home's aesthetic character.",
+        "We developed a space-efficient rooftop solar layout that prioritized energy generation while preserving all essential service and maintenance areas. The system was designed around the facility's existing electrical infrastructure and daily consumption pattern. Installation was divided into manageable stages, allowing the business to continue operating normally while the solar system was progressively installed, tested, and commissioned.",
 
       items: [
-        "Home Energy Assessment",
-        "Custom Rooftop Design",
-        "Premium Solar Panels",
-        "Hybrid Inverter Installation",
-        "Hidden Cable Management",
-        "Smart Energy Monitoring",
-        "Safety & Performance Testing",
-        "Ongoing Technical Support",
+        "Rooftop Feasibility Assessment",
+        "Shadow & Layout Analysis",
+        "Solar System Engineering",
+        "High-Efficiency PV Modules",
+        "Grid-Tied Inverter System",
+        "Space-Optimized Module Layout",
+        "Electrical Integration",
+        "Safety & Access Planning",
+        "Performance Monitoring",
+        "System Commissioning",
       ],
     },
 
@@ -197,94 +233,222 @@ const projects = [
       title: "The Results",
 
       description:
-        "The completed installation now generates a significant portion of the home's daily electricity needs, helping the homeowner achieve substantial reductions in monthly utility costs while gaining meaningful energy independence. The smart monitoring system provides complete transparency into energy production and consumption, enabling informed decisions that maximize savings. Beyond the financial benefits, the project has reduced the household's carbon footprint and demonstrated how residential solar can deliver both immediate and long-term value.",
+        "The completed 180 kWp system now generates clean electricity directly at the commercial facility, helping offset daytime grid consumption and making productive use of previously unused rooftop space. The installation provides the business with greater visibility over its renewable energy generation while supporting its long-term energy and sustainability goals.",
     },
 
     testimonial: {
-      name: "Michael Johnson",
-      designation: "Homeowner",
+      name: "Amit Shah",
+      designation: "Facility Manager, Ahmedabad Business Centre",
       image: "/Images/testimonials/client-2.jpg",
       rating: 5,
 
       review:
-        "The entire experience was smooth from consultation to installation. The team explained every step clearly, completed the project on schedule, and left everything clean and organized. We've already noticed a significant reduction in our electricity bills, and the monitoring app makes it easy to track our daily energy production. We couldn't be happier with the results.",
+        "The team managed the project very professionally from the initial survey through commissioning. They worked around our daily operations and kept the installation process organized. The rooftop is now being used much more effectively, and the system has been performing as expected.",
 
       videoUrl: "",
     },
   },
+
   {
-    id: "corporate-office-solar-project",
+    id: "residential-rooftop-solar-ahmedabad-2025",
+
+    status: "Completed",
+    projectType: "Residential",
 
     card: {
-      title: "Corporate Office Solar Project",
+      title: "Residential Rooftop Solar Project",
+
+      shortDescription:
+        "10 kWp rooftop solar built for an Ahmedabad home seeking cleaner power and greater control over electricity costs.",
+
       description:
-        "A comprehensive rooftop solar solution spanning 26,500 sq.ft., developed for a modern corporate office to significantly reduce operating costs, improve energy efficiency, and support long-term sustainability goals. This high-capacity commercial installation delivers reliable renewable energy while demonstrating the organization's commitment to environmental responsibility.",
+        "A residential rooftop solar installation designed for an independent home in Ahmedabad. The 10 kWp system was planned around the family's electricity consumption, available terrace area, and long-term energy requirements.",
+
       image: "/Images/project-3.webp",
-      location: "New York, USA",
-      totalArea: "26,500 sq.ft.",
-      clientName: "Vertex Business Solutions",
-      tags: ["Industrial", "Ground Mounted", "High Capacity", "Completed"],
-    },
 
-    seo: {
-      title:
-        "Corporate Office Solar Project | Commercial Rooftop Solar Installation",
+      location: "Ahmedabad, Gujarat, India",
+      totalArea: "2,400 sq.ft.",
+      systemSize: "10 kWp",
+      clientName: "Mehta Residence",
 
-      description:
-        "Discover our corporate office solar installation project featuring a customized rooftop solar solution designed to reduce electricity expenses, improve operational efficiency, and support sustainable business operations.",
-
-      keywords: [
-        "corporate solar project",
-        "office solar installation",
-        "commercial rooftop solar",
-        "business solar system",
-        "renewable energy project",
-        "commercial solar EPC",
-        "office renewable energy",
+      tags: [
+        "Residential",
+        "Rooftop Solar",
+        "On-Grid",
+        "Home Solar",
+        "Completed",
       ],
     },
 
     hero: {
-      title: "Corporate Office Solar Project",
-
+      title: "Residential Rooftop Solar Project",
       subtitle:
-        "Helping businesses lower operating costs and achieve sustainability goals through reliable, high-performance solar energy solutions.",
+        "A thoughtfully designed rooftop solar system helping an Ahmedabad family generate clean energy right from home.",
 
-      image: "/Images/projects/project-4.jpg",
-      alt: "Corporate office rooftop solar installation",
+      image: "/Images/projects/project-3.jpg",
+
+      alt: "Residential rooftop solar installation in Ahmedabad",
+
       videoUrl: "",
     },
 
     details: {
-      clientName: "Vertex Business Solutions",
-      service: "Commercial Rooftop Solar Installation",
-      duration: "3 Months",
-      location: "New York, USA",
-      year: "2023",
+      clientName: "Mehta Residence",
+      service: "Residential Rooftop Solar Installation",
+      systemSize: "10 kWp",
+      totalArea: "2,400 sq.ft.",
+      duration: "3 Weeks",
+      location: "Ahmedabad, Gujarat, India",
+      year: "2025",
     },
 
     about: {
       title: "Project Overview",
 
       description:
-        "Vertex Business Solutions wanted to substantially reduce rising electricity costs while reinforcing its commitment to environmental sustainability and corporate responsibility. The objective was to install a high-capacity rooftop solar system capable of supporting daily office operations without affecting employee productivity, business continuity, or the professional appearance of their corporate headquarters.",
+        "The homeowners were looking for a practical way to reduce their dependence on conventional grid electricity while making productive use of their spacious rooftop. With regular daytime and evening household consumption, a rooftop solar system offered an efficient way to generate renewable energy directly at the property.",
 
       content:
-        "Following a comprehensive structural assessment and detailed energy consumption analysis, our engineering team designed a customized rooftop solar solution tailored to the available roof space and operational requirements. The installation was executed in carefully planned phases coordinated around business hours to avoid disruption to office activities and daily workflows. Today, the system supplies a significant portion of the building's daily electricity demand, helping the company reduce operating expenses, improve energy efficiency, and strengthen its commitment to clean renewable energy.",
+        "The project began with an assessment of the home's electricity usage, rooftop orientation, available installation area, shading conditions, and structural requirements. Based on the assessment, our team designed a 10 kWp on-grid solar system with an efficient rooftop layout that maintained adequate access for future maintenance. The installation was completed with minimal disruption to the household, including module mounting, DC cabling, inverter installation, electrical integration, testing, and commissioning. The homeowners can monitor system performance and solar generation while benefiting from clean energy produced directly on their property.",
+    },
+
+    gallery: [
+      {
+        image: "/Images/projects/project-3.jpg",
+        alt: "Residential solar panels installed on Ahmedabad home",
+      },
+      {
+        image: "/Images/projects/project-6.jpg",
+        alt: "Rooftop solar installation on residential property",
+      },
+      {
+        image: "/Images/projects/project-7.jpg",
+        alt: "Completed home solar project in Ahmedabad",
+      },
+    ],
+
+    challenges: {
+      title: "The Challenge",
+
+      description:
+        "The residential rooftop had multiple areas that needed to remain accessible, including water storage and service zones. The system also needed to be visually clean while making efficient use of the available terrace space. Since the installation was at an occupied residence, the project had to be completed quickly with minimal disruption to the homeowners.",
+    },
+
+    solution: {
+      title: "The Solution",
+
+      description:
+        "Our team created a compact rooftop layout tailored specifically to the home's available space and electricity consumption. The panels were positioned to make effective use of the usable terrace while maintaining necessary access routes. A grid-connected inverter system was integrated with the home's existing electrical setup, followed by complete testing and commissioning. The installation was completed within three weeks with a focus on safety, neat cable management, and long-term maintainability.",
+
+      items: [
+        "Residential Site Assessment",
+        "Electricity Consumption Analysis",
+        "Customized Rooftop Design",
+        "High-Efficiency Solar Modules",
+        "On-Grid Inverter Installation",
+        "Optimized Panel Placement",
+        "Electrical Integration",
+        "Neat Cable Management",
+        "System Testing",
+        "Remote Performance Monitoring",
+      ],
+    },
+
+    results: {
+      title: "The Results",
+
+      description:
+        "The 10 kWp rooftop system now provides the home with a dependable source of renewable electricity and helps offset conventional grid consumption. The homeowners have gained greater visibility into their energy generation while making better use of their rooftop and taking a practical step toward cleaner household energy.",
+    },
+
+    testimonial: {
+      name: "Nirav Mehta",
+      designation: "Homeowner",
+      image: "/Images/testimonials/client-3.jpg",
+      rating: 5,
+
+      review:
+        "From the site visit to the final installation, everything was explained clearly and handled professionally. The team kept the process simple and completed the work without causing much disturbance at home. We are very happy with the quality of the installation.",
+
+      videoUrl: "",
+    },
+  },
+
+  {
+    id: "warehouse-rooftop-solar-sanand-2024",
+
+    status: "Ongoing",
+    projectType: "Commercial",
+
+    card: {
+      title: "Warehouse Rooftop Solar Project",
+
+      shortDescription:
+        "500 kWp of rooftop solar planned to power warehouse operations while turning unused roof space into an energy asset.",
+
+      description:
+        "A large-scale rooftop solar project for a warehouse and logistics facility in the Ahmedabad–Sanand industrial corridor. The 500 kWp system is designed to offset daytime electricity demand from warehouse operations, material handling equipment, lighting, and facility infrastructure.",
+
+      image: "/Images/project-4.webp",
+
+      location: "Sanand, Ahmedabad, Gujarat, India",
+      totalArea: "48,000 sq.ft.",
+      systemSize: "500 kWp",
+      clientName: "WestGate Logistics",
+
+      tags: [
+        "Commercial",
+        "Warehouse",
+        "Rooftop Solar",
+        "On-Grid",
+        "Ongoing",
+      ],
+    },
+
+    hero: {
+      title: "Warehouse Rooftop Solar Project",
+      subtitle:
+        "A large rooftop solar project designed to power high-demand warehouse operations with cleaner and more efficient energy.",
+
+      image: "/Images/projects/project-4.jpg",
+
+      alt: "Warehouse rooftop solar project near Ahmedabad",
+
+      videoUrl: "",
+    },
+
+    details: {
+      clientName: "WestGate Logistics",
+      service: "Commercial Rooftop Solar Installation",
+      systemSize: "500 kWp",
+      totalArea: "48,000 sq.ft.",
+      duration: "4 Months",
+      location: "Sanand, Ahmedabad, Gujarat, India",
+      year: "2024",
+    },
+
+    about: {
+      title: "Project Overview",
+
+      description:
+        "This ongoing solar project is being developed for a large warehouse and logistics facility located in the Ahmedabad–Sanand industrial corridor. The facility's extensive rooftop presented a significant opportunity to generate renewable electricity while helping offset the energy demand associated with warehouse lighting, material handling systems, office operations, and other daytime loads.",
+
+      content:
+        "The project began with a detailed assessment of the warehouse roof, including structural conditions, available installation zones, shading, access requirements, and electrical infrastructure. Based on the assessment, our engineering team developed a 500 kWp rooftop solar design optimized for the facility's daytime consumption profile. The layout accounts for existing rooftop equipment and required service corridors while maintaining efficient module spacing. Installation is being carried out in planned phases to maintain warehouse operations and ensure safe movement of personnel and equipment throughout the construction process. Once commissioned, the system will include real-time performance monitoring for generation tracking and operational oversight.",
     },
 
     gallery: [
       {
         image: "/Images/projects/project-4.jpg",
-        alt: "Corporate rooftop solar installation",
+        alt: "Warehouse rooftop solar installation",
       },
       {
-        image: "/Images/projects/project-4-1.jpg",
-        alt: "Solar panels on office building",
+        image: "/Images/projects/project-8.jpg",
+        alt: "Solar panels being installed on warehouse roof",
       },
       {
-        image: "/Images/projects/project-4-2.jpg",
-        alt: "Completed commercial rooftop solar project",
+        image: "/Images/projects/project-9.jpg",
+        alt: "Large commercial rooftop solar system",
       },
     ],
 
@@ -292,24 +456,26 @@ const projects = [
       title: "The Challenge",
 
       description:
-        "The office remained fully operational throughout the entire project duration, requiring meticulous scheduling, strict safety protocols, and highly efficient installation methods to minimize disruption. Additionally, the rooftop presented structural load considerations and limited access points, demanding creative engineering solutions to maximize solar generation capacity while ensuring the building's structural integrity and maintaining a clean, professional exterior appearance.",
+        "The large warehouse roof required careful planning around structural limitations, ventilation equipment, access points, and ongoing logistics operations. The facility operates throughout the project, making safety and construction coordination particularly important. The solar layout also needed to balance maximum rooftop utilization with sufficient maintenance access and safe movement across the installation area.",
     },
 
     solution: {
       title: "The Solution",
 
       description:
-        "Our team engineered a high-performance rooftop solar system that achieved the perfect balance between maximum energy generation and structural safety while ensuring completely uninterrupted business operations throughout the installation process. The solution incorporated lightweight mounting technology, strategic panel distribution, and phased implementation scheduling.",
+        "The engineering team developed a phased installation strategy based on detailed rooftop mapping and structural assessment. The 500 kWp system was divided into manageable installation zones, allowing construction activities to progress without disrupting warehouse operations. High-efficiency modules, commercial-grade inverters, organized DC cabling, and coordinated AC integration form the core of the system. A centralized monitoring platform will provide visibility into generation and system performance after commissioning.",
 
       items: [
-        "Structural Roof Assessment",
-        "Custom Solar Layout",
+        "Detailed Structural Assessment",
+        "Rooftop Solar Feasibility Study",
+        "Energy Consumption Analysis",
+        "500 kWp System Design",
         "High-Efficiency PV Modules",
-        "Smart Inverter Technology",
-        "Optimized Energy Production",
-        "Live Performance Monitoring",
-        "Minimal Business Disruption",
-        "Dedicated After-Sales Support",
+        "Commercial Inverter System",
+        "Phased Installation Planning",
+        "Electrical Infrastructure Integration",
+        "Safety & Access Management",
+        "Real-Time Performance Monitoring",
       ],
     },
 
@@ -317,151 +483,35 @@ const projects = [
       title: "The Results",
 
       description:
-        "The completed project significantly reduced the company's monthly electricity expenses while improving overall energy efficiency and advancing its sustainability initiatives. The new solar installation delivers dependable renewable energy, substantially lowers carbon emissions, and provides measurable long-term financial savings that strengthen the organization's bottom line. Beyond the direct financial benefits, the system has enhanced the company's reputation as an environmentally responsible business, making it a valuable investment for future growth and stakeholder relations.",
+        "Once commissioned, the 500 kWp rooftop solar system is expected to provide a substantial source of clean electricity for the facility's daytime operations. The project will convert previously underutilized rooftop space into an active energy asset while helping the warehouse reduce its dependence on conventional grid power and strengthen its long-term sustainability strategy.",
     },
 
     testimonial: {
-      name: "Sarah Mitchell",
-      designation: "Facility Manager",
+      name: "Vivek Shah",
+      designation: "Operations Head, WestGate Logistics",
       image: "/Images/testimonials/client-4.jpg",
       rating: 5,
 
       review:
-        "From the initial consultation to final commissioning, every stage of the project was handled professionally and efficiently. The installation was completed without disrupting our daily operations, and the system has already delivered noticeable savings on our electricity bills. Their team's communication, workmanship, and ongoing support have been exceptional, and we're extremely satisfied with the results.",
-
-      videoUrl: "",
-    },
-  },
-  {
-    id: "hospital-solar-energy-system",
-
-    card: {
-      title: "Hospital Solar Energy System",
-      description:
-        "A high-capacity rooftop solar installation spanning 31,800 sq.ft., developed to support continuous hospital operations while significantly reducing electricity costs and promoting sustainable healthcare infrastructure. This critical facility installation delivers reliable renewable energy that ensures uninterrupted power for essential medical services and patient care.",
-      image: "/Images/project-4.webp",
-      location: "Chicago, Illinois, USA",
-      totalArea: "31,800 sq.ft.",
-      clientName: "CityCare Medical Center",
-      tags: ["Commercial", "Office Building", "Rooftop Solar", "Completed"],
-    },
-
-    seo: {
-      title:
-        "Hospital Solar Energy System | Healthcare Solar Installation Project",
-
-      description:
-        "Explore our hospital solar energy project featuring a customized rooftop solar installation designed to reduce energy costs, improve operational efficiency, and provide reliable renewable power for healthcare facilities.",
-
-      keywords: [
-        "hospital solar project",
-        "healthcare solar installation",
-        "commercial rooftop solar",
-        "medical center solar",
-        "solar EPC project",
-        "renewable energy hospital",
-        "commercial solar installation",
-      ],
-    },
-
-    hero: {
-      title: "Hospital Solar Energy System",
-
-      subtitle:
-        "Providing dependable renewable energy solutions that support critical healthcare services while reducing long-term operating costs.",
-
-      image: "/Images/projects/project-5.jpg",
-      alt: "Hospital rooftop solar installation",
-      videoUrl: "",
-    },
-
-    details: {
-      clientName: "CityCare Medical Center",
-      service: "Commercial Rooftop Solar Installation",
-      duration: "5 Months",
-      location: "Chicago, Illinois, USA",
-      year: "2023",
-    },
-
-    about: {
-      title: "Project Overview",
-
-      description:
-        "CityCare Medical Center needed to improve energy efficiency while substantially reducing the rising operational costs associated with running a modern 24/7 healthcare facility. The objective was to install a reliable, high-capacity solar energy system capable of supporting daily hospital operations without interrupting essential medical services, patient care, or critical life-support systems.",
-
-      content:
-        "Following an exhaustive structural evaluation and comprehensive energy consumption analysis across all departments, our engineering team designed a customized rooftop solar solution that maximized available roof space while meeting the hospital's demanding energy requirements. Installation was meticulously planned in multiple coordinated phases to ensure uninterrupted patient care and continuous operation of critical medical departments. Today, the system supplies a significant portion of the hospital's daytime electricity demand, helping reduce utility expenses while supporting the organization's sustainability initiatives and enhancing operational resilience.",
-    },
-
-    gallery: [
-      {
-        image: "/Images/projects/project-5.jpg",
-        alt: "Hospital rooftop solar panels",
-      },
-      {
-        image: "/Images/projects/project-5-1.jpg",
-        alt: "Solar installation on healthcare facility",
-      },
-      {
-        image: "/Images/projects/project-5-2.jpg",
-        alt: "Completed hospital solar project",
-      },
-    ],
-
-    challenges: {
-      title: "The Challenge",
-
-      description:
-        "Hospitals operate around the clock with zero tolerance for power interruptions, making uninterrupted power availability and strict healthcare safety compliance absolutely essential. The project required navigating complex regulatory requirements, maintaining sterile environments, and carefully coordinating all installation activities to avoid any impact on patient care, emergency services, surgical schedules, or everyday hospital operations.",
-    },
-
-    solution: {
-      title: "The Solution",
-
-      description:
-        "We delivered a dependable rooftop solar solution specifically engineered for the unique demands of healthcare facilities, ensuring uninterrupted operation, enhanced energy efficiency, and long-term system reliability. The solution incorporated redundant safety systems, specialized mounting approaches for sensitive roof environments, and a phased implementation strategy that respected all medical facility protocols.",
-
-      items: [
-        "Healthcare Energy Analysis",
-        "Custom Solar Engineering",
-        "High-Efficiency PV Panels",
-        "Advanced Inverter Systems",
-        "Critical Power Protection",
-        "Continuous System Monitoring",
-        "Strict Safety Compliance",
-        "Preventive Maintenance Plan",
-      ],
-    },
-
-    results: {
-      title: "The Results",
-
-      description:
-        "The completed installation significantly reduced electricity costs while improving the hospital's overall energy efficiency, operational resilience, and sustainability profile. The medical center now benefits from dependable renewable energy that reduces dependency on grid power, lowers operating expenses, and decreases carbon emissions. This future-ready power solution supports continuous healthcare operations while demonstrating the organization's commitment to both fiscal responsibility and environmental stewardship, creating lasting value for the facility and the community it serves.",
-    },
-
-    testimonial: {
-      name: "Dr. Emily Carter",
-      designation: "Hospital Administrator",
-      image: "/Images/testimonials/client-5.jpg",
-      rating: 5,
-
-      review:
-        "The entire project was managed with exceptional professionalism and attention to detail. Every phase of the installation was carefully coordinated to avoid disrupting hospital operations, and the communication throughout the project was outstanding. The completed solar system has exceeded our expectations by reducing our electricity expenses while supporting our commitment to sustainable healthcare.",
+        "The planning process has been thorough and well coordinated with our warehouse operations. The team has taken the time to understand the site and work around our operational requirements. We are looking forward to the system being fully commissioned.",
 
       videoUrl: "",
     },
   },
 ];
-
 export function getAllProjects() {
   return projects;
 }
 
 // GET ALL PROJECT CARDS
+
 export const getProjectCards = () => {
   return projects.map((project) => ({
     id: project.id,
+
+    status: project.status,
+    projectType: project.projectType,
+
     ...project.card,
   }));
 };

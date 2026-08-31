@@ -5,14 +5,14 @@ export function Eyebrow({ children, light = false, className = "" }) {
   return (
     <p
       className={clsx(
-        "inline-flex items-start gap-2.5 text-[12px] font-semibold uppercase tracking-[0.14em] sm:text-[13px]",
+        "inline-flex items-center gap-2.5 whitespace-nowrap text-[11px] font-semibold uppercase tracking-[0.12em] sm:text-[13px] sm:tracking-[0.14em]",
         light ? "text-primary-400" : "text-primary-500/90",
         className,
       )}
     >
       <span
         className={clsx(
-          "mt-[0.55em] h-px w-6 shrink-0",
+          "h-px w-5 shrink-0",
           light ? "bg-primary-400" : "bg-primary-500/90",
         )}
         aria-hidden="true"

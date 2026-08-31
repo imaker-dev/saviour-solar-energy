@@ -111,30 +111,17 @@ const Hero = () => {
 
   return (
     <PageWrapper
-      className="overflow-hidden min-h-screen"
-      containerClassName="pt-24 lg:pt-20"
+      className="relative overflow-hidden min-h-screen"
+      containerClassName="pt-24 lg:pt-16"
     >
-      {/* ---------------- DECORATIVE BACKGROUND ---------------- */}
-      <div className="absolute inset-0 overflow-hidden z-0">
-        <div className="absolute inset-0 bg-gradient-to-b from-white via-gray-50 to-white" />
-
-        <div className="absolute inset-0 bg-[radial-gradient(#3F4347_1px,transparent_1px)] bg-[length:18px_18px] opacity-[0.18]" />
-
-        <div
-          className="absolute -top-20 -left-20 h-64 w-64 rounded-full bg-primary-400/10 
-               blur-2xl animate-pulse [animation-duration:7s] motion-reduce:animate-none
-               sm:h-80 sm:w-80 sm:blur-3xl
-               lg:-top-32 lg:-left-32 lg:h-[30rem] lg:w-[30rem]"
-        />
-        <div
-          className="absolute top-1/4 -right-16 h-56 w-56 rounded-full bg-amber-300/10 
-               blur-2xl animate-pulse [animation-duration:9s] motion-reduce:animate-none
-               sm:h-72 sm:w-72 sm:blur-3xl
-               lg:top-1/3 lg:-right-20 lg:h-[26rem] lg:w-[26rem]"
-        />
-
-        <div className="absolute inset-x-0 bottom-0 h-24 sm:h-32 lg:h-40 bg-gradient-to-t from-gray-50 to-transparent" />
-      </div>
+  {/* ---------------- BACKGROUND ---------------- */}
+  <div
+    className="pointer-events-none absolute inset-0 -z-10"
+    style={{
+      background:
+        "radial-gradient(65% 55% at 82% 20%, rgba(234,179,8,0.07), transparent 70%), #ffffff",
+    }}
+  />
 
       {/* ---------------- HERO CONTENT ---------------- */}
       <div className="relative z-10 grid gap-14 lg:grid-cols-2 lg:items-center lg:gap-16">
@@ -156,10 +143,7 @@ const Hero = () => {
           </h1>
 
           <p className="mx-auto mt-6 max-w-md text-[15px] leading-relaxed text-[#58595B] lg:mx-0">
-            From trusted solar panels and inverters to complete installation,
-            government-benefit assistance and after-sales support, Savior
-            Renewable Energy delivers customized solar systems designed around
-            your energy requirements and budget.
+           From consultation and system design to installation and long-term support, Savior Solar delivers solutions built around your energy needs, property and budget.
           </p>
 
           <div className="mt-8 flex flex-wrap items-center justify-center gap-4 lg:gap-8 lg:justify-start">
