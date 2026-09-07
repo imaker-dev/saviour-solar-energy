@@ -11,7 +11,7 @@ const WhatsAppButton = ({
   const [isHovered, setIsHovered] = useState(false);
 
   const positionClasses =
-    position === "bottom-left" ? "left-6" : "right-6";
+    position === "bottom-right" ? "left-6" : "right-6";
 
   const handleClick = () => {
     const cleanedNumber = phoneNumber.replace(/[^\d]/g, "");

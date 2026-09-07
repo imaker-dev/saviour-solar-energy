@@ -4,6 +4,7 @@ import "./globals.css";
 import { BASE_URL } from "./const";
 import ClientProviders from "./components/client-providers";
 import { seoPages } from "./lib/seo-pages";
+import Script from "next/script";
 
 export const metadata: Metadata = seoPages.home;
 
@@ -67,6 +68,18 @@ export default function RootLayout({
 
       <body>
         <ClientProviders>{children}</ClientProviders>
+        
+        {/* Odoo Live Chat */}
+        <Script
+          defer
+          type="text/javascript"
+          src="https://imakererp.saviorrenewableenergy.com/im_livechat/loader/2"
+        />
+        <Script
+          defer
+          type="text/javascript"
+          src="https://imakererp.saviorrenewableenergy.com/im_livechat/assets_embed.js"
+        />
       </body>
     </html>
   );
